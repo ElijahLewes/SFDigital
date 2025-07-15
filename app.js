@@ -1,10 +1,13 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const expressLayouts = require('express-ejs-layouts');
 
 // Set view engine to EJS
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(expressLayouts);
+app.set('layout', 'layout'); // This assumes your layout file is 'views/layout.ejs'
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
