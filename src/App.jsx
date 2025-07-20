@@ -1,34 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import  Navbar from './components/Navbar.jsx'
+
+//doubles as landign page
 
 //Components: states, hooks, logic, ui
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar />
+      <div className="page-container">
+      {/*Right side of home page*/}
+        <div id="home-title-container" style={({display: 'flex', width:'50%', flexDirection:'column', alignItems: 'center', justifyContent: 'flex-start', float:'left',})}>
+
+           <h1 id="home-title">Welcome to SF Digital</h1>
+          <p id="home-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+      {/*Left side of home page*/}
+        <div id="home-project-cards-container" style={{display: 'flex', width:'50%',  alignItems: 'center', justifyContent: 'center', float:'right'}}>
+          <div className="home-project-card" style={{background: 'var(--green-base)', color: 'var(--text-light)'}}>
+           <h2>Project 1</h2>
+            <p>Brief description of Project 1.</p>
+            </div>
+          </div>
+        </div>
     </>
   )
 }

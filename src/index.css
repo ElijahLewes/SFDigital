@@ -13,6 +13,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --text-dark:#2E4052;
+  --text-light:#F2E5D7;
+  --green-highlight:#C6D8AF;
+  --orange-accent:#C97D60;
+  --green-base:#648767;
+
+
+
+  
 }
 
 a {
@@ -28,8 +37,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  
 }
 
 h1 {
