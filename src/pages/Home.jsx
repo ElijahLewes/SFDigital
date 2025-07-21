@@ -26,15 +26,24 @@ function Home() {
       {/* About us section */}
       <section className="page-container">
         <div className="about-us-container">
-        <div className="about-us">
-          <h1>About Us</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div className="about-us">
+                <div className = "subtitle-container">
+                <h1>About Us</h1>
+                </div>
+                <div className = "divider"></div>   
+                <div className = "about-us-text-container">
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
         </div>
-        <div className="mission-statement">
+        <div className="mission-statement-container">
             <div className="subtitle-container">
               <h1>Mission Statement</h1>
-              <p>Our mission is to provide exceptional digital solutions that empower communities and foster growth.</p>
             </div>
+            <div className = "divider"></div>
+            <div className = "mission-statement-text-container">
+              <p>Our mission is to provide exceptional digital solutions that empower communities and foster growth.</p>
+            
          </div>
         </div>
       </section>

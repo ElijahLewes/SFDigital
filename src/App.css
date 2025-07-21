@@ -39,7 +39,10 @@
   padding: 1rem 2rem;
   background: var(--text-dark);
   box-sizing: border-box;
-  z-index: 10;
+   position: fixed; /* Makes the element fixed relative to the viewport */
+  top: 0;          /* Positions the element at the top edge of the viewport */
+  width: 100%;     /* Ensures the navbar spans the full width of the screen */
+  z-index: 1000;
 }
 
 .logo-container {
