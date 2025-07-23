@@ -37,3 +37,6 @@ This project is intended to be low-cost and easily maintainable.
 All logic is handled client-side, with media stored in AWS S3.
 
 Later, you can migrate to Firestore or Supabase if project metadata becomes too complex.
+
+Dependency docs:
+Tailwind: 

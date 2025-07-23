@@ -1,125 +1,106 @@
+@import "tailwindcss";
+
+
+* {
+  @apply box-border m-0 p-0;
+}
 
 #root {
-  text-align: center;
+  @apply text-center min-h-screen w-full;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--text-light);
   color: var(--text-dark);
-  min-height: 100vh;
-  width: 100%;
 }
+
 .logo {
-  
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  @apply p-6 transition-[filter] duration-300;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-
-
 .card {
-  padding: 2em;
+  @apply p-8;
 }
 
 .read-the-docs {
-  color: #888;
+  @apply text-gray-500;
 }
 
-
 .navbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background: var(--text-dark);
-  box-sizing: border-box;
-   position: fixed; /* Makes the element fixed relative to the viewport */
-  top: 0;          /* Positions the element at the top edge of the viewport */
-  width: 100%;     /* Ensures the navbar spans the full width of the screen */
-  z-index: 1000;
+  @apply w-full fixed top-0 flex justify-between px-8 py-4 z-[1000] bg-[var(--text-dark)];
 }
 
 .logo-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+  @apply flex items-start gap-4;
 }
 
 #navbar-logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: var(--text-light)  ;
+  @apply font-bold text-xl no-underline text-[var(--text-light)];
 }
 
 .navbar-links {
-  display: flex;
-  align-items: flex-end;
-  gap: 2rem;
+  @apply flex items-end gap-8;
 }
 
 .nav-btn {
-  padding: 0.5rem 1.2rem;
-  background: var(--text-light);
-  color: var(--text-dark) ;
-  border: none;
-  border-radius: 0.3rem;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.2s;
-  cursor: pointer;
+  @apply px-5 py-2 bg-[var(--text-light)] text-[var(--text-dark)] border-none rounded-md no-underline text-base transition-colors duration-200 cursor-pointer;
 }
 
 .nav-btn:hover {
-  background: #535bf2;
+  @apply bg-[#535bf2];
 }
-
-
 
 .page-container {
- width: 100%;
-  min-height: 100vh;
-  
+  @apply w-full min-h-screen;
 }
 
-.landing-container{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100vh;
+.landing-container {
+  @apply flex flex-row w-full h-screen;
 }
+
 .home-title-container,
 .home-project-cards-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;  /* vertical centering because flex-direction is column */
-  align-items: center;      /* horizontal centering */
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 2rem;
- 
+  @apply flex flex-col flex-1 justify-center items-start p-8 box-border;
 }
-
-
 
 .home-project-card {
-  background: white;
-  padding: 2rem;
-  margin: 1rem 0;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  @apply bg-white p-8 my-4 rounded-lg w-full max-w-[400px] shadow-md;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.home-title-container {
+  @apply text-left;
+}
+
+.home-buttons-container {
+  @apply flex gap-4 mt-6 justify-start;
+}  
+
+.home-button {
+  @apply px-6 py-3 rounded-md font-semibold transition-colors duration-200 border-[var(--text-dark)] bg-transparent text-[var(--text-dark)];
+}
+
+
+/* About us section */
+
+.about-us{
+  @apply flex items-center justify-center p-8 columns-3;
+}
+
+.mission-statement-container{
+  @apply flex items-center justify-center p-8 columns-3;
+
+}
+.divider {
+  width: 2px;
+  height: 100px; /* or use 100% to fill parent height */
+  background-color: var(--text-dark);
+  margin: 0 1rem;
+  display: block;
 }
