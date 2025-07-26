@@ -46,6 +46,11 @@ function Home() {
                 </div>
             </div>
         </div>
+
+{/* Add img carousel box */}
+
+
+
         <div className="mission-statement-container">
             <div className="subtitle-container">
               <h1>Our Mission</h1>
