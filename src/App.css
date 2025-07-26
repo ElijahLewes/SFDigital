@@ -13,6 +13,13 @@
   color: var(--text-dark);
 }
 
+.page-container {
+  @apply min-h-screen w-full flex flex-col items-center justify-center;
+}
+
+.brand-subtitle {
+  @apply font-[--Career] text-3xl mb-4;
+}
 .logo {
   @apply p-6 transition-[filter] duration-300;
 }
