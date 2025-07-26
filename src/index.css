@@ -132,5 +132,14 @@ button:focus-visible {
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
-=
+
+}
+
+@font-face {
+  font-family: 'Career';
+  src: url('./fonts/Career.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+
 }
