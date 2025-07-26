@@ -93,3 +93,44 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@font-face {
+  font-family: 'Gangster Grotesk';
+  src: url('./fonts/GangsterGrotesk-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gangster Grotesk';
+  src: url('./fonts/GangsterGrotesk-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gangster Grotesk';
+  src: url('./fonts/GangsterGrotesk-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('./fonts/MonaSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mona Sans Variable';
+  src: url('./fonts/MonaSans-VariableFont_wdth,wght.ttf') format('trueetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+=
+}
