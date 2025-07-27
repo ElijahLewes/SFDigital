@@ -1,5 +1,5 @@
 import React from 'react';
-import FlipCard from '/src/components/BioCard.jsx'; 
+import FlipCard from '/src/components/FlipCard.jsx'; 
 import SlideCard from '/src/components/SlideCard.jsx'; 
 function Team() {
   return (
