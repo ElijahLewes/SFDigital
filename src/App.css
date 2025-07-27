@@ -13,6 +13,22 @@
   color: var(--text-dark);
 }
 
+/* Page behavior] */
+.page-container-column {
+  @apply min-h-screen w-full flex flex-col items-center justify-center;
+}
+
+.page-container-row {
+  @apply min-h-screen w-full flex flex-row items-center justify-center;
+}
+.brand-subtitle {
+  @apply font-[--Career] text-3xl mb-4;
+}
+
+.link212-subtitle {
+  font-family: 'GangsterGrotesk-Bold', sans-serif;
+  @apply text-5xl mb-2;
+}
 .logo {
   @apply p-6 transition-[filter] duration-300;
 }
@@ -57,17 +73,21 @@
   @apply bg-[#535bf2];
 }
 
+
+
+/* --------Home Page Style---------- */
 .page-container {
-  @apply w-full min-h-screen;
+  @apply w-full h-full flex flex-col items-center justify-center;
 }
 
 .landing-container {
   @apply flex flex-row w-full h-screen;
 }
 
+
 .home-title-container,
 .home-project-cards-container {
-  @apply flex flex-col flex-1 justify-center items-start p-8 box-border;
+  @apply flex flex-col flex-1 justify-center items-end p-8 box-border;
 }
 
 .home-project-card {
