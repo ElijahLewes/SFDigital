@@ -4,7 +4,7 @@ function Home() {
   return (
     <>
       <div className="section-container flex flex-col justify-center min-h-screen">
-      <section id="home-container-1" className="page-container flex flex-row w-full h-screen items-center justify-center">
+      <section id="home-container-1" className="page-container-column flex flex-row w-full h-screen items-center justify-center">
         <div className="landing-container">
           {/* Left side of home page */}
           <section className="home-title-container flex flex-col flex-1 justify-start">
@@ -35,11 +35,11 @@ function Home() {
       </section>
 
       {/* About us section */}
-      <section className="page-container items-center justify-center">
+      <section className="page-container-column items-center justify-center">
         <div className="about-us-container ">
           <div className="about-us">
             <div className="subtitle-container">
-              <h1 className="brand-subtitle">Who Are We?</h1>
+              <h1 className="brand-subtitle">WHO ARE WE?</h1>
             </div>
             <div className="divider"></div>
             <div className="about-us-text-container">
@@ -57,7 +57,7 @@ function Home() {
 
         <div className="mission-statement-container flex flex-row basis-1/3">
           <div className="subtitle-container">
-            <h1 className="brand-subtitle w-full">Our Mission</h1>
+            <h1 className="brand-subtitle w-full">OUR MISSION</h1>
           </div>
           <div className="divider"></div>
           <div className="mission-statement-text-container content-center justify-items-center">

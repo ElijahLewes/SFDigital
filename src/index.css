@@ -103,24 +103,24 @@ button:focus-visible {
 }
 
 @font-face {
-  font-family: 'Gangster Grotesk';
-  src: url('./fonts/GangsterGrotesk-Bold.otf') format('opentype');
+  font-family: 'GangsterGrotesk-Bold';
+  src: url('./fonts/GangsterGrotesk-Bold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gangster Grotesk';
-  src: url('./fonts/GangsterGrotesk-Regular.otf') format('opentype');
+  font-family: 'GangsterGrotesk-Regular';
+  src: url('./fonts/GangsterGrotesk-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gangster Grotesk';
-  src: url('./fonts/GangsterGrotesk-Light.otf') format('opentype');
+  font-family: 'GangsterGrotesk-Light';
+  src: url('./fonts/GangsterGrotesk-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;

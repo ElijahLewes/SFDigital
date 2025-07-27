@@ -13,12 +13,21 @@
   color: var(--text-dark);
 }
 
-.page-container {
+/* Page behavior] */
+.page-container-column {
   @apply min-h-screen w-full flex flex-col items-center justify-center;
 }
 
+.page-container-row {
+  @apply min-h-screen w-full flex flex-row items-center justify-center;
+}
 .brand-subtitle {
   @apply font-[--Career] text-3xl mb-4;
+}
+
+.link212-subtitle {
+  font-family: 'GangsterGrotesk-Bold', sans-serif;
+  @apply text-5xl mb-2;
 }
 .logo {
   @apply p-6 transition-[filter] duration-300;

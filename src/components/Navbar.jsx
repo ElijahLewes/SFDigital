@@ -50,7 +50,7 @@ function NavTeam() {
 
 function Navbar() {
   return (
-    <nav className="navbar">
+    <nav className="navbar fixed">
       <div className="logo-container">
         <Link id="navbar-logo" to="/">Streetfront Digital</Link>
       </div>
