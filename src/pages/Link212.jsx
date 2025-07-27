@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 function ProjectLanding() {                                     
   return (
-    <div className="section-container flex flex-col justify-center min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/public/images/Link212BackgroundLight.svg)' }}>
+    <div className="section-container flex flex-col justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/public/images/Link212BackgroundLight.svg)' }}>
       <section id="Link212-page-container" className="page-container-column items-center justify-center">
         <div className="section container flex flex-row w-full h-screen items-center justify-center">
           <div className="subtitle-container">
@@ -18,9 +18,10 @@ function ProjectLanding() {
 
 
 {/* // Minimum height of a section options are defined in tailwind.config.js. Current options area: 1/4, 1/3, 1/2, 2/3, 3/4, full */}
-     <section className="page-container-row flex flex-row items-center justify-center">
-      <div className="interactive-map-container 
-      min-h-2/3 bg-cover bg-center bg-[var(--green-base)] text-[var(--text-light)] bg-opacity-60 
+    <h2 className="link212-subtitle">Find your neighborhood</h2>
+     <section className="page-container-row ">
+      <div className="interactive-map-container flex flex-col  items-center justify-center 
+      h-3/4 bg-cover bg-center bg-[var(--green-base)] text-[var(--text-light)] bg-opacity-60 
       p-6 rounded-lg shadow-lg basis-1/2">
         <h2>Interactive Map</h2>
         <p>Explore the neighborhood through our interactive map. Click on the markers to learn more about each location.</p>
@@ -30,12 +31,14 @@ function ProjectLanding() {
         </div>
       </div>
       <div className="neighborhood-menu-container basis-1/2 p-6">
-        <h2>Neighborhood Menu</h2>
-        <ul>
-          <li><Link to="/neighborhood/1">Neighborhood 1</Link></li>
-          <li><Link to="/neighborhood/2">Neighborhood 2</Link></li>
-          <li><Link to="/neighborhood/3">Neighborhood 3</Link></li>
-        </ul>
+        
+        <aside className="basis-1/2 h-3/4 text-white p-5" >
+          <ul className="space-y-4 items-end">
+            <li><a href="#" className="link212-menu-item hover:text-blue-400 bg-cover bg-[var(--green-highlight)] ">Remington: COMING SOON</a></li>
+            <li><a href="#" className="link212-menu-item hover:text-blue-400">Jones-Falls: COMING SOON</a></li>
+            <li><a href="#" className="link212-menu-item hover:text-blue-400">Abell: COMING SOON</a></li>
+          </ul>
+        </aside>
       </div>
       
     </section>
@@ -44,13 +47,4 @@ function ProjectLanding() {
   );
 }   
 export default ProjectLanding;
-
-<aside class="w-64 h-screen bg-gray-900 text-white p-5">
-  <ul class="space-y-4">
-    <li><a href="#" class="block hover:text-blue-400">Dashboard</a></li>
-    <li><a href="#" class="block hover:text-blue-400">Settings</a></li>
-    <li><a href="#" class="block hover:text-blue-400">Profile</a></li>
-    <li><a href="#" class="block hover:text-blue-400">Logout</a></li>
-  </ul>
-</aside>
 

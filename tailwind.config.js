@@ -1,18 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx,html,css,svg}"
+  ],
   theme: {
-    extend: {  
-      minHeight: {
+    extend: {
+      height: {
         '1/4': '25%',
         '1/3': '33.3333%',
         '1/2': '50%',
         '2/3': '66.6667%',
         '3/4': '75%',
         'full': '100%',
-      },},
+      },
+    },
   },
   plugins: [],
 }
-
