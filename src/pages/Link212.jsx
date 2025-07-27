@@ -20,7 +20,7 @@ function ProjectLanding() {
 {/* // Minimum height of a section options are defined in tailwind.config.js. Current options area: 1/4, 1/3, 1/2, 2/3, 3/4, full */}
      <section className="page-container-row flex flex-row items-center justify-center">
       <div className="interactive-map-container 
-      min-h-full bg-cover bg-center bg-[var(--green-base)] text-[var(--text-light)] bg-opacity-60 
+      min-h-2/3 bg-cover bg-center bg-[var(--green-base)] text-[var(--text-light)] bg-opacity-60 
       p-6 rounded-lg shadow-lg basis-1/2">
         <h2>Interactive Map</h2>
         <p>Explore the neighborhood through our interactive map. Click on the markers to learn more about each location.</p>
