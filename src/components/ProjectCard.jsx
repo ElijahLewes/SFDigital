@@ -8,7 +8,7 @@ const ProjectCard = ({
   isFlipped,
   imageSrc,
   onHover,
-  onClick,
+  onClick
 }) => {
   return (
     <div
