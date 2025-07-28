@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import ScrollToTop from './components/OnPageLoad.jsx' // Import the ScrollToTop component
 import  Navbar from './components/Navbar.jsx'
 import Home from './pages/Home.jsx'
 import Link212 from './pages/Link212.jsx'
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop /> {/* Add the ScrollToTop component here */}
       <Navbar />  
       <Routes>
         <Route path="/" element={<Home />} />
