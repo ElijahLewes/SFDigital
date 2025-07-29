@@ -7,6 +7,7 @@ import Link212 from './pages/Link212.jsx'
 import Team from './pages/Team.jsx'
 import ContactUs from './pages/ContactUs.jsx'
 import Remington from './pages/NeighborhoodPages/Remington.jsx'
+import Footer from './components/Footer.jsx' // Adjust if using absolute imports
 import { Route, Routes } from 'react-router-dom'
 //import Link212 from './pages/Link212.jsx' // Uncomment if you want to use
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/neighborhoods/remington" element={<Remington />} />
         {/* Add more routes as needed */}
       </Routes>
+      <Footer />
      <OnPageLoad /> 
 
     </>

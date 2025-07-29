@@ -40,3 +40,7 @@ Later, you can migrate to Firestore or Supabase if project metadata becomes too 
 
 Dependency docs:
 Tailwind: 
+
+
+
+Iconize api docs: http://iconify.design/docs/api/queries.html
