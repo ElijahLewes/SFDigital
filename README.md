@@ -42,5 +42,6 @@ Dependency docs:
 Tailwind: 
 
 
+Ant icons api docs: https://lineicons.com/docs
 
-Iconize api docs: http://iconify.design/docs/api/queries.html
+

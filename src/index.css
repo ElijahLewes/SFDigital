@@ -158,3 +158,33 @@ button:focus-visible {
 .Career {
   font-family: 'Career', sans-serif;
 }
+
+/* Icon definitions: */
+
+.light-youtube {
+  color: #FF0000;
+}
+.dark-youtube {
+  color: #FF0000;
+  filter: brightness(0.8);
+}
+.light-instagram {
+  color: #C13584;
+}
+.dark-instagram {
+  color: #C13584;
+}
+.light-linkedin {
+  color: #0A66C2;
+}
+.dark-linkedin {
+  color: #0A66C2;
+  filter: brightness(0.8);
+}
+.light-email {
+  color: #D44638;
+}
+.dark-email {
+  color: #D44638;
+  filter: brightness(0.8);
+}
