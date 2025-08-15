@@ -1,6 +1,11 @@
 //Landing page for neighborhood project
 import React from 'react';
 import { Link } from 'react-router-dom';
+//import { animate } from 'animejs';
+
+// createDrawable() from anime library should be used for SVG of LINK212 Header text
+
+
 function ProjectLanding() {                                     
   return (
     <div className="section-container flex flex-col justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/public/images/Link212BackgroundLight.svg)' }}>

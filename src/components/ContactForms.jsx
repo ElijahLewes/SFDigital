@@ -7,6 +7,7 @@ function ContactForms() {
     switch (activeTab) {
       case 'general':
         return (
+          // General Inquiry Form -- TODO: create css classes for form elements
           <form className="contact-form flex flex-col gap-4 max-w-md">
             <h3 className="text-xl font-bold">General Inquiry</h3>
             <input 
@@ -35,6 +36,7 @@ function ContactForms() {
       
       case 'project':
         return (
+          // Project Inquiry Form -- TODO: create css classes for form elements
           <form className="contact-form flex flex-col gap-4 max-w-md">
             <h3 className="text-xl font-bold">Project Inquiry</h3>
             <input 
@@ -66,10 +68,11 @@ function ContactForms() {
           </form>
         );
       
-      case 'support':
+      case 'LINK212 Spotlight':
         return (
+          // Link212 Inquiry Form -- TODO: create css classes for form elements
           <form className="contact-form flex flex-col gap-4 max-w-md">
-            <h3 className="text-xl font-bold">Support Request</h3>
+            <h3 className="text-xl font-bold">Link212 Request</h3>
             <input 
               type="text" 
               placeholder="Your Name" 
@@ -133,7 +136,7 @@ function ContactForms() {
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
             }`}
           >
-            Project
+            Services
           </button>
           <button
             onClick={() => setActiveTab('support')}
@@ -143,7 +146,7 @@ function ContactForms() {
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
             }`}
           >
-            Support
+            Link 212
           </button>
         </div>
 
