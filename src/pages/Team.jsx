@@ -37,7 +37,7 @@ function Team() {
           image2="/public/images/profilePics/Ayla-dark.png"
           fName="Ayla"
           lName="Dumont"
-          description="Content Strategy and Operations Lead"
+          description="Creative Director"
           bio="Captian of Design and theif of my heart."
           color="bg-[var(--text-light)]"
         />

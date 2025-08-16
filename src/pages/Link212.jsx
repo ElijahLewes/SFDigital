@@ -1,6 +1,11 @@
 //Landing page for neighborhood project
 import React from 'react';
 import { Link } from 'react-router-dom';
+//import { animate } from 'animejs';
+
+// createDrawable() from anime library should be used for SVG of LINK212 Header text
+
+
 function ProjectLanding() {                                     
   return (
     <div className="section-container flex flex-col justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/public/images/Link212BackgroundLight.svg)' }}>
@@ -21,7 +26,7 @@ function ProjectLanding() {
     <h2 className="link212-subtitle">Find your neighborhood</h2>
      <section className="page-container-row ">
       <div className="interactive-map-container flex flex-col  items-center justify-center 
-      h-3/4 bg-cover bg-center bg-[var(--green-base)] text-[var(--text-light)] bg-opacity-60 
+      h-100% bg-cover bg-center bg-[var(--green-base)] text-[var(--text-light)] bg-opacity-60 
       p-6 rounded-lg shadow-lg basis-1/2">
         <h2>Interactive Map</h2>
         <p>Explore the neighborhood through our interactive map. Click on the markers to learn more about each location.</p>

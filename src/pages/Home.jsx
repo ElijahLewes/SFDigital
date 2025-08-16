@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ProjectCard from '../components/ProjectCard'; // Adjust if using absolute imports
 
 function Home() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [flippedIndex, setFlippedIndex] = useState(null);
 
   const handleHover = (index) => {
@@ -27,11 +27,15 @@ function Home() {
       title: 'Project 2',
       shortDescription: 'Quick look at Project 2.',
       longDescription: 'Details and background of Project 2...',
+      imageSrc: '/images/projectCardPics/pCardFiller.png',
+      defaultState: false,
     },
     {
       title: 'Project 3',
       shortDescription: 'Overview of Project 3.',
       longDescription: 'Full project description and collaborators for Project 3...',
+      imageSrc: '/images/projectCardPics/pCardFiller.png',
+      
     },
   ];
 

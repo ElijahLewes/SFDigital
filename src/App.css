@@ -28,6 +28,10 @@
   font-family: 'Career', sans-serif;
   @apply text-5xl mb-2;
 }
+.footer-subtitle {
+  font-family: 'Career', sans-serif;
+  @apply mb-2;
+}
 
 .link212-subtitle {
   font-family: 'GangsterGrotesk-Bold', sans-serif;

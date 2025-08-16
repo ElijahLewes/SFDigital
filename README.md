@@ -40,3 +40,8 @@ Later, you can migrate to Firestore or Supabase if project metadata becomes too 
 
 Dependency docs:
 Tailwind: 
+
+
+Ant icons api docs: https://lineicons.com/docs
+
+
