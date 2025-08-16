@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import ScrollToTop from './components/OnPageLoad.jsx' // Import the ScrollToTop component
+import ScrollToTop from './components/OnPageLoad.jsx' // 
 import  Navbar from './components/Navbar.jsx'
 import Home from './pages/Home.jsx'
 import Link212 from './pages/Link212.jsx'
