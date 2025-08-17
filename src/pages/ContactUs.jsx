@@ -13,15 +13,28 @@ function ContactUs() {
   ];
 
   return (
-    <div className="section-container flex flex-col justify-center min-h-screen">
-      <section className="contact-us-title-container flex flex-col items-center mb-8">
-        <div className="contact-form-title mb-4">
-          <h1 className="text-4xl font-bold">LET'S WORK TOGETHER!</h1>
+    <div className="section-container flex flex-col justify-center mt-[80px] min-h-screen">
+      <section className="contact-us-title-container flex flex-col justify-start px-32">
+        <div className="contact-form-title mb-6 ">
+          <h1 className="text-5xl font-bold text-left Career leading-[3.5rem]">LET'S CREATE <br></br>TOGETHER!</h1>
         </div>
-        <p className="text-center">This is the contact us page. Reach out to us for more information.</p>
+        <p className="text-left text-base">Interested in collaborating, <br></br> getting featured or working with us?<br></br>
+Leave us a message and we’ll be in touch!</p>
         <nav>
-          <div className="icon-container">
+          <div className="sm-btns-container flex flex-row gap-x-10 mt-[50px] mb-20">
+            <div className='sm-container flex flex-row justify-center items-center rounded-full bg-[#2E4052] w-[160px] h-[40px]'>
+              <p className="text-center text-[#F2E5D7]"> @SFDigital </p>
+            </div>
+
+            <div className='sm-container flex flex-row justify-center items-center rounded-full bg-[#2E4052] w-[165px] h-[40px]'>
+            <p className="text-center text-[#F2E5D7]"> @SFDigital </p>
+            </div>
+
+            <div className='sm-container flex flex-row justify-center items-center rounded-full bg-[#2E4052] w-[180px] h-[40px]'>
+            <p className="text-center text-[#F2E5D7]"> @StreetfrontDigital </p>
+            </div>
             {/* add icons for social media links */}
+
           </div>
         </nav>
       </section>
