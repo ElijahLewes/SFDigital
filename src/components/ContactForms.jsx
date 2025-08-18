@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 function ContactForms() {
   const [activeTab, setActiveTab] = useState('general');
 
+  // On-click changes ContactForms state for activedTab
+  //TO-DO: move operating hours to parent page
+
   const renderForm = () => {
     switch (activeTab) {
       case 'general':
