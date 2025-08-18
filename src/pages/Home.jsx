@@ -90,21 +90,16 @@ function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="page-container-column items-center justify-center">
-        <div className="about-us-container">
-          <div className="about-us">
-            <div className="subtitle-container">
+      <section className="page-container-column flex flex-col items-start">
+        <div className="about-us flex flex-col">
               <h1 className="brand-subtitle">WHO ARE WE?</h1>
-            </div>
-            <div className="divider"></div>
-            <div className="about-us-text-container">
+            <div className="about-us-text-container text-left w-full leading-6">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet,consectetur adipiscing <br></br>elit, sed do
+                eiusmod tempor incididunt ut labore et <br></br>dolore magna aliqua.
               </p>
             </div>
           </div>
-        </div>
 
         {/* Image carousel */}
         <div className="landing-carousel-container w-full">
