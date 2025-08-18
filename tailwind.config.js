@@ -14,6 +14,12 @@ export default {
         '3/4': '75%',
         'full': '100%',
       },
+      // Add custom fonts here
+      fontFamily: {
+        'mona-sans': ['Mona Sans', 'sans-serif'],
+        // you can add more custom fonts if needed
+        'career': ['Career', 'sans-serif'],
+      },
     },
   },
   plugins: [],

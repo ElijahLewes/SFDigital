@@ -16,8 +16,8 @@
   @apply text-center min-h-screen w-full text-base;
   font-family: "Mono Sans Variable" -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: var(--text-light);
-  color: var(--text-dark);
+  background-color: var(--Light);
+  color: var(--Charcoal);
   
 
 }
@@ -29,18 +29,23 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #F2E5D7;
+  background-color: #2E4052;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --text-dark: #2E4052;
-  --text-light: #F2E5D7;
-  --green-highlight: #C6D8AF;
-  --orange-accent: #C97D60;
-  --green-base: #648767;
+  --Charcoal: #2E4052;
+  --Light: #F2E5D7;
+  --Highlight: #C6D8AF;
+  --Accent: #C97D60;
+  --Mint-Green: #648767;
+  --Isabelline: #FAF5F0;
+  --Chestnut: #98473E;
+  --Indigo-Dye: #134D67;
+  --Base: #648767;
+   
 
 
 
@@ -49,12 +54,17 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  font-family: 'Mona Sans';
+  color: var(--Charcoal);
   text-decoration: inherit;
 }
 
 a:hover {
-  color: var(--text-light);
+  color: var(--Charcoal);
+  text-decoration: underline;
+  text-decoration-color: var(--Light);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 body {
@@ -70,7 +80,7 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 25px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -79,25 +89,40 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  opacity: 0.5;
+}
+
+.home-btn{
+  opacity: 1;
+}
+
+.home-btn:hover{
+  background-color: var(--Charcoal);
+  color: var(--Light);
+  transition: 0.3s ease-in-out;
 }
 
 button:hover {
-  border-color: #646cff;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-color: var(--Base);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: var(--Light);
   }
 
   a:hover {
-    color: #747bff;
   }
 
   button {
