@@ -32,7 +32,7 @@ const ProjectCard = ({
             ${isActive ? 'rounded-2xl' : 'rounded-md'} 
             ${isActive && imageSrc
               ? 'bg-cover bg-center text-[var(--text-light)]'
-              : 'bg-[var(--green-base)] text-[var(--text-light)]'}
+              : 'bg-[var(--Accent)] text-[var(--text-light)]'}
           `}
           style={{
             backgroundImage: isActive && imageSrc ? `url(${imageSrc})` : 'none',
@@ -49,7 +49,7 @@ const ProjectCard = ({
             p-4
             transition-all duration-500
             ${isActive ? 'rounded-2xl' : 'rounded-md'}
-            bg-[var(--green-base)] text-[var(--text-light)]
+            bg-[var(--Accent)] text-[var(--text-light)]
           `}
         >
           <h2 className="text-xl font-bold">{title}</h2>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ProjectCard from '../components/ProjectCard'; // Adjust if using absolute imports
 
 function Home() {
@@ -40,12 +41,36 @@ function Home() {
   ];
 
   return (
-    <div className="section-container flex flex-col justify-center min-h-screen">
+    
+    <div className="section-container flex flex-col justify-start min-h-screen">
+       <nav className="navbar-home fixed flex flex-row px-8 py-8 items-center">
+         <Link id="navbar-logo" to="/" className="font-bold text-xl">
+    SFD
+  </Link>
+  <ul className="flex gap-4">
+    <li>
+      <Link to="/team" className="nav-btn">
+        Meet the Team
+      </Link>
+    </li>
+    <li>
+      <Link to="/link212" className="nav-btn">
+        Link 212
+      </Link>
+    </li>
+    <li>
+      <Link to="/contact" className="nav-btn">
+        Contact Us
+      </Link>
+    </li>
+  </ul>
+      </nav>
+
       <section
         id="home-container-1"
         className="page-container-column flex flex-row w-full h-screen items-center justify-center"
       >
-        <div className="landing-container flex flex-row w-full h-full">
+        <div className="landing-container flex flex-row w-full h-fu">
           {/* Left Side */}
           <section className="home-title-container flex flex-col flex-1 justify-start p-8">
             <img
@@ -53,12 +78,12 @@ function Home() {
               alt="SFDheader"
               className="home-header-image self-start"
             />
-            <p className="w-full justify-start">
-              Lorem ipsum dolor sit amet...
+            <p className="w-full mt-8">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <div className="home-buttons-container mt-4">
-              <button className="home-button">About Us</button>
-              <button className="home-button">Work With Us</button>
+            <div className="home-btn-container w-full flex flex-row mt-4">
+              <button className="home-btn">About Us</button>
+              <button className="home-btn">Work With Us</button>
             </div>
           </section>
 
