@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ProjectCard from '../components/ProjectCard'; // Adjust if using absolute imports
+import ProjectCard from '../components/ProjectCard';
+import HomeNavBar from '../components/HomeNavBar'; // ✅ import the homepage navbar
 
 function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -36,36 +36,15 @@ function Home() {
       shortDescription: 'Overview of Project 3.',
       longDescription: 'Full project description and collaborators for Project 3...',
       imageSrc: '/images/projectCardPics/pCardFiller.png',
-      
     },
   ];
 
   return (
-    
     <div className="section-container flex flex-col justify-start min-h-screen">
-       <nav className="navbar-home fixed flex flex-row px-8 py-8 items-center">
-         <Link id="navbar-logo" to="/" className="font-bold text-xl">
-    SFD
-  </Link>
-  <ul className="flex gap-4">
-    <li>
-      <Link to="/team" className="nav-btn">
-        Meet the Team
-      </Link>
-    </li>
-    <li>
-      <Link to="/link212" className="nav-btn">
-        Link 212
-      </Link>
-    </li>
-    <li>
-      <Link to="/contact" className="nav-btn">
-        Contact Us
-      </Link>
-    </li>
-  </ul>
-      </nav>
+      {/* Home-specific Navbar */}
+      <HomeNavBar />
 
+      {/* Hero / Landing Section */}
       <section
         id="home-container-1"
         className="page-container-column flex flex-row w-full h-screen items-center justify-center"
@@ -79,7 +58,8 @@ function Home() {
               className="home-header-image self-start"
             />
             <p className="w-full mt-8">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br /> 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <div className="home-btn-container w-full flex flex-row mt-4">
               <button className="home-btn">About Us</button>
@@ -133,6 +113,7 @@ function Home() {
           </div>
         </div>
 
+        {/* Mission Statement */}
         <div className="mission-statement-container flex flex-row basis-1/3">
           <div className="subtitle-container">
             <h1 className="brand-subtitle w-full">OUR MISSION</h1>
