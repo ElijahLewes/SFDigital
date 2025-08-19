@@ -17,7 +17,7 @@ function App() {
     <>
       {/* Navbar shows for all routes except Home, which has its own HomeNavBar */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<><Navbar /><Home /></>} />
         <Route path="/link212" element={<><Navbar /><Link212 /></>} />
         <Route path="/team" element={<><Navbar /><Team /></>} />
         <Route path="/contact" element={<><Navbar /><ContactUs /></>} />

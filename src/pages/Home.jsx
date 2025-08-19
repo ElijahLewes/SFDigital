@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
-import HomeNavBar from '../components/HomeNavBar'; // ✅ import the homepage navbar
+
 
 function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -41,8 +41,6 @@ function Home() {
 
   return (
     <div className="section-container flex flex-col justify-start min-h-screen">
-      {/* Home-specific Navbar */}
-      <HomeNavBar />
 
       {/* Hero / Landing Section */}
       <section

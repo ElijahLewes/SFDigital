@@ -163,3 +163,7 @@ Flip card experiment for team page */
 }
 
 
+/* Contact Us Components */
+.contact-form-submit-btn {
+  @apply flex flex-col items-center justify-center p-8 bg-[var(--green-base)] text-white p-2 rounded hover:opacity-80;
+}

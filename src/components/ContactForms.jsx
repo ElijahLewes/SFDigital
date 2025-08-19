@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ContactFormSubmitBtn from './ContactFormSubmitBtn.jsx';
 
 function ContactForms() {
   const [activeTab, setActiveTab] = useState('general');
@@ -30,9 +31,9 @@ function ContactForms() {
             />
             <button 
               type="submit" 
-              className="bg-[var(--green-base)] text-white p-2 rounded hover:opacity-80"
+              className="contact-form-submit-btn"
             >
-              Send Message
+              Send Message 
             </button>
           </form>
         );
@@ -64,7 +65,7 @@ function ContactForms() {
             />
             <button 
               type="submit" 
-              className="bg-[var(--green-base)] text-white p-2 rounded hover:opacity-80"
+              className="contact-form-submit-btn"
             >
               Submit Project Inquiry
             </button>
@@ -99,7 +100,7 @@ function ContactForms() {
             />
             <button 
               type="submit" 
-              className="bg-[var(--green-base)] text-white p-2 rounded hover:opacity-80"
+              className="contact-form-submit-btn"
             >
               Submit Support Request
             </button>
