@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
-import HomeNavBar from '../components/HomeNavBar'; // ✅ import the homepage navbar
+import Navbar from '../components/Navbar'; // ✅ import the unified navbar
 
 function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,16 +40,16 @@ function Home() {
   ];
 
   return (
-    <div className="section-container flex flex-col justify-start min-h-screen">
-      {/* Home-specific Navbar */}
-      <HomeNavBar />
+    <div className="section-container flex flex-col justify-start min-h-screen ml-4">
+      {/* Navbar */}
+      <Navbar />
 
       {/* Hero / Landing Section */}
       <section
         id="home-container-1"
-        className="page-container-column flex flex-row w-full h-screen items-center justify-center"
+        className="page-container-column"
       >
-        <div className="landing-container flex flex-row w-full h-fu">
+        <div className="landing-container">
           {/* Left Side */}
           <section className="home-title-container flex flex-col flex-1 justify-start p-8">
             <img
@@ -69,12 +69,12 @@ function Home() {
 
           {/* Right Side - Project Cards */}
           <section
-            className="home-project-cards-container flex flex-col justify-center items-center flex-1 h-full gap-y-4 px-4"
-            onMouseLeave={() => {
-              setActiveIndex(null);
-              setFlippedIndex(null);
-            }}
-          >
+  className="home-project-cards-container flex-1 gap-y-2 px-4"
+  onMouseLeave={() => {
+    setActiveIndex(null);
+    setFlippedIndex(null);
+  }}
+>
             {projectData.map((project, index) => (
               <ProjectCard
                 key={index}
@@ -90,16 +90,18 @@ function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="page-container-column flex flex-col items-start">
-        <div className="about-us flex flex-col">
-              <h1 className="brand-subtitle">WHO ARE WE?</h1>
-            <div className="about-us-text-container text-left w-full leading-6">
-              <p>
-                Lorem ipsum dolor sit amet,consectetur adipiscing <br></br>elit, sed do
-                eiusmod tempor incididunt ut labore et <br></br>dolore magna aliqua.
-              </p>
-            </div>
+      <section className="page-container-column items-start justify-start gap-y-8 ml-12">
+        <div className="section-container items-start text-left">
+          <h1 className="brand-subtitle">WHO ARE WE?</h1>
+          <div className="divider"></div>
+          <div className="section-text-container">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing <br />
+              elit, sed do eiusmod tempor incididunt ut labore et <br />
+              dolore magna aliqua.
+            </p>
           </div>
+        </div>
 
         {/* Image carousel */}
         <div className="landing-carousel-container w-full">
@@ -109,14 +111,12 @@ function Home() {
         </div>
 
         {/* Mission Statement */}
-        <div className="mission-statement-container flex flex-row basis-1/3">
-          <div className="subtitle-container">
-            <h1 className="brand-subtitle w-full">OUR MISSION</h1>
-          </div>
-          <div className="divider"></div>
-          <div className="mission-statement-text-container content-center justify-items-center">
+        <div className="section-container flex flex-col items-start">
+            <h1 className="brand-subtitle">OUR MISSION</h1>
+            <div className="divider w-[400px]"></div>
+          <div className="section-text-container text-left">
             <p>
-              Our mission is to provide exceptional digital solutions that empower communities and foster growth.
+              Our mission is to provide exceptional digital solutions <br></br>that empower communities and foster growth.
             </p>
           </div>
         </div>

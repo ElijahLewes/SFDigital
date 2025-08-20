@@ -32,7 +32,7 @@ function NavTeam() {
 //Home-specific Navbar with Tailwind directly applied
 function HomeNavBar() {
   return (
-    <nav className="fixed top-0 flex flex-row justify-start items-center z-[1000] bg-transparent w-full p-4 px-8">
+    <nav className="fixed top-0 flex flex-row justify-start items-center z-[1000] bg-[var(--Light)] w-full p-4 px-8">
       {/* Logo */}
       <div className="mr-8">
         <Link id="navbar-logo" to="/" className="text-xl font-bold">
