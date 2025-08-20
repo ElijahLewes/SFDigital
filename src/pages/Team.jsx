@@ -1,5 +1,6 @@
 import React from 'react';
 import FlipCard from '/src/components/FlipCard.jsx'; 
+import SlideCard from '/src/components/SlideCard.jsx'; 
 function Team() {
   return (
     <>
@@ -20,7 +21,7 @@ function Team() {
       {/* About us section */}
        <div className="flex w-screen h-screen">
       <div className="w-1/3 h-full">
-        <FlipCard
+        <SlideCard
           imageSrc="/public/images/profilePics/Laur-light.png"
             image2="/public/images/profilePics/Laur-dark.svg"
           fName="Laur"
@@ -31,7 +32,7 @@ function Team() {
         />
       </div>
       <div className="w-1/3 h-full">
-        <FlipCard
+        <SlideCard
           imageSrc="/public/images/profilePics/Ayla-light.svg"
           image2="/public/images/profilePics/Ayla-dark.png"
           fName="Ayla"
@@ -42,7 +43,7 @@ function Team() {
         />
       </div>
       <div className="w-1/3 h-full">
-        <FlipCard
+        <SlideCard
           imageSrc="/public/images/profilePics/Eli-light.svg"
           image2="/public/images/profilePics/eli-dark.svg"
           fName="Elijah"
