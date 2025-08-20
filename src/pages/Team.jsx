@@ -1,5 +1,6 @@
 import React from 'react';
-import FlipCard from '/src/components/FlipCard.jsx';
+import FlipCard from '/src/components/FlipCard.jsx'; 
+import SlideCard from '/src/components/SlideCard.jsx'; 
 function Team() {
   return (
     <>
@@ -20,9 +21,9 @@ function Team() {
       {/* About us section */}
        <div className="flex w-screen h-screen">
       <div className="w-1/3 h-full">
-        <FlipCard
-          imageSrc="/public/images/profilePics/LaurL.svg"
-            image2="/public/images/profilePics/LaurL hvr.svg"
+        <SlideCard
+          imageSrc="/public/images/profilePics/Laur-light.png"
+            image2="/public/images/profilePics/Laur-dark.svg"
           fName="Laur"
           lName="Ndikumana"
           description="Lead Visual Designer"
@@ -31,9 +32,9 @@ function Team() {
         />
       </div>
       <div className="w-1/3 h-full">
-        <FlipCard
-          imageSrc="/public/images/profilePics/AylaL.svg"
-          image2="/public/images/profilePics/AylaL hvr.svg"
+        <SlideCard
+          imageSrc="/public/images/profilePics/Ayla-light.svg"
+          image2="/public/images/profilePics/Ayla-dark.png"
           fName="Ayla"
           lName="Dumont"
           description="Creative Director"
@@ -42,9 +43,9 @@ function Team() {
         />
       </div>
       <div className="w-1/3 h-full">
-        <FlipCard
-          imageSrc="/public/images/profilePics/EliL.svg"
-          image2="/public/images/profilePics/EliL hvr.svg"
+        <SlideCard
+          imageSrc="/public/images/profilePics/Eli-light.svg"
+          image2="/public/images/profilePics/eli-dark.svg"
           fName="Elijah"
           lName="Lewes"
           description="Head Developer"
