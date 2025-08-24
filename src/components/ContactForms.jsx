@@ -11,7 +11,7 @@ function ContactForms() {
       case 'general':
         return (
           // General Inquiry Form -- TODO: create css classes for form elements
-          <form className="contact-form flex flex-col gap-4 max-w-md">
+          <form className="gen-form">
             <h3 className="text-xl font-bold">General Inquiry</h3>
             <input 
               type="text" 

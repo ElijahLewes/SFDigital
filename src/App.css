@@ -88,6 +88,30 @@
   opacity: 1; /* fully visible on hover */
 }
 
+.sm-navbar-btn {
+  @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sm-navbar-btn:hover {
+  background-color: #E1D5C8;
+  opacity: 1;
+}
+
+.social-icon {
+  transition: transform 0.2s ease-in-out;
+  display: inline-block; 
+}
+
+.sm-navbar-btn:hover .social-icon {
+  transform: scale(1.2); 
+}
+
+
+
+
+
 
 
 
@@ -269,3 +293,41 @@ Flip card experiment for team page */
 }
 
 
+/*CONTACT FORM PAGE*/
+
+.contact-page-container{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  justify-content: center;
+}
+#contact-form-section{
+  width: 100%;
+  height: 900px;
+  justify-content:right;
+  right:0;
+  left: 500px;
+  display: flex;
+  flex-direction: row;
+  padding-right: 50px;
+}
+
+.contact-form-container{
+
+}
+
+.cf-left-column{
+  background-color: transparent;
+}
+
+.gen-form{
+  background-color: var(--Charcoal);
+  color: var(--Light);
+  text-align: left;
+  height: 400px;
+  width: 800px;
+  padding: 30px;
+  border-radius: 25px 25px 0 0;
+}

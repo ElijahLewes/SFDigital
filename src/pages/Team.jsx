@@ -27,7 +27,7 @@ function Team() {
           bio="Top notch friendly neighborhood Designer and Videographer."
           email = "LNdikumana@streetfrontdigital.com"
           website = "LauraNdikumana.org"
-          color="bg-[var(--Accent)]"
+          color="bg-[var(--Heartwood)]"
           colorhvr="bg-[var(--Highlight)]"
         />
       </div>
@@ -41,7 +41,7 @@ function Team() {
           email = "ADumont@streetfrontdigital.com"
           website = "AylaDumont.com"
           color="bg-[#E1D5C8]"
-          colorhvr="bg-[var(--Accent)]"
+          colorhvr="bg-[var(--Heartwood)]"
 
         />
       </div>

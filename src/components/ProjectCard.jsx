@@ -37,7 +37,7 @@ const ProjectCard = ({
     flex flex-col justify-end
     text-[var(--text-light)]
     transition-all duration-500
-    ${isActive ? '' : 'bg-[var(--Accent)]'}  //
+    ${isActive ? '' : 'bg-[var(--Heartwood)]'}  //
   `}
   style={{
     backgroundImage: isActive ? `url(${imageSrc})` : 'none',
