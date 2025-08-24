@@ -4,53 +4,58 @@ import SlideCard from '/src/components/SlideCard.jsx';
 function Team() {
   return (
     <>
-    <div className="section-container flex flex-col justify-center bg-[var(--text-light)] bg-cover bg-center bg-no-repeat">
-      <section id="team-page-container" className="page-container-column items-center justify-center">
-        <div className="section container flex flex-row w-full h-screen items-center justify-center">
-          <div className="subtitle-container">
-            <h1 className="brand-subtitle basis-1/2">MEET THE TEAM</h1>
+    <div className="page-container flex flex-col">
+        <div className="section-container flex flex-col mt-[200px] mb-[50px]">
+          <div className="section-container">
+            <h1 className="brand-subtitle">MEET THE TEAM</h1>
           </div>
           <div className="divider"></div>
-          <div className="mission-statement-text-container content-center justify-items-center basis-1/2">
+          <div className="section-text-container leading-[25px]">
             <p>The Link 212 Project is a multimedia project aimed at showcasing the vibrant culture and community the 250 Baltimore neighborhoods found in the 212 zipcode.</p>
           </div>
         </div>
-      </section>
         
 
-      {/* About us section */}
-       <div className="flex w-screen h-screen">
+{/* About us section */}
+<div className=" w-full justify-center gap-x-4 flex">
       <div className="w-1/3 h-full">
-        <SlideCard
-          imageSrc="/public/images/profilePics/Laur-light.png"
-            image2="/public/images/profilePics/Laur-dark.svg"
+        <FlipCard
+          imageSrc="/public/images/profilePics/LaurL ver3.svg"
           fName="Laur"
           lName="Ndikumana"
-          description="Lead Visual Designer"
+          description="Chief Design Officer"
           bio="Top notch friendly neighborhood Designer and Videographer."
-          color="bg-[var(--green-highlight)]"
+          email = "LNdikumana@streetfrontdigital.com"
+          website = "LauraNdikumana.org"
+          color="bg-[var(--Accent)]"
+          colorhvr="bg-[var(--Highlight)]"
         />
       </div>
       <div className="w-1/3 h-full">
-        <SlideCard
-          imageSrc="/public/images/profilePics/Ayla-light.svg"
-          image2="/public/images/profilePics/Ayla-dark.png"
+        <FlipCard
+          imageSrc="/public/images/profilePics/AylaL ver3.svg"
           fName="Ayla"
           lName="Dumont"
           description="Creative Director"
           bio="Captian of Design and theif of my heart."
-          color="bg-[var(--text-light)]"
+          email = "ADumont@streetfrontdigital.com"
+          website = "AylaDumont.com"
+          color="bg-[#E1D5C8]"
+          colorhvr="bg-[var(--Accent)]"
+
         />
       </div>
       <div className="w-1/3 h-full">
-        <SlideCard
-          imageSrc="/public/images/profilePics/Eli-light.svg"
-          image2="/public/images/profilePics/eli-dark.svg"
+        <FlipCard
+          imageSrc="/public/images/profilePics/EliL ver3.svg"
           fName="Elijah"
           lName="Lewes"
           description="Head Developer"
           bio="Developer and fruit enthusiast."
-          color="bg-[var(--orange-accent)]"
+          email = "ESauerwalt@streetfrontdigital.com"
+          website = "ElijahLewes.com"
+          color="bg-[var(--Highlight)]"
+          colorhvr="bg-[#E1D5C8]"
         />
       </div>
       </div>

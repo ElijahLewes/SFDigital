@@ -1,51 +1,66 @@
 import React, { useState } from 'react';
 
-
-//Not currently used, but may be used for Project pages in the future
 const FlipCard = ({
   imageSrc,
   fName,
   lName,
   description,
   bio,
-  color
+  email,
+  website,
+  color,
+  colorhvr
 }) => {
   const [flipped, setFlipped] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   return (
     <div
-      className="w-full h-full perspective cursor-pointer"
+      className="w-full h-[540px] perspective"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+    <div className="flip-btn absolute flex flex-col bg-[var(--Charcoal)] 
+      rounded-full w-[65px] h-[25px] text-[var(--Light)] items-center z-[1] mt-5 ml-[340px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
       onClick={() => setFlipped(!flipped)}
     >
+      <p> Flip</p>
+    </div>
+
       <div
-        className={`relative w-full h-full transition-transform duration-700 transform-style ${
+        className={`relative w-full h-full transition-transform duration-1200 transform-style preserve-3d ${
           flipped ? 'rotate-y-180' : ''
-        }`}
-      >
-        {/* Front */}
+        }`}>
+
+        {/* FRONT */}
         <div
-          className={`absolute w-full h-full backface-hidden ${color} flex flex-col overflow-hidden p-6`}
+          className={`absolute w-full h-full backface-hidden flex justify-center items-center rounded-[30px] overflow-hidden transition-colors duration-300 ${
+            hovered ? colorhvr : color
+          }`}
         >
-          <h3 className="Career text-5xl font-bold mb-2 text-left w-full">{fName} <br /> {lName}</h3>
-          <p className="text-md text-left">{description}</p>
-          <span className="mt-4 text-2xl text-right">↪</span>
-          <div className="w-full h-3/4 flex items-center justify-center mt-24"> {/* Set a fixed height */}
-            <img
-              src={imageSrc}
-              alt={`${fName} ${lName}`}
-              className="w-auto h-full  object-contain rounded items-end justify-end"
-            />
-          </div>
+
+          <img
+            src={imageSrc}
+            alt={`${fName} ${lName}`}
+            className="w-full h-full object-contain transition-transform duration-300 ease-in-out hover:scale-110"
+          />
         </div>
 
-        {/* Front*/}
+        {/* BACK */}
         <div
-          className={`absolute w-full h-full backface-hidden rotate-y-180 ${color} text-[var(--text-dark)] flex flex-col items-center justify-center p-6`}
+          className={`absolute w-full h-full backface-hidden rotate-y-180 ${colorhvr} text-[var(--text-dark)] flex flex-col items-start justify-start gap-y-8 pt-16 pl-8 rounded-[30px]`}
         >
-          <h3 className="Career text-5xl font-bold mb-2 text-left w-full">{fName} <br /> {lName}</h3>
-          <p className="text-md text-left">{description}</p>
-          <p className="text-md mt-4">{bio}</p>
-          
+          <div className="container">
+            <h3 className="Career text-5xl font-bold mb-2 leading-[60px] text-left w-full">
+              {fName} <br></br> {lName}
+            </h3>
+            <p className="text-[18px] text-left">{description}</p>
+          </div>
+          <p className="text-md mt-4 text-left font">{bio}</p>
+          <div className="container flex flex-col leading-[8px] font-bold">
+            <p className="text-md mt-4 text-left">{email}</p>
+            <p className="text-md mt-4 text-left">{website}</p>
+          </div>
         </div>
       </div>
     </div>

@@ -22,7 +22,7 @@ const ProjectCard = ({
   onMouseEnter={onHover}
   onClick={onClick}
 >
-    {/* Front & Back Container */}
+{/* Front & Back Container */}
       <div
         className={`
           relative w-full h-full transition-transform duration-700 transform-style preserve-3d
@@ -37,10 +37,10 @@ const ProjectCard = ({
     flex flex-col justify-end
     text-[var(--text-light)]
     transition-all duration-500
-    ${isActive ? '' : 'bg-[var(--Accent)]'}  // ✅ Solid fill when collapsed
+    ${isActive ? '' : 'bg-[var(--Accent)]'}  //
   `}
   style={{
-    backgroundImage: isActive ? `url(${imageSrc})` : 'none', // ✅ Image only on hover/active
+    backgroundImage: isActive ? `url(${imageSrc})` : 'none',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   }}
