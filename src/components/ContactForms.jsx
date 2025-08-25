@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ContactFormSubmitBtn from './ContactFormSubmitBtn.jsx';
 
 function ContactForms() {
   const [activeTab, setActiveTab] = useState('general');
@@ -175,4 +174,4 @@ function ContactForms() {
   );
 }
 
-export default ContactUs;
+export default ContactForms;

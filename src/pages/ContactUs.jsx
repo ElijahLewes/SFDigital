@@ -1,25 +1,26 @@
 //Professional contact page with about the team section
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ContactForms from '../components/ContactForms.jsx';
 
 
 function ContactUs() {
   const [activeTab, setActiveTab] = useState('tab1');
 
   const tabs = [
-    { id: 'tab1', label: 'General' },
-    { id: 'tab2', label: 'Project' },
-    { id: 'tab3', label: 'Support' }
+    { id: 'tab1', label: 'General', icon: <FiHome /> },
+    { id: 'tab2', label: 'Project', icon: <FiFolder /> },
+    { id: 'tab3', label: 'Support', icon: <FiLifeBuoy /> }
   ];
 
   return (
     <div className="section-container flex flex-col justify-center mt-[80px] min-h-screen">
       <section className="contact-us-title-container flex flex-col justify-start px-32">
         <div className="contact-form-title mb-6 ">
-          <h1 className="text-5xl font-bold text-left Career leading-[3.5rem]">LET'S CREATE <br></br>TOGETHER!</h1>
+          <h1 className="text-5xl font-bold text-left font-[Career] leading-[3.5rem]">LET'S CREATE <br></br>TOGETHER!</h1>
         </div>
         <p className="text-left text-base">Interested in collaborating, <br></br> getting featured or working with us?<br></br>
-Leave us a message and we’ll be in touch!</p>
+      Leave us a message and we’ll be in touch!</p>
         <nav>
           <div className="sm-btns-container flex flex-row gap-x-10 mt-[50px] mb-20">
             <div className='sm-container flex flex-row justify-center items-center rounded-full bg-[#2E4052] w-[160px] h-[40px]'>
@@ -68,31 +69,13 @@ Leave us a message and we’ll be in touch!</p>
             </div>
 
             {/* Content Area */}
-            <div className="flex-1 p-6">
-              {activeTab === 'tab1' && (
-                <div>
-                  <h3 className="text-xl font-bold mb-4">General Inquiry</h3>
-                  <p>Submit a general inquiry form here.</p>
-                </div>
-              )}
-              {activeTab === 'tab2' && (
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Project Request</h3>
-                  <p>Tell us about your project needs.</p>
-                </div>
-              )}
-              {activeTab === 'tab3' && (
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Support</h3>
-                  <p>Get help with existing services.</p>
-                </div>
-              )}
+           <ContactForms activeTab={activeTab} />
             </div>
           </div>
-        </div>
+        
       </section>
-    </div>
-  );
+   </div>
+  );  
 }
 
 export default ContactUs;
