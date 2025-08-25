@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
+import Navbar from '../components/Navbar.jsx';
 
 
 function Home() {

@@ -7,9 +7,9 @@ function ContactUs() {
   const [activeTab, setActiveTab] = useState('tab1');
 
   const tabs = [
-    { id: 'tab1', label: 'General', icon: <FiHome /> },
-    { id: 'tab2', label: 'Project', icon: <FiFolder /> },
-    { id: 'tab3', label: 'Support', icon: <FiLifeBuoy /> }
+    { id: 'tab1', label: 'General' },
+    { id: 'tab2', label: 'Project' },
+    { id: 'tab3', label: 'Support' }
   ];
 
   return (
