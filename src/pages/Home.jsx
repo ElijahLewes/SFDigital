@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
-import Navbar from '../components/Navbar'; // ✅ import the unified navbar
+import Navbar from '../components/Navbar'; //
 
 function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -91,10 +91,10 @@ function Home() {
 
       {/* About Us Section */}
       <section className="page-container-column items-start justify-start gap-y-8 ml-12">
-        <div className="section-container items-start text-left">
-          <h1 className="brand-subtitle">WHO ARE WE?</h1>
-          <div className="divider"></div>
-          <div className="section-text-container">
+        <div className="about-us-section-container items-start text-left">
+          <h1 className="about-us-subtitle">WHO ARE WE?</h1>
+          <div className="about-us-divider"></div>
+          <div className="about-us-text-container">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing <br />
               elit, sed do eiusmod tempor incididunt ut labore et <br />
@@ -111,10 +111,10 @@ function Home() {
         </div>
 
         {/* Mission Statement */}
-        <div className="section-container flex flex-col items-start">
-            <h1 className="brand-subtitle">OUR MISSION</h1>
-            <div className="divider w-[400px]"></div>
-          <div className="section-text-container text-left">
+        <div className="about-us-section-container flex flex-col items-start">
+            <h1 className="about-us-subtitle">OUR MISSION</h1>
+            <div className="about-us-divider w-[400px]"></div>
+          <div className="about-us-text-container text-left">
             <p>
               Our mission is to provide exceptional digital solutions <br></br>that empower communities and foster growth.
             </p>

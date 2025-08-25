@@ -24,10 +24,7 @@
 .page-container-row {
   @apply h-screen w-full flex flex-row;
 }
-.brand-subtitle {
-  font-family: 'Career', sans-serif;
-  @apply text-5xl mb-2 text-left w-full;
-}
+
 .footer-subtitle {
   font-family: 'Career', sans-serif;
   @apply mb-2;
@@ -91,6 +88,30 @@
   opacity: 1; /* fully visible on hover */
 }
 
+.sm-navbar-btn {
+  @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sm-navbar-btn:hover {
+  background-color: #E1D5C8;
+  opacity: 1;
+}
+
+.social-icon {
+  transition: transform 0.2s ease-in-out;
+  display: inline-block; 
+}
+
+.sm-navbar-btn:hover .social-icon {
+  transform: scale(1.2); 
+}
+
+
+
+
+
 
 
 
@@ -129,17 +150,83 @@
 
 /* About us section */
 
-.section-container{
-  @apply flex flex-col items-start justify-start w-full gap-y-1;
+.about-us-section-container{
+  @apply flex flex-col w-full gap-y-1;
 }
 
-.section-container:hover .divider {
-  width: 360px;
+.about-us-txt-container{
+  text-align: left;
+  width: 450px;
+}
+
+.about-us-subtitle{
+  font-family: 'Career', sans-serif;
+  @apply text-5xl mb-2 text-left w-full;
+}
+
+.about-us-divider{
+  position: relative;
+  width: 0px; /* starting width */
+  height: 2px;
+  background-color: var(--Charcoal);
+  display: block;
+  transition: width 0.8s ease-in-out;
+  opacity: 0;
+  margin-bottom: 4px;
+  z-index: 0;
+}
+
+.about-us-divider::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--Charcoal);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.about-us-section-container:hover .about-us-divider{
+  width: 400px;
+  opacity: 1;
+}
+
+.about-us-section-container:hover .about-us-divider::after {
+  opacity: 1;
+}
+
+/* general section conts styling*/
+
+.section-container{
+  @apply flex flex-col w-full gap-y-1;
+}
+
+.section-container:hover .divider{
+  width: 100%;
   opacity: 1;
 }
 
 .section-container:hover .divider::after{
   opacity: 1;
+}
+
+.section-container:hover .section-text-container{
+  opacity: 1;
+  transform: translateY(-95px)
+}
+
+.section-container:hover .brand-subtitle{
+  transform: translateX(830px);
+}
+
+.brand-subtitle {
+  font-family: 'Career', sans-serif;
+  @apply text-5xl mb-2 text-left w-full;
+  transition: transform 1.4s ease;
 }
 
 .divider {
@@ -148,9 +235,10 @@
   height: 2px;
   background-color: var(--Charcoal);
   display: block;
-  transition: width 0.75s ease-in-out;
+  transition: width 0.8s ease-in-out;
   opacity: 0;
   margin-bottom: 4px;
+  z-index: 0;
 }
 
 
@@ -170,6 +258,11 @@
 
 .section-text-container{
   text-align: left;
+  opacity: 0;
+  transform: translateY(0px);
+  transition: transform 1.4s ease, opacity 1s ease-in-out;
+  z-index: 1;
+  width: 450px;
 }
 
 /* 
@@ -200,3 +293,41 @@ Flip card experiment for team page */
 }
 
 
+/*CONTACT FORM PAGE*/
+
+.contact-page-container{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  justify-content: center;
+}
+#contact-form-section{
+  width: 100%;
+  height: 900px;
+  justify-content:right;
+  right:0;
+  left: 500px;
+  display: flex;
+  flex-direction: row;
+  padding-right: 50px;
+}
+
+.contact-form-container{
+
+}
+
+.cf-left-column{
+  background-color: transparent;
+}
+
+.gen-form{
+  background-color: var(--Charcoal);
+  color: var(--Light);
+  text-align: left;
+  height: 400px;
+  width: 800px;
+  padding: 30px;
+  border-radius: 25px 25px 0 0;
+}
