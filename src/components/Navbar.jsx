@@ -1,70 +1,54 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import InstagramLight from "../icons/InstagramLight";
+import YoutubeLight from "../icons/YoutubeLight";
 
-
-// Navbar button logic
-function NavLink212() {
-  const navigate = useNavigate();
-
-  const goToLink212 = () => {
-    navigate('/link212');
-  };
-
+function NavButton({ to, label }) {
   return (
-    <button onClick={goToLink212} className="nav-btn">
-      Link 212
-    </button>
+    <Link to={to} className="nav-btn">
+      {label}
+    </Link>
   );
 }
-
-function NavContactUs() {
-  const navigate = useNavigate();
-
-  const goToContactUs = () => {
-    navigate('/contact');
-  };
-
-  return (
-    <button onClick={goToContactUs} className="nav-btn">
-      Contact Us
-    </button>
-  );
-}
-
-
-function NavTeam() {
-  const navigate = useNavigate();
-
-  const goToTeam = () => {
-    navigate('/team');
-  };
-
-  return (
-    <button onClick={goToTeam} className="nav-btn">
-      Meet the Team
-    </button>
-  );
-}
-
-// Actual Navbar component
 
 function Navbar() {
   return (
-    <nav className="navbar fixed">
-      <div className="logo-container">
-        <Link id="navbar-logo" to="/">Streetfront Digital</Link>
+    <nav className="fixed top-0 flex flex-row justify-start items-center z-[1000] bg-[var(--Light)] w-full py-5 px-8">
+      {/* Logo */}
+      <div className="mr-8">
+        <Link id="navbar-logo" to="/" className="font-bold text-xl">
+          SFD
+        </Link>
       </div>
-      <div className="navbar-links">
-        <NavLink212 />
-        <NavContactUs />
-        <NavTeam />
-        {/* Add dropdown for individual project page? */}
+
+      {/* Nav Links */}
+      <div className="flex gap-6 items-center">
+        <NavButton to="/link212" label="Link 212" />
+        <NavButton to="/contact" label="Contact Us" />
+        <NavButton to="/team" label="Meet the Team" />
+
+        {/* Social icons */}
+        <div className="sm-navbar-btn">
+          <a
+          href="https://instagram.com/yourprofile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <InstagramLight className="social-icon" />
+        </a>
+        </div>
+        <div className="sm-navbar-btn">
+        <a
+          href="https://youtube.com/yourchannel"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <YoutubeLight className="social-icon" />
+        </a>
+        </div>
       </div>
     </nav>
   );
 }
 
-export { NavLink212 };  
-export { NavContactUs };
-export { NavTeam };
 export default Navbar;

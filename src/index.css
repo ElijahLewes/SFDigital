@@ -13,7 +13,7 @@
 
 #root {
   /* Default text size is 16pt. Is that too big or am I just blind? */
-  @apply text-center min-h-screen w-full text-base;
+  @apply text-start min-h-screen w-full text-base;
   font-family: "Mono Sans Variable" -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--Light);
@@ -39,12 +39,12 @@
   --Charcoal: #2E4052;
   --Light: #F2E5D7;
   --Highlight: #C6D8AF;
-  --Accent: #C97D60;
+  --Heartwood: #C97D60;
   --Mint-Green: #648767;
   --Isabelline: #FAF5F0;
   --Chestnut: #98473E;
   --Indigo-Dye: #134D67;
-  --Base: #648767;
+  --Collard-Green: #648767;
    
 
 
@@ -71,6 +71,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  overflow-x: hidden;
 
 }
 
