@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
-import Navbar from '../components/Navbar'; //
+import Navbar from '../components/Navbar.jsx';
+
 
 function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,7 +41,8 @@ function Home() {
   ];
 
   return (
-    <div className="section-container flex flex-col justify-start min-h-screen ml-4">
+
+    <div className="section-container flex flex-col justify-start min-h-screen">
       {/* Navbar */}
       <Navbar />
 
