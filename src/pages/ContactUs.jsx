@@ -1,7 +1,6 @@
 // Professional contact page with about the team section
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import ContactForms from '../components/ContactForms.jsx';
 
 function ContactUs() {
   const [activeTab, setActiveTab] = useState('tab1');
@@ -16,8 +15,6 @@ function ContactUs() {
     <div className="contact-page-container">
       {/* Title + Socials */}
       <section className="contact-us-title-container flex flex-col justify-start px-32">
-
-
         <div className="contact-form-title mb-6">
           <h1 className="text-5xl font-bold text-left Career leading-[3.5rem]">
             LET'S CREATE <br /> TOGETHER!
@@ -28,7 +25,6 @@ function ContactUs() {
           <br />
           Leave us a message and we’ll be in touch!
         </p>
-
 
         <nav>
           <div className="sm-btns-container flex flex-row gap-x-10 mt-[50px] mb-20">
@@ -49,16 +45,16 @@ function ContactUs() {
       </section>
 
       {/* Operating Hours */}
-      <div className="contact-right-column flex flex-col text-center items-center justify-center mb-12">
+      <div className="hours-container">
         <h2 className="text-2xl font-bold mb-4">Operating Hours</h2>
         <p>Monday-Friday: 9 AM - 5 PM</p>
         <p>Saturday: 10 AM - 4 PM</p>
       </div>
-\
+
       {/* Contact Form Tabs */}
       <section id="contact-form-section">
           {/* Sidebar Tabs */}
-          <div className="tabs">
+          <div className="cf-left-column-container">
             {tabs.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
@@ -66,8 +62,8 @@ function ContactUs() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center transition-all duration-300 ease-in-out overflow-hidden
-                    ${isActive ? 'w-48 bg-white font-semibold' : 'w-16 bg-gray-100 hover:bg-gray-200'}
-                    px-4 py-3 border-b border-gray-300`}
+                    ${isActive ? 'w-48 bg-[var(--Charcoal)] font-semibold' : 'w-16 bg-gray-100 hover:bg-gray-200'}
+                    px-4 py-3`}
                 >
                   <span className="text-xl mr-2">{tab.icon}</span>
                   {isActive && <span className="whitespace-nowrap">{tab.label}</span>}
@@ -77,7 +73,7 @@ function ContactUs() {
           </div>
 
           {/* Content Area */}
-          <div className="contact-form-container">
+          <div className="contact-form-container flex-1 ">
             {activeTab === 'tab1' && (
               <div className="gen-form">
                 <h3 className="text-xl font-bold mb-4">General Inquiry</h3>
@@ -98,8 +94,8 @@ function ContactUs() {
             )}
           </div>
       </section>
-   </div>
-  );  
+    </div>
+  );
 }
 
 export default ContactUs;
