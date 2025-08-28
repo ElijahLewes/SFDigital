@@ -151,7 +151,7 @@
 /* About us section */
 
 .about-us-section-container{
-  @apply flex flex-col w-full gap-y-1;
+  @apply flex flex-col w-full gap-y-2 mb-[200px] ml-[80px];
 }
 
 .about-us-txt-container{
@@ -198,6 +198,28 @@
 .about-us-section-container:hover .about-us-divider::after {
   opacity: 1;
 }
+
+/*Carousel*/
+
+.carousel-container{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.carousel-btns {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 100% !important; /* or 0 if you want squares */
+  background-color: var(--Light) !important;
+  transition: background-color 0.3s ease !important;
+  transform: scale(-40%);
+}
+
 
 /* general section conts styling*/
 

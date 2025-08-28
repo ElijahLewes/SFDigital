@@ -9,6 +9,7 @@ import ContactUs from './pages/ContactUs.jsx'
 import Remington from './pages/NeighborhoodPages/Remington.jsx'
 import Footer from './components/Footer.jsx'
 import { Route, Routes } from 'react-router-dom'
+import 'flowbite';
 
 function App() {
   const [count, setCount] = useState(0)

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import Navbar from '../components/Navbar.jsx';
+import Carousel from '../components/Carousel.jsx'
 
 
 function Home() {
@@ -92,8 +93,8 @@ function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="page-container-column items-start justify-start gap-y-8 ml-12">
-        <div className="about-us-section-container items-start text-left">
+      <section className="page-container-column items-start justify-start gap-y-8">
+        <div className="about-us-section-container items-start text-left mt-[150px]">
           <h1 className="about-us-subtitle">WHO ARE WE?</h1>
           <div className="about-us-divider"></div>
           <div className="about-us-text-container">
@@ -106,14 +107,12 @@ function Home() {
         </div>
 
         {/* Image carousel */}
-        <div className="landing-carousel-container w-full">
-          <div className="carousel bg-[var(--green-base)] text-[var(--text-light)] h-40 flex items-center justify-center width-full">
-            <h1 className="carousel-title">It's us!</h1>
-          </div>
+        <div className="carousel-container">
+            <Carousel/>
         </div>
 
         {/* Mission Statement */}
-        <div className="about-us-section-container flex flex-col items-start">
+        <div className="about-us-section-container flex flex-col items-start mt-[190px]">
             <h1 className="about-us-subtitle">OUR MISSION</h1>
             <div className="about-us-divider w-[400px]"></div>
           <div className="about-us-text-container text-left">
