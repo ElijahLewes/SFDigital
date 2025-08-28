@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import ContactFormSubmitBtn from './ContactFormSubmitBtn.jsx';
 
+export default ContactForms;
 function ContactForms() {
   const [activeTab, setActiveTab] = useState('general');
 
@@ -28,12 +30,7 @@ function ContactForms() {
               rows="4" 
               className="p-2 border rounded"
             />
-            <button 
-              type="submit" 
-              className="contact-form-submit-btn"
-            >
-              Send Message 
-            </button>
+            <ContactFormSubmitBtn />
           </form>
         );
       
@@ -174,4 +171,3 @@ function ContactForms() {
   );
 }
 
-export default ContactForms;

@@ -12,6 +12,7 @@ function ContactFormSubmitBtn() {
 
   return (
     <button 
+      type="submit"
       onClick={handleSubmit} 
       className="contact-form-submit-btn bg-[var(--green-base)] text-white p-2 rounded hover:opacity-80"
     >
@@ -19,3 +20,4 @@ function ContactFormSubmitBtn() {
     </button>
   );
 }
+export default ContactFormSubmitBtn;
