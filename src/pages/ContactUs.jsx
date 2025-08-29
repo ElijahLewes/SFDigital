@@ -1,7 +1,10 @@
 // Professional contact page with about the team section
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import ContactForms from '../components/ContactForms.jsx';
+import CFGeneral from '../components/ContactForms/CFGeneral.jsx';
+import CFProject from '../components/ContactForms/CFProject.jsx';
+import CFLink212 from '../components/ContactForms/CFLink212.jsx';
+
 
 function ContactUs() {
   const [activeTab, setActiveTab] = useState('tab1');
@@ -55,49 +58,57 @@ function ContactUs() {
         <p>Saturday: 10 AM - 4 PM</p>
       </div>
 
-      {/* Contact Form Tabs */}
-      <section id="contact-form-section">
-          {/* Sidebar Tabs */}
-          <div className="tabs">
-            {tabs.map((tab) => {
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center transition-all duration-300 ease-in-out overflow-hidden
-                    ${isActive ? 'w-48 bg-white font-semibold' : 'w-16 bg-gray-100 hover:bg-gray-200'}
-                    px-4 py-3 border-b border-gray-300`}
-                >
-                  <span className="text-xl mr-2">{tab.icon}</span>
-                  {isActive && <span className="whitespace-nowrap">{tab.label}</span>}
-                </button>
-              );
-            })}
-          </div>
+
+        <div className="section-container flex flex-col justify-center min-h-screen p-8">
+          <section className="contact-us-title-container flex flex-col items-center mb-8">
+            <div className="contact-form-title mb-4">
+          <h1 className="text-4xl font-bold">LET'S WORK TOGETHER!</h1>
+        </div>
+        <p className="text-center mb-6">Choose the type of inquiry below and fill out the form.</p>
+        
+        {/* Tab Navigation */}
+        <div className="tab-container flex gap-4 mb-8">
+          <button
+            onClick={() => setActiveTab('general')}
+            className={`tab-button px-6 py-2 rounded ${
+              activeTab === 'general' 
+                ? 'bg-[var(--green-base)] text-white' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+          >
+            General
+          </button>
+          <button
+            onClick={() => setActiveTab('project')}
+            className={`tab-button px-6 py-2 rounded ${
+              activeTab === 'project' 
+                ? 'bg-[var(--green-base)] text-white' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+          >
+            Services
+          </button>
+          <button
+            onClick={() => setActiveTab('support')}
+            className={`tab-button px-6 py-2 rounded ${
+              activeTab === 'support' 
+                ? 'bg-[var(--green-base)] text-white' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+          >
+            Link 212
+          </button>
+        </div>
+
 
           {/* Content Area */}
           <div className="contact-form-container">
-            {activeTab === 'tab1' && (
-              <div className="gen-form">
-                <h3 className="text-xl font-bold mb-4">General Inquiry</h3>
-                <p>Submit a general inquiry form here.</p>
-              </div>
-            )}
-            {activeTab === 'tab2' && (
-              <div>
-                <h3 className="text-xl font-bold mb-4">Project Request</h3>
-                <p>Tell us about your project needs.</p>
-              </div>
-            )}
-            {activeTab === 'tab3' && (
-              <div>
-                <h3 className="text-xl font-bold mb-4">Support</h3>
-                <p>Get help with existing services.</p>
-              </div>
-            )}
+            {<CFGeneral activeTab={activeTab} />}
+            {<CFProject activeTab={activeTab} />}
+            {<CFLink212 activeTab={activeTab} />}
           </div>
       </section>
+   </div>
    </div>
   );  
 }
