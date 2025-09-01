@@ -1,10 +1,42 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import Navbar from '../components/Navbar.jsx';
 import Carousel from '../components/Carousel.jsx'
 
 
 function Home() {
+
+  //Landing page transition to Home
+ <div className="relative min-h-screen overflow-hidden">
+      {/* Fullscreen background that morphs from the landing image */}
+      <motion.img
+        src="/hero.jpg"
+        alt="Background"
+        layoutId="hero-image"                        // 👈 same id as Landing
+        className="absolute inset-0 w-full h-full object-cover"
+        transition={{ type: "spring", stiffness: 120, damping: 18 }}
+      />
+   {/* Optional: fade in page content after the image finishes expanding */}
+      <motion.div
+        className="relative z-10 text-white"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.15, duration: 0.35 }}
+      >
+        <header className="p-6">
+          <h1 className="text-4xl font-bold drop-shadow">Your Homepage</h1>
+          <p className="mt-2 max-w-xl opacity-90">
+            Whatever content you want to render once the background has taken over.
+          </p>
+        </header>
+      </motion.div>
+
+      {/* A subtle dark overlay for text contrast */}
+      <div className="absolute inset-0 bg-black/30" />
+    </div>
+
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [flippedIndex, setFlippedIndex] = useState(null);
 
