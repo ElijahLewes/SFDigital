@@ -19,8 +19,6 @@ function ContactUs() {
     <div className="contact-page-container">
       {/* Title + Socials */}
       <section className="contact-us-title-container flex flex-col justify-start px-32">
-
-
         <div className="contact-form-title mb-6">
           <h1 className="text-5xl font-bold text-left Career leading-[3.5rem]">
             LET'S CREATE <br /> TOGETHER!
@@ -31,7 +29,6 @@ function ContactUs() {
           <br />
           Leave us a message and we’ll be in touch!
         </p>
-
 
         <nav>
           <div className="sm-btns-container flex flex-row gap-x-10 mt-[50px] mb-20">
@@ -52,7 +49,7 @@ function ContactUs() {
       </section>
 
       {/* Operating Hours */}
-      <div className="contact-right-column flex flex-col text-center items-center justify-center mb-12">
+      <div className="hours-container">
         <h2 className="text-2xl font-bold mb-4">Operating Hours</h2>
         <p>Monday-Friday: 9 AM - 5 PM</p>
         <p>Saturday: 10 AM - 4 PM</p>
@@ -108,9 +105,9 @@ function ContactUs() {
             {<CFLink212 activeTab={activeTab} />}
           </div>
       </section>
+    </div>
    </div>
-   </div>
-  );  
+  );
 }
 
 export default ContactUs;
