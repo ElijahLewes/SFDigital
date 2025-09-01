@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       {/* Navbar shows for all routes except Home, which has its own HomeNavBar */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<><Navbar /><Home /></>} />
