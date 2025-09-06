@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ContactFormSubmitBtn from './ContactFormSubmitBtn';
+import ArrowAngularTopRight from '../../icons/ArrowLight';
 
 function CFProject({ activeTab }) {
   const [showForm, setShowForm] = useState(true);
@@ -20,44 +21,46 @@ function CFProject({ activeTab }) {
   return (
     <div className="form-container">
       {showThankYou ? (
-        <div className="thank-you-message text-center p-6 bg-green-50 border border-green-200 rounded-lg">
-          <h3 className="text-xl font-bold text-green-800 mb-3">Thank You!</h3>
-          <p className="text-green-700 mb-4">
-            Thank you for contacting us! We will do our best to get back to you within the next 3 business days.
+        <div className="ty-msg-project-form">
+          <p className="text-[var(--Charcoal)] w-[450px]">
+            Thank you for contacting us! <br /> We will do our best to get back to you within the next 3 business days.
           </p>
           <button 
             onClick={handleNewMessage}
-            className="bg-[var(--green-base)] text-white px-4 py-2 rounded hover:opacity-80"
+            className=" new-msg-btn text-[var(--Charcoal)]] rounded hover:opacity-100"
+            
           >
+             <ArrowAngularTopRight />
             Send Another Message
           </button>
         </div>
       ) : (
-        <div className={`form-wrapper transition-all duration-500 ${showForm ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-          <form className="contact-form flex flex-col gap-4">
-            <h3 className="text-xl font-bold">Project Inquiry</h3>
+        <div className={`project-form-wrapper transition-all duration-500 ${showForm ? 'opacity-100' : 'opacity-0 overflow-hidden'}`}>
+          <form className="contact-form flex flex-col">
+            <h3 className="text-[25px] font-bold">Project Inquiry</h3>
             <input 
               type="text" 
               placeholder="Company Name" 
-              className="p-2 border rounded"
+              className="project-form-input"
               required
             />
             <input 
               type="text" 
               placeholder="Project Type" 
-              className="p-2 border rounded"
+              className="project-form-input"
               required
             />
             <input 
               type="text" 
               placeholder="Budget Range" 
-              className="p-2 border rounded"
+              className="project-form-input"
               required
             />
             <textarea 
               placeholder="Project Description" 
-              rows="4" 
-              className="p-2 border rounded"
+              rows="2" 
+              className="project-form-input"
+              style={{ paddingTop: '5px' }}
               required
             />
             <ContactFormSubmitBtn onFormSubmit={handleFormSubmit} />

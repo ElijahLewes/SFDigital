@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="footer-container h-[40vh] flex flex-row bg-[var(--Highlight)] text-[var(--Charcoal)] p-4">
+    <footer className="footer-container h-[40vh] flex flex-row relative bg-[var(--Highlight)] text-[var(--Charcoal)] p-4 z-50">
       <div className="left-side-footer w-1/2 flex flex-col items-start gap-y-6 h-full">
         <div className="footer-subtitle font-bold leading-none" style={{ fontSize: 'clamp(3rem, 15vw, 9rem)' }}>
           SFD

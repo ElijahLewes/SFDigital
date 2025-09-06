@@ -317,55 +317,255 @@ Flip card experiment for team page */
 
 /*CONTACT FORM PAGE*/
 
-.contact-form-submit-btn {
-  @apply flex flex-col items-center justify-center p-8 bg-[var(--green-base)] text-white p-2 rounded hover:opacity-80;
-}
 .contact-page-container{
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 150px;
-  justify-content: center;
-}
-#contact-form-section{
-  width: 100%;
-  height: 400px;
-  justify-content:right;
-  right:0;
-  left: 500px;
-  display: flex;
-  flex-direction: row;
-  padding-right: 50px;
+  margin-right: 0;
+  gap: 0px;
 }
 
-.contact-form-container{
+.contact-page-title{
+  font-size: 70px;
+  font-family: "Career";
+  line-height: 1;
+  text-align: left;
+}
+
+.sm-container-ig{
+  display: flex;
+  flex-direction: row;
+  background-color: var(--Charcoal);
+  color: var(--Light);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 180px;
+}
+
+.sm-container-yt{
+  display: flex;
+  flex-direction: row;
+  background-color: var(--Charcoal);
+  color: var(--Light);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 250px;
+}
+
+.sm-container img {
+  display: flex;
+  flex-direction: row;
+}
+
+.Parent-Cont-Form{
+flex-direction: row;
+width: 105%;
+height: 400px;
+justify-content: right;
+z-index: 10;
+}
+
+
+
+.tab-container{
+flex-direction: column;
+justify-content:end;
+gap: 25px;
+z-index:-1;
+width: 430px;
+position: absolute;
+right: 650px;
+margin-top: 30px;
+height: 540px;
+
+}
+
+.tab-button{
+border-radius: 35px;
+height: 120px;
+font-size: 20px;
+text-align: left;
+ box-shadow: -3px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.general-form-wrapper{
+  background-color: var(--Charcoal);
+  padding: 40px;
+  width: 730px;
+  height: 85vh;
+  border-radius: 10px 0;
+  z-index: 2;
+  box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
+  
+}
+
+.project-form-wrapper{
+  background-color:#E1D5C8;
+  padding: 40px;
+  width: 730px;
+  height: 85vh;
+  border-radius: 10px 0;
+  z-index: 2;
+  box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.l212-form-wrapper{
+  background-color: var(--Collard-Green);
+  padding: 40px;
+  width: 730px;
+  height: 85vh;
+  border-radius: 10px 0;
+  z-index: 2;
+  box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form{
+  justify-content: space-between;
+  height: 90%;
+  z-index: 0;
+  padding-top: 10px;
 }
 
 .hours-container{
   height: 200px;
 }
 
-.cf-left-column-container{
+.general-form-input{
   background-color: transparent;
+  color: var(--Light);
+  border: none;
+  border-bottom: 1.4px solid var(--Light);
+  padding: 0;
+  margin: 0 20px;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 2.5;
+
 }
 
-.gen-form{
-  background-color: var(--Charcoal);
-  color: var(--Light);
-  text-align: left;
-  height: 400px;
-  width: 800px;
-  padding: 30px;
-  border-radius: 15px 15px 0 0;
+.project-form-input{
+  background-color: transparent;
+  color: var(--Charcoal);
+  border: none;
+  border-bottom: 1.4px solid var(--Charcoal);
+  padding: 0;
+  margin: 20px;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 2.5;
 }
+
+.l212-form-input{
+  background-color: transparent;
+  color: var(--Light);
+  border: none;
+  border-bottom: 1.4px solid var(--Light);
+  padding: 0;
+  margin: 0 10px;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 2.5;
+}
+
 
 .contact-form-submit-btn{
   background-color: var(--Highlight);
-  border-radius: 100%;
+  color: var(--Charcoal);
   justify-content: center;
   align-items: center;
   padding: 10px;
-  width: 200px;
+  margin-left: 20px;
+  width: 130px;
   height: 50px;
+  border: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform:uppercase;
 }
+
+.ty-msg-general-form{
+  background-color:var(--Charcoal);
+  display: flex;
+  flex-direction: column;
+  width: 730px;
+  height: 80vh;
+  border-radius: 10px 0;
+  z-index: 2;
+  box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
+  align-items: flex-end;
+  padding: 70px 65px;
+}
+
+.ty-msg-general-form p{
+  text-align: right;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.2;
+  opacity: 90%;
+}
+
+.ty-msg-project-form{
+  background-color:#E1D5C8;
+  display: flex;
+  flex-direction: column;
+  width: 730px;
+  height: 80vh;
+  border-radius: 10px 0;
+  z-index: 2;
+  box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
+  align-items: flex-end;
+  padding: 70px 65px;
+}
+
+.ty-msg-project-form p{
+  text-align: right;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.2;
+  opacity: 90%;
+}
+
+.ty-msg-l212-form{
+  background-color:var(--Collard-Green);
+  display: flex;
+  flex-direction: column;
+  width: 730px;
+  height: 80vh;
+  border-radius: 10px 0;
+  z-index: 2;
+  box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
+  align-items: flex-end;
+  padding: 70px 65px;
+}
+
+.ty-msg-l212-form p{
+  text-align: right;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.2;
+  opacity: 90%;
+}
+
+
+.new-msg-btn{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  background-color: transparent;
+  margin-top: 25px;
+  align-items: center;
+  text-align: right;
+  padding: 0;
+  justify-content: flex-end;
+  
+}
+

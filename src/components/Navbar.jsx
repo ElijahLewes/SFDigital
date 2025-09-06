@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import InstagramLight from "../icons/InstagramLight";
-import YoutubeLight from "../icons/YoutubeLight";
 
 function NavButton({ to, label }) {
   return (
@@ -22,7 +20,7 @@ function Navbar() {
       </div>
 
       {/* Nav Links */}
-      <div className="flex gap-6 items-center">
+      <div className="flex gap-6 items-start">
         <NavButton to="/link212" label="Link 212" />
         <NavButton to="/contact" label="Contact Us" />
         <NavButton to="/team" label="Meet the Team" />
@@ -34,7 +32,8 @@ function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <InstagramLight className="social-icon" />
+         <img src="/images/ig-nav-light.svg" alt="instagram icon" 
+         className="w-[28px] h-[28px]"/>
         </a>
         </div>
         <div className="sm-navbar-btn">
@@ -43,7 +42,8 @@ function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <YoutubeLight className="social-icon" />
+         <img src="/images/yt-nav-light.svg" alt="youtube icon" 
+         className="w-[50px] h-[38px]"/>
         </a>
         </div>
       </div>

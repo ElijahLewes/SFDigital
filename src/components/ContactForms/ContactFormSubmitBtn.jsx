@@ -18,14 +18,16 @@ function ContactFormSubmitBtn({ onFormSubmit }) {
   };
 
   return (
+    <div className="submit-btn-wrapper flex w-full justify-end pr-[20px]">
     <button 
       type="submit"
       onClick={handleSubmit} 
-      className="contact-form-submit-btn bg-[var(--green-base)] text-white p-2 rounded hover:opacity-80 transition-all duration-300"
+      className="contact-form-submit-btn hover:opacity-100 transition-all duration-300"
       disabled={isSubmitted}
     >
-      {isSubmitted ? 'Message Sent!' : 'Send Message'}
+      {isSubmitted ? 'Sent!' : 'Submit'}
     </button>
+    </div>
   );
 }
 

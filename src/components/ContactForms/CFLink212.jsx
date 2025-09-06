@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ContactFormSubmitBtn from './ContactFormSubmitBtn';
+import ArrowAngularTopRight from '../../icons/ArrowLight';
 
 function CFLink212({ activeTab }) {
   const [showForm, setShowForm] = useState(true);
@@ -21,35 +22,35 @@ function CFLink212({ activeTab }) {
   return (
     <div className="form-container">
       {showThankYou ? (
-        <div className="thank-you-message text-center p-6 bg-green-50 border border-green-200 rounded-lg">
-          <h3 className="text-xl font-bold text-green-800 mb-3">Thank You!</h3>
-          <p className="text-green-700 mb-4">
-            Thank you for contacting us! We will do our best to get back to you within the next 3 business days.
+        <div className="ty-msg-l212-form">
+          <p className="text-[var(--Light)] w-[450px]">
+            Thank you for contacting us! <br />We will do our best to get back to you within the next 3 business days.
           </p>
           <button 
             onClick={handleNewMessage}
-            className="bg-[var(--green-base)] text-white px-4 py-2 rounded hover:opacity-80"
+            className="new-msg-btn text-[var(--Light)] hover:opacity-100"
           >
+            <ArrowAngularTopRight />
             Send Another Message
           </button>
         </div>
       ) : (
-        <div className={`form-wrapper transition-all duration-500 ${showForm ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+        <div className={`l212-form-wrapper transition-all duration-500 ${showForm ? 'opacity-100' : 'opacity-50 overflow-hidden'}`}>
           <form className="contact-form flex flex-col gap-4">
-            <h3 className="text-xl font-bold">Link 212 Support</h3>
+            <h3 className="text-[25px] font-bold text-[var(--Light)]">Link 212 Support</h3>
             <input 
               type="text" 
               placeholder="Your Name" 
-              className="p-2 border rounded"
+              className="l212-form-input"
               required
             />
             <input 
               type="email" 
               placeholder="Your Email" 
-              className="p-2 border rounded"
+              className="l212-form-input"
               required
             />
-            <select className="p-2 border rounded" required>
+            <select className="l212-form-input" required>
               <option value="">Select Issue Type</option>
               <option value="technical">Technical Support</option>
               <option value="billing">Billing Question</option>
@@ -57,9 +58,10 @@ function CFLink212({ activeTab }) {
               <option value="other">Other</option>
             </select>
             <textarea 
-              placeholder="Describe your issue" 
-              rows="4" 
-              className="p-2 border rounded"
+              placeholder="Describe Your Issue" 
+              rows="2" 
+              className="l212-form-input"
+              style={{ paddingTop: '5px' }}
               required
             />
             <ContactFormSubmitBtn onFormSubmit={handleFormSubmit} />
