@@ -1,179 +1,209 @@
 import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Link212() {
-  // --- DOT + ALIGNMENT STATE ---
-  const [dotTop, setDotTop] = useState(null);
-  const [listHeight, setListHeight] = useState(0);
-  const listRef = useRef(null);
-  const dividerRef = useRef(null);
-  const DOT_SIZE = 16; // matches w-4 h-4
-
-  // --- MENU + PREVIEW STATE ---
-  const [hoverIndex, setHoverIndex] = useState(null); // controls preview image
+  const [dotTop, setDotTop] = useState(0);
+  const [hoverIndex, setHoverIndex] = useState(null);
+  const menuRef = useRef(null);
+  const DOT_SIZE = 16;
 
   const menuItems = [
-    { label: "Remington", img: "/images/previews/test_image.jpeg" },
-    { label: "Jones-Falls: COMING SOON", img: "/images/previews/jonesfalls.jpg" },
-    { label: "Abell: COMING SOON", img: "/images/previews/abell.jpg" },
+    {
+      label: "Remington",
+      img: "/images/l212/remington.JPG",
+      position: { bottom: "10px", left: "-70px" },
+      width: "300px",
+    },
+    {
+      label: "Jones Falls",
+      img: "/images/l212/jonesfalls.JPG",
+      position: { bottom: "5px", left: "-60px" },
+      width: "400px",
+    },
+    {
+      label: "Abell",
+      img: "/images/l212/abell.JPG",
+      position: { bottom: "10px", left: "-80px" },
+      width: "400px",
+    },
   ];
 
-  // Helper: show the name before the colon
-  const prettyName =
-    hoverIndex !== null
-      ? menuItems[hoverIndex].label.split(":")[0]
-      : null;
+  const handleMouseMove = (e) => {
+    if (!menuRef.current) return;
+    const rect = menuRef.current.getBoundingClientRect();
+    const cursorY = e.clientY - rect.top - DOT_SIZE / 2;
 
-  // Measure list height to match divider height
-  const measureHeights = () => {
-    if (listRef.current) {
-      const h = listRef.current.getBoundingClientRect().height;
-      setListHeight(h);
-    }
+    // Find nearest menu item
+    const items = Array.from(menuRef.current.querySelectorAll("li"));
+    let nearestIndex = null;
+    let minDistance = Infinity;
+
+    items.forEach((item, index) => {
+      const itemRect = item.getBoundingClientRect();
+      const itemCenter = itemRect.top + itemRect.height / 2 - rect.top - DOT_SIZE / 2;
+      const distance = Math.abs(cursorY - itemCenter);
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearestIndex = index;
+      }
+    });
+
+    // Magnetic effect threshold
+    const THRESHOLD = 40; // px
+    const targetY =
+      minDistance < THRESHOLD
+        ? (cursorY + (items[nearestIndex].getBoundingClientRect().top + items[nearestIndex].getBoundingClientRect().height / 2 - rect.top - DOT_SIZE / 2)) / 2
+        : cursorY;
+
+    setDotTop(Math.max(0, Math.min(targetY, rect.height - DOT_SIZE)));
+
+    // Update hover index if cursor is within item bounds
+    const foundIndex = items.findIndex((item) => {
+      const itemRect = item.getBoundingClientRect();
+      return e.clientY >= itemRect.top && e.clientY <= itemRect.bottom;
+    });
+    setHoverIndex(foundIndex >= 0 ? foundIndex : null);
   };
 
-  useEffect(() => {
-    measureHeights();
-    const onResize = () => measureHeights();
-    window.addEventListener("resize", onResize);
-    const t = setTimeout(measureHeights, 0);
-    return () => {
-      window.removeEventListener("resize", onResize);
-      clearTimeout(t);
-    };
-  }, []);
-
-  // Align the dot to the hovered item's vertical center relative to the divider
-  const handleHover = (e, index) => {
-    setHoverIndex(index);
-    if (!dividerRef.current) return;
-    const itemRect = e.currentTarget.getBoundingClientRect();
-    const dividerRect = dividerRef.current.getBoundingClientRect();
-    const itemCenterY = itemRect.top + itemRect.height / 2;
-    const relativeY = itemCenterY - dividerRect.top - DOT_SIZE / 2;
-    setDotTop(relativeY);
-  };
-
-  const handleLeave = () => {
+  const handleMouseLeave = () => {
     setHoverIndex(null);
-    setDotTop(null);
   };
-
-  // Pick preview image (default to first if none hovered)
-  const currentPreview =
-    hoverIndex !== null ? menuItems[hoverIndex].img : "/images/previews/default.jpg";
 
   return (
-    <div
-      className="section-container flex flex-col justify-center bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url(/images/Link212BackgroundLight.svg)" }}
-    >
-      {/* Intro section */}
-      <section
-        id="Link212-page-container"
-        className="page-container-column items-center justify-center"
-      >
-        <div className="section container flex flex-row w-full h-screen items-center justify-center">
-          <div className="subtitle-container">
-            <h1 className="link212-subtitle basis-1/2">The Link 212 Project</h1>
-          </div>
+    <div className="bg-[var(--Isabelline)] min-h-screen">
+      {/* HEADER */}
+      <section id="l212-header-wrapper">
+        <div className="l212-header">
+          <p>Link 212</p>
           <div className="divider" />
-          <div className="mission-statement-text-container content-center justify-items-center basis-1/2">
+          <div className="l212-descript">
             <p>
-              The Link 212 Project is a multimedia project aimed at showcasing the vibrant
-              culture and community of the 250 Baltimore neighborhoods found in the 212
-              zipcode.
+              Link 212 cultivates civic pride among young adults in Baltimore
+              through shared local knowledge, neighborhood connections, and
+              niche entertainment experiences, promoting engagement and
+              investment in those who strengthen urban neighborhoods and create
+              resilient places where people choose to stay, build, and thrive
+              together.
             </p>
           </div>
         </div>
+        <div className="l212-header-right">
+          <img
+            src="images/l212/quote-start.svg"
+            alt="starting quote"
+            className="l212-start-quote"
+          />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <img
+            src="images/l212/quote-end.svg"
+            alt="ending quote"
+            className="l212-end-quote"
+          />
+        </div>
       </section>
 
-      {/* Split row: Map | Divider with dot | Menu + Preview */}
-      <section className="page-container-row flex w-full  relative items-stretch gap-6  px-5 pb-16">
-        {/* Left: Map */}
-        <div className="interactive-map-container flex flex-col items-center justify-center basis-1/2 bg-[var(--green-base)] text-[var(--text-light)] bg-opacity-60 p-6 rounded-lg shadow-lg relative">
-          <h2 className="text-xl font-semibold mb-2">Interactive Map</h2>
-          <p className="text-sm text-white mb-4">
-            Explore the neighborhood through our interactive map. Click on the markers to learn
-            more about each location.
-          </p>
-          <div className="map bg-gray-700 w-full h-64 rounded-md">{/* map placeholder */}</div>
-        </div>
-
-        {/* Center: Divider with dot aligned to menu */}
-        <div
-          ref={dividerRef}
-          className="relative w-[2px] bg-gray-400 self-center"
-          style={{ height: listHeight || "100%" }}
-        >
-          {dotTop !== null && (
-            <motion.div
-              className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-400"
-              initial={false}
-              animate={{ top: dotTop }}
-              transition={{ type: "spring", stiffness: 260, damping: 22 }}
+      {/* MAP + MENU + PREVIEW */}
+      <section id="l212-nbd-menu-wrapper" className="flex">
+        <div className="interactive-map-container">
+          <div className="map-wrapper">
+            <img
+              src="images/l212/remington-map.svg"
+              alt="remington map"
+              className="w-full h-full object-cover"
             />
-          )}
+          </div>
         </div>
 
-        {/* Right: split vertically → Menu (left column) | Preview (right column) */}
-        <div className="neighborhood-menu-container basis-1/2 p-0 min-h-[22rem]"> {/* ★ ensure right side has height */}
-          <div className="grid grid-cols-2 gap-6 h-full">
-            {/* Menu column */}
-            <aside className="flex flex-col justify-center">
-              <ul
-                ref={listRef}
-                className="space-y-6 text-white relative"
-                onLoad={measureHeights}
-              >
-                {menuItems.map((item, index) => (
-                  <li key={index} className="leading-7">
-                    <a
-                      href="#"
-                      className="link212-menu-item hover:text-blue-400 transition-colors inline-block"
-                      onMouseEnter={(e) => handleHover(e, index)}
-                      onMouseLeave={handleLeave}
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </aside>
+        <div className="nbd-menu-nav relative w-[3px] bg-[var(--Charcoal)] h-[650px] mx-4">
+          <motion.div
+            className="nbd-menu-dot absolute w-4 h-4 bg-[var(--Charcoal)] rounded-full -translate-x-1/2"
+            animate={{ top: dotTop }}
+            transition={{ type: "tween", duration: 0.2, ease: "easeInOut" }}
+          />
+        </div>
 
-            {/* Preview column (with rotated label overlay) */}
-            <div className="relative rounded-lg overflow-hidden min-h-[18rem]"> {/* ★ explicit height */}
-              {/* Image crossfade */}
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={currentPreview}
-                  src={currentPreview}
-                  alt="Neighborhood preview"
-                  className="absolute inset-0 w-full h-full object-cover z-0"
-                  initial={{ opacity: 0.0, scale: 1.02 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.25 }}
-                />
-              </AnimatePresence>
+        <div
+          className="nbd-menu-container flex"
+          ref={menuRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <aside className="flex flex-col justify-start items-start p-8 w-[400px]">
+            <ul className="w-full">
+              {menuItems.map((item, index) => (
+                <li key={index} className="my-2">
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-4"
+                    animate={{
+                      opacity: hoverIndex === null || hoverIndex === index ? 1 : 0.4,
+                      x: hoverIndex === index ? 10 : 0, // move right 10px when hovered
+                    }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    {hoverIndex === index && (
+                      <motion.img
+                        src="images/l212/right-arrow-l212.svg"
+                        alt="right arrow"
+                        className="w-[40px] h-[40px]"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      />
+                    )}
+                    {item.label}
+                  </motion.a>
+                </li>
+              ))}
+            </ul>
+          </aside>
 
-              {/* Subtle overlay for contrast */}
-              <div className="absolute inset-0 bg-black/20 pointer-events-none z-10" />
+          <div className="l212-menu-pic relative w-[500px] h-[650px]">
+            {menuItems.map((item, index) => (
+              <motion.img
+                key={item.img}
+                src={item.img}
+                alt={item.label}
+                className="absolute inset-0 w-full h-full object-cover"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity:
+                    hoverIndex === index
+                      ? 1
+                      : hoverIndex === null && index === 0
+                      ? 1
+                      : 0,
+                }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+              />
+            ))}
 
-          
-              {/* Rotated label pinned to bottom-left of the image */}
-              <div className="absolute left-0 bottom-0 [writing-mode:vertical-rl] rotate-180 z-20">
-                <div className="px-2 py-6 m-2 rounded-md">
-                  <span className="text-white/95 link212-subtitle font-semibold tracking-widest uppercase text-sm">
-                  {prettyName}
-               </span>
-             </div>
-            </div>
-
-              {/* Bottom caption */}
-              <div className="absolute bottom-0 left-0 right-0 p-3 text-sm text-white bg-gradient-to-t from-black/60 to-transparent z-20"> {/* ★ z-20 */}
-                {hoverIndex !== null ? menuItems[hoverIndex].label : "Hover a neighborhood →"}
-              </div>
+            <div
+              className="nbd-big-title absolute text-[120px] font-bold text-[var(--Isabelline)] right-0"
+              style={{
+                bottom:
+                  hoverIndex !== null
+                    ? menuItems[hoverIndex].position?.bottom || "10px"
+                    : menuItems[0].position?.bottom || "10px",
+                left:
+                  hoverIndex !== null
+                    ? menuItems[hoverIndex].position?.left || "-70px"
+                    : menuItems[0].position?.left || "-70px",
+                width:
+                  hoverIndex !== null
+                    ? menuItems[hoverIndex].width || "300px"
+                    : menuItems[0].width || "300px",
+              }}
+            >
+              <p>
+                {hoverIndex !== null
+                  ? menuItems[hoverIndex].label
+                  : menuItems[0].label}
+              </p>
             </div>
           </div>
         </div>
