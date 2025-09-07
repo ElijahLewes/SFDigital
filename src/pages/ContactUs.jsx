@@ -7,7 +7,7 @@ import CFLink212 from '../components/ContactForms/CFLink212.jsx';
 
 
 function ContactUs() {
-  const [activeTab, setActiveTab] = useState('tab1');
+  const [activeTab, setActiveTab] = useState('general');
 
   const tabs = [
     { id: 'tab1', label: 'General' },
@@ -18,11 +18,11 @@ function ContactUs() {
   return (
     <div className="contact-page-container">
       {/* Title + Socials */}
-      <section className="contact-us-title-container flex flex-col justify-start px-32">
+      <section className="contact-us-title-container flex flex-col justify-start px-20 mb-[10px]">
         <div className="contact-form-title mb-6">
-          <h1 className="text-5xl font-bold text-left Career leading-[3.5rem]">
+          <p className="contact-page-title">
             LET'S CREATE <br /> TOGETHER!
-          </h1>
+          </p>
         </div>
         <p className="text-left text-base">
           Interested in collaborating, <br /> getting featured or working with us?
@@ -30,67 +30,77 @@ function ContactUs() {
           Leave us a message and we’ll be in touch!
         </p>
 
-        <nav>
           <div className="sm-btns-container flex flex-row gap-x-10 mt-[50px] mb-20">
-            <div className="sm-container flex flex-row justify-center items-center rounded-full bg-[#2E4052] w-[160px] h-[40px]">
-              <p className="text-center text-[#F2E5D7]">@SFDigital</p>
-            </div>
 
-            <div className="sm-container flex flex-row justify-center items-center rounded-full bg-[#2E4052] w-[165px] h-[40px]">
-              <p className="text-center text-[#F2E5D7]">@SFDigital</p>
-            </div>
+            <a 
+              href="https://www.instagram.com/streetfrontdigital/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="no-underline text-[var(--Light)] hover:no-underline"
+            >
+            <button className="sm-container-ig">
+            <img src="/images/ig-icon-light.svg" 
+            alt="instagram icon" 
+            className="w-[30px] h-[30px]"
+            />
+             @SFDigital
+            </button>
+            </a>
 
-            <div className="sm-container flex flex-row justify-center items-center rounded-full bg-[#2E4052] w-[180px] h-[40px]">
-              <p className="text-center text-[#F2E5D7]">@StreetfrontDigital</p>
-            </div>
+            <a 
+              href="https://www.youtube.com/@StreetfrontDigital" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="no-underline text-[var(--Light)] hover:no-underline"
+            >
+            <button className="sm-container-yt">
+            <img src="/images/yt-icon-light.svg" 
+            alt="youtube icon" 
+            className="w-[40px] h-[40px]" 
+            />
+              @StreetfrontDigital
+            </button>
+            </a>
+
+
             {/* add icons for social media links */}
           </div>
-        </nav>
+
       </section>
-
-      {/* Operating Hours */}
-      <div className="hours-container">
-        <h2 className="text-2xl font-bold mb-4">Operating Hours</h2>
-        <p>Monday-Friday: 9 AM - 5 PM</p>
-        <p>Saturday: 10 AM - 4 PM</p>
-      </div>
-
 
         <div className="section-container flex flex-col justify-center min-h-screen p-8">
           <section className="contact-us-title-container flex flex-col items-center mb-8">
-            <div className="contact-form-title mb-4">
-          <h1 className="text-4xl font-bold">LET'S WORK TOGETHER!</h1>
-        </div>
-        <p className="text-center mb-6">Choose the type of inquiry below and fill out the form.</p>
-        
+      
+    <div className="Parent-Cont-Form flex"> {/*CONTACT FORM WRAPPER*/}
+
         {/* Tab Navigation */}
-        <div className="tab-container flex gap-4 mb-8">
+        <div className="tab-container flex flex-col">
           <button
             onClick={() => setActiveTab('general')}
-            className={`tab-button px-6 py-2 rounded ${
+            className={`tab-button transform transition-all duration-300 ease-in-out ${
               activeTab === 'general' 
-                ? 'bg-[var(--green-base)] text-white' 
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-[var(--Charcoal)] text-[var(--Light)] translate-x-0' 
+                : 'bg-[var(--Charcoal)] text-[var(--Light)] translate-x-60'
             }`}
           >
             General
           </button>
           <button
             onClick={() => setActiveTab('project')}
-            className={`tab-button px-6 py-2 rounded ${
+            className={`tab-button transform transition-all duration-500 ease-in-out ${
               activeTab === 'project' 
-                ? 'bg-[var(--green-base)] text-white' 
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-[#E1D5C8] text-[var(--Charcoal)] translate-x-0' 
+                : 'bg-[#E1D5C8] text-[var(--Charcoal)] translate-x-60'
             }`}
           >
-            Services
+            Projects
           </button>
           <button
             onClick={() => setActiveTab('support')}
-            className={`tab-button px-6 py-2 rounded ${
+            className={`tab-button transform transition-all duration-500 ease-in-out ${
               activeTab === 'support' 
-                ? 'bg-[var(--green-base)] text-white' 
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-[var(--Collard-Green)] text-[var(--Light)] translate-x-0' 
+                : 'bg-[var(--Collard-Green)] text-[var(--Light)] translate-x-60'
             }`}
           >
             Link 212
@@ -104,6 +114,8 @@ function ContactUs() {
             {<CFProject activeTab={activeTab} />}
             {<CFLink212 activeTab={activeTab} />}
           </div>
+
+    </div> {/*CONTACT FORM WRAPPER*/}
       </section>
     </div>
    </div>
