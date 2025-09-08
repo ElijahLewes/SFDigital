@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*BACKGROUND AND COLOR*/
+  :root{
+      background-color: var(--Charcoal);
+      color: var(--Fawn);
+  }
+/*BACKGROUND AND COLOR*/
+
+/*SFD Theme*/
+  :root.sfd {
+    --Charcoal: #2E4052;
+    --Fawn: #F2E5D7;
+    --Clover: #C6D8AF;
+    --Heartwood: #C97D60;
+    --Collard-Green: #648767;
+
+    font-family: 'Career', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+/*SFD Theme*/
+
+
+/*Link212 Theme*/
+  :root.link212 {
+    --Charcoal: #2E4052;
+    --Isabelline: #FAF5F0;
+    --Chestnut: #98473E;
+    --Indigo-Dye: #134D67;
+    --Collard-Green: #648767;
+
+    font-family: 'GangsterGrotesk-Regular', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+/*Link212 Theme*/
+
+/*BUTTON COLORING*/
+:root {
+  --button-bg: var(--Fawn);
+  --button-text: var(--Charcoal);
+}
+/*BUTTON COLORING*/
+
+/* TEXT STYLING*/
+  a {
+    font-weight: 500;
+    font-family: 'Mona Sans';
+    color: var(--Fawn);
+    text-decoration: inherit;
+  }
+
+  a:hover {
+    color: var(--Fawn);
+    text-decoration: underline;
+    text-decoration-color: var(--Fawn);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+/* TEXT STYLING*/

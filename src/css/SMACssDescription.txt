@@ -1,0 +1,152 @@
+
+# 📂 SMACSS Folder Definitions
+
+SMACSS (Scalable and Modular Architecture for CSS) organizes CSS into **five categories**. The key idea is *separation of concerns*: styles are grouped by role, not by page.
+
+---
+
+## 1. **Base**
+
+* **Purpose:** Provide *reset* or *baseline* styles across the entire site.
+* **Applies to:** Elements (`html`, `body`, `p`, `h1`, `a`, etc.) — **not classes**.
+* **Examples:**
+
+  * CSS reset or normalize.
+  * Default typography (font stack, link colors).
+  * Accessibility defaults (e.g., `:focus` outline).
+* **Folder/File Example:**
+
+  ```
+  /base/
+    _reset.css
+    _typography.css
+    _forms.css
+  ```
+
+---
+
+## 2. **Layout**
+
+* **Purpose:** Define *major structural regions* of the site (grid, header, footer, sidebar).
+* **Applies to:** Large containers, often with `.l-` prefix.
+* **Examples:**
+
+  * `.l-header`, `.l-sidebar`, `.l-container`
+  * Grid/flexbox definitions for page columns.
+* **Folder/File Example:**
+
+  ```
+  /layout/
+    _grid.css
+    _header.css
+    _footer.css
+    _sidebar.css
+  ```
+
+---
+
+## 3. **Module**
+
+* **Purpose:** Define **reusable components** (cards, buttons, navigation, media objects).
+* **Applies to:** The “meat” of your UI. Modules are portable and self-contained.
+* **Examples:**
+
+  * `.m-card`, `.m-button`, `.m-nav`, `.m-carousel`
+  * Variants of modules, e.g. `.btn--primary`, `.card--compact`
+* **Folder/File Example:**
+
+  ```
+  /module/
+    _card.css
+    _button.css
+    _navigation.css
+    _form-controls.css
+  ```
+
+---
+
+## 4. **State**
+
+* **Purpose:** Define **temporary, situational styles** that represent a change in state.
+* **Naming:** Typically `.is-*` or `.has-*`.
+* **Examples:**
+
+  * `.is-active`, `.is-hidden`, `.has-error`
+  * Toggled states for tabs, dropdowns, modals.
+* **Folder/File Example:**
+
+  ```
+  /state/
+    _visibility.css
+    _interactions.css
+    _validation.css
+  ```
+
+---
+
+## 5.Theme
+
+Purpose:Define **visual design variations** (color palettes, typography themes, seasonal branding).
+Notes:Optional; not every project uses it.
+Examples:
+
+    `.theme-dark`, `.theme-high-contrast`
+        Holiday or brand variations applied sitewide.
+            Folder/File Example:
+
+        ```
+        /theme/
+            _dark.css
+            _light.css
+            _brandA.css
+        ```
+
+---
+
+# 📁 Putting It Together
+
+A typical SMACSS project structure might look like:
+
+```
+/css/
+  base/
+    _reset.css
+    _typography.css
+  layout/
+    _grid.css
+    _header.css
+    _footer.css
+  module/
+    _card.css
+    _button.css
+    _nav.css
+  state/
+    _visibility.css
+    _is-active.css
+  theme/
+    _dark.css
+    _holiday.css
+  main.css   <-- imports everything
+```
+
+
+---
+SMACss with <form class="d-flex">
+    /css/
+  base/
+    _reset.css
+    _typography.css
+  layout/
+    _grid.css
+    _header.css
+    _footer.css
+  module/
+    _card.css
+    _button.css
+  state/
+    _is-active.css
+    _is-hidden.css
+  theme/
+    _dark.css
+    _holiday.css
+  main.css

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ArrowAngularTopRight() {
+export default function ArrowAngularTopRight() { TODO: /*ENSURE THAT THERE ARE TWO VERSIONS OF ARROWLIGHT AND THE RIGHT VERSION IS CALLED WHEN IN A SPECIFIC MODE*/
   return (
     <div className="w-[35px] h-[35px] rounded-full bg-[var(--Highlight)] flex items-center justify-center p-[2px]">
       <svg

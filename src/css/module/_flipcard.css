@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+Flip card experimentteam page */
+.flip__card-perspective {
+  perspective: 1000px;
+}
+.flip__card-transform-style {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.flip__-180 {
+  transform: rotateY(180deg);
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.profile_card-back{
+  width: 300px;
+  height: 500px;
+  text-align: left;
+  justify-content: space-between;
+}

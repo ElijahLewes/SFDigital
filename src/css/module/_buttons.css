@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button {
+  border-radius: 25px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color:var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  opacity: 0.5;
+}
+
+
+button:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+button:focus,
+button:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-color: var(--Collard-Green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.home__btn{
+  opacity: 1;
+}
+
+.home__btn:hover{
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  transition: 0.3s ease-in-out;
+}
+
+.carousel__btns {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 100% !important; /* or 0 if you want squares */
+  background-color: var(--Light) !important;
+  transition: background-color 0.3s ease !important;
+  transform: scale(-40%);
+}
+
+.nav__btn-small {
+  @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.nav__btn-small:hover {
+  background-color: #E1D5C8;
+  opacity: 1;
+}
+
+
+.nav__btn {
+  @apply px-5 py-2 bg-[var(--Light)] text-[var(--Charcoal)] transition-opacity duration-300 cursor-pointer;
+  opacity: 0.5; /* makes text + background semi-transparent */
+}
+
+.nav__btn:hover {
+  opacity: 1; /* fully visible on hover */
+}
+.nav__btn-small:hover .social-icon {
+  transform: scale(1.2);
+  background-color: #E1D5C8;
+  opacity: 1;
+}
+
+.nav__btn-small {
+  @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.nav__btn-small:hover {
+  background-color: #E1D5C8;
+  opacity: 1;
+}
+
+/*CONTACT FORM PAGE*/
+.sm__container-ig{ /*Buttons on the contact page header*/
+  display: flex;
+  flex-direction: row;
+  background-color: var(--Charcoal);
+  color: var(--Light);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 180px;
+}
+
+.sm__container-yt{
+  display: flex;
+  flex-direction: row;
+  background-color: var(--Charcoal);
+  color: var(--Light);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 250px;
+}
+/*CONTACT FORM PAGE*/
+
+.form__btn-submit{
+  background-color: var(--Highlight);
+  color: var(--Charcoal);
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-left: 20px;
+  width: 130px;
+  height: 50px;
+  border: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform:uppercase;
+}
+
+.form__btn-newmsg{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  background-color: transparent;
+  margin-top: 25px;
+  align-items: center;
+  text-align: right;
+  padding: 0;
+  justify-content: flex-end;
+  
+}
+
+.home-btn-container {
+  @apply flex gap-8 mt-10;
+}  
+
+.home-btn {
+  @apply py-1 w-[180px] h-[40px] rounded-full font-semibold border-[var(--Charcoal)] border-2 bg-transparent text-[var(--Charcoal)];
+}

@@ -45,3 +45,12 @@ Tailwind:
 Ant icons api docs: https://lineicons.com/docs
 
 
+CSS Style sheet standards:
+To use BEM, we only need to follow its naming convention!
+
+The B stands for block. A block is a standalone entity. An example would be a card component
+The E stands for element. An element is a part of a block that’s semantically tied to it and has no meaning on its own
+The M stands for modifier. It is simply a flag that lets you modify the appearance or behavior of an element or block
+
+
+TODO: Mona sa

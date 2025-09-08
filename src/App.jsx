@@ -1,7 +1,8 @@
+
 import { useState } from 'react'
 import { AnimatePresence } from "framer-motion";
 import Landing from './pages/Landing.jsx'
-import './App.css'
+import './css/App.css'
 import OnPageLoad from './components/OnPageLoad.jsx'
 import Navbar from './components/Navbar.jsx'
 import Home from './pages/Home.jsx'

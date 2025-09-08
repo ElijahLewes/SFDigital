@@ -1,0 +1,15 @@
+.logo {
+  @apply p-6 transition-[filter] duration-300;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.logo__container {
+  @apply flex items-start gap-4;
+}

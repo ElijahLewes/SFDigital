@@ -1,0 +1,39 @@
+
+.form__wrapper-general{
+  background-color: var(--Charcoal);
+}
+
+.form__wrapper-project{
+  background-color:#E1D5C8;
+}
+
+.form__wrapper-l212{
+  background-color: var(--Collard-Green);
+}
+
+.form__input-general .form__input-l212{
+  color: var(--Light);
+  border-bottom: 1.4px solid var(--Light);
+}
+
+.form__input-project{
+  color: var(--Charcoal);
+  border-bottom: 1.4px solid var(--Charcoal);
+}
+
+.form__wrapper-ty-general{
+  background-color:var(--Charcoal);
+  color: var(--Fawn);
+}
+
+.form__wrapper-ty-project{
+  background-color:#E1D5C8;
+  color: var(--Charcoal);
+}
+
+.form__wrapper-ty-l212{
+  background-color:var(--Collard-Green);
+  color: var(--Fawn);
+}
+
+

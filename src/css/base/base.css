@@ -1,0 +1,154 @@
+/* Global font-face declarations*/
+  @font-face {
+    font-family: 'Career';
+    src: url('./fonts/Career.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Mona Sans Italics';
+    src: url('./fonts/MonaSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Mona Sans';
+    src: url('./fonts/MonaSans-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'GangsterGrotesk-Bold';
+    src: url('./fonts/GangsterGrotesk-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'GangsterGrotesk-Regular';
+    src: url('./fonts/GangsterGrotesk-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'GangsterGrotesk-Light';
+    src: url('./fonts/GangsterGrotesk-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+/* Global font-face declarations*/
+
+/*COLOR VARIABLES*/
+:root{
+    --Charcoal: #2E4052;
+    --Fawn: #F2E5D7;
+    --Clover: #C6D8AF;
+    --Heartwood: #C97D60;
+    --Collard-Green: #648767;
+    --Isabelline: #FAF5F0;
+    --Chestnut: #98473E;
+    --Indigo-Dye: #134D67;
+}
+/*COLOR VARIABLES*/
+
+/*BASE CLASSES*/
+.page__container {
+  @apply w-full h-full flex flex-col items-start justify-center p-12;
+}
+.section__container{
+  @apply flex flex-col w-full gap-y-1;
+}
+h1{
+
+}
+h2{
+
+}
+h3{
+
+}
+a{
+
+}
+p {
+
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  @apply p-8;
+}
+
+.section__container:hover .divider{
+  width: 100%;
+  opacity: 1;
+}
+
+.section__container:hover .divider::after{
+  opacity: 1;
+}
+
+.section__container:hover .sectiontion__container--text{
+  opacity: 1;
+  transform: translateY(-95px)
+}
+
+.section__container:hover .brand__subtitle{
+  transform: translateX(830px);
+}
+
+.section__container--text{
+  text-align: left;
+  opacity: 0;
+  transform: translateY(0px);
+  transition: transform 1.4s ease, opacity 1s ease-in-out;
+  z-index: 1;
+  width: 450px;
+}
+
+.header__wrapper-2col{
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  width: 650px;
+  align-items: start;
+  gap: 10px;
+}
+
+.header__leftcol .header__right{
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  height: 350px;
+  width: 350px;
+  align-items: end;
+}
+
+.header__text{
+  font-size: 60px;
+  color: var(--Indigo-Dye);
+  line-height: 1;
+}
+
+.text_description{ 
+  font-family: "Mona Sans";
+  font-weight: 500;
+  line-height: 1.4;
+  font-size: 19px;
+  text-align: left;
+}
+
+

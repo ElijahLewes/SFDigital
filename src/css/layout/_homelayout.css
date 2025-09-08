@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/*HOME LANDING SECTION*/
+.landing-container {
+  @apply flex flex-row w-full h-screen justify-center items-center pr-8;
+}
+
+.home-title-container,
+.home-project-cards-container {
+  @apply flex flex-col justify-center items-center box-border h-[900px]  gap-y-4;
+}
+
+.home-project-card {
+  @apply w-full max-w-[700px] items-center justify-center z-[1000];
+}
+
+.home-title-container {
+  @apply text-left;
+}
+
+.home-btn-container {
+  @apply flex gap-8 mt-10;
+}  
+
+.home-btn {
+  @apply py-1 w-[180px] h-[40px] rounded-full font-semibold border-[var(--Charcoal)] border-2 bg-transparent text-[var(--Charcoal)];
+}
+/*HOME LANDING SECTION*/
+
+
+/*GENERAL SECTION*/
+.section-container{
+  @apply flex flex-col w-full gap-y-2 mb-[200px] ml-[80px];
+}
+
+.section-container:hover .divider{
+  width: 400px;
+  opacity: 1;
+}
+
+.section-container:hover .divider::after {
+  opacity: 1;
+}
+
+.section-container:hover .section-text-container{
+  opacity: 1;
+  transform: translateY(-95px)
+}
+/*GENERAL SECTION*/
+

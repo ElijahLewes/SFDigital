@@ -1,0 +1,26 @@
+
+.brand-subtitle {
+  font-family: 'Career', sans-serif;
+  @apply text-5xl mb-2 text-left w-full;
+  transition: transform 1.4s ease;
+}
+.brand-subtitle:hover {
+  transform: translateY(-10px);
+}
+
+.form__ty-p{ /*the text inside the thank you message part of form*/
+  text-align: right;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.2;
+  opacity: 90%;
+}
+
+.l212-header-right p{
+  text-align: right;
+  font-family: "Mona Sans";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 70%;
+}

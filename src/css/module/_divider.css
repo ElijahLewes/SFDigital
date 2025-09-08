@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.divider{
+  position: relative;
+  width: 0px; /* starting width */
+  height: 2px;
+  background-color: var(--Charcoal);
+  display: block;
+  transition: width 0.8s ease-in-out;
+  opacity: 0;
+  margin-bottom: 4px;
+  z-index: 0;
+}
+
+.divider::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--Charcoal);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.divider__container:hover .divider{
+  width: 400px;
+  opacity: 1;
+}
+
+.divider__container:hover .divider::after {
+  opacity: 1;
+}

@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.contactform__section{
+flex-direction: row;
+width: 105%;
+height: 400px;
+justify-content: right;
+z-index: 10;
+}
+
+.tab__container{
+flex-direction: column;
+justify-content:end;
+gap: 25px;
+z-index:-1;
+width: 430px;
+position: absolute;
+right: 650px;
+margin-top: 30px;
+height: 540px;
+}
+
+.tab__button{
+border-radius: 35px;
+height: 120px;
+font-size: 20px;
+text-align: left;
+ box-shadow: -3px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.form__wrapper{
+  padding: 40px;
+  width: 730px;
+  height: 85vh;
+  border-radius: 10px 0;
+  z-index: 2;
+  box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+/*this is the wrapper around the input field form*/
+.form__wrapper-userinput{
+  justify-content: space-between;
+  height: 90%;
+  z-index: 0;
+  padding-top: 10px;
+}
+
+.form__input{
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 20px;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 2.5;
+}
+
+.form__wrapper-ty{
+  display: flex;
+  flex-direction: column;
+  width: 730px;
+  height: 80vh;
+  border-radius: 10px 0;
+  z-index: 2;
+  box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
+  align-items: flex-end;
+  padding: 70px 65px;
+}
