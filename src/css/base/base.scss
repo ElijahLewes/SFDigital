@@ -51,6 +51,17 @@
   }
 /* Global font-face declarations*/
 
+/*SaSS Color Variables*/
+$Charcoal: #2E4052;
+$Fawn: #F2E5D7;
+$Clover: #C6D8AF;
+$Heartwood: #C97D60;
+$ollard-Green:
+ #648767;$Isabelline:
+ #FAF5F0;$Chestnut:
+ $Indigo-Dye:
+
+
 /*COLOR VARIABLES*/
 :root{
     --Charcoal: #2E4052;
@@ -72,9 +83,12 @@
   @apply flex flex-col w-full gap-y-1;
 }
 h1{
-
+  
 }
 h2{
+  font-family: 'Career', sans-serif;
+  @apply text-5xl mb-2 text-left w-full;
+  transition: transform 1.4s ease;
 
 }
 h3{

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-button {
+%button {
   border-radius: 25px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -16,6 +16,9 @@ button {
   opacity: 0.5;
 }
 
+%small-button {
+  @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
+}
 
 button:hover {
   opacity: 1;
@@ -32,8 +35,13 @@ button:focus-visible {
 }
 
 .home__btn{
+  @extend %button;
   opacity: 1;
 }
+
+.home-btn-container {
+  @apply flex gap-8 mt-10;
+}  
 
 .home__btn:hover{
   background-color: var(--button-bg);
@@ -51,7 +59,7 @@ button:focus-visible {
 }
 
 .nav__btn-small {
-  @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
+  @extend %small-button;
   opacity: 0.9;
   transition: opacity 0.3s ease-in-out;
 }
@@ -144,10 +152,5 @@ button:focus-visible {
   
 }
 
-.home-btn-container {
-  @apply flex gap-8 mt-10;
-}  
 
-.home-btn {
-  @apply py-1 w-[180px] h-[40px] rounded-full font-semibold border-[var(--Charcoal)] border-2 bg-transparent text-[var(--Charcoal)];
-}
+
