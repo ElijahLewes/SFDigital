@@ -99,12 +99,15 @@ $body_size: 30px;
   @apply flex flex-col w-full gap-y-1;
 }
 h1{
+  
+}
+%h2{
+  font-family: 'Career', sans-serif;
+  @apply text-5xl mb-2 text-left w-full;
+  transition: transform 1.4s ease;
 
 }
-h2{
-
-}
-h3{
+%h3{
 
 }
 a{
