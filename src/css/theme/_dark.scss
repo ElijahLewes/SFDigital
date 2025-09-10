@@ -11,53 +11,49 @@
 /*BACKGROUND AND COLOR*/
 
 /*SFD Theme*/
-  :root.sfd {
-    --Charcoal: #2E4052;
-    --Fawn: #F2E5D7;
-    --Clover: #C6D8AF;
-    --Heartwood: #C97D60;
-    --Collard-Green: #648767;
-
-    font-family: 'Career', system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-  }
+.sfd__title-dark{
+  @extend %sfd__title;
+  color: $Fawn;
+}
 /*SFD Theme*/
 
-
-/*Link212 Theme*/
-  :root.link212 {
-    --Charcoal: #2E4052;
-    --Isabelline: #FAF5F0;
-    --Chestnut: #98473E;
-    --Indigo-Dye: #134D67;
-    --Collard-Green: #648767;
-
-    font-family: 'GangsterGrotesk-Regular', system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-  }
-/*Link212 Theme*/
-
-/*BUTTON COLORING*/
-:root {
-  --button-bg: var(--Fawn);
-  --button-text: var(--Charcoal);
+.l212__title-dark{
+  @extend %l212__title;
+  color: $Isabelline;
 }
-/*BUTTON COLORING*/
+
+.body__font-dark{
+  @extend %body__font;
+  color: $Isabelline;
+}
+
+/*SaSS Button Dark Color Mode*/
+.sfd__button-dark{
+  @extend %button;
+  background-color: $Fawn;
+  color: $Charcoal;
+}
+
+.l212__button-dark{
+  @extend %button;
+  background-color: $Isabelline;
+  color: $Charcoal;
+}
+/*SaSS Button Dark Color Mode*/
+
 
 /* TEXT STYLING*/
   a {
     font-weight: 500;
-    font-family: 'Mona Sans';
-    color: var(--Fawn);
+    font-family: $body__font;
+    color: $Fawn;
     text-decoration: inherit;
   }
 
   a:hover {
-    color: var(--Fawn);
+    color: $Fawn;
     text-decoration: underline;
-    text-decoration-color: var(--Fawn);
+    text-decoration-color: $Fawn;
     text-decoration-thickness: 2px;
     text-underline-offset: 3px;
   }

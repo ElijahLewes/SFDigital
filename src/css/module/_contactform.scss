@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .contactform__section{
 flex-direction: row;
 width: 105%;
@@ -30,14 +26,17 @@ text-align: left;
  box-shadow: -3px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.form__wrapper{
+@mixin form__wrapper {
   padding: 40px;
   width: 730px;
   height: 85vh;
   border-radius: 10px 0;
   z-index: 2;
   box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
+}
 
+.form__wrapper {
+  @include form__wrapper;
 }
 
 /*this is the wrapper around the input field form*/
@@ -48,7 +47,7 @@ text-align: left;
   padding-top: 10px;
 }
 
-.form__input{
+ @mixin form__input{
   background-color: transparent;
   border: none;
   padding: 0;
@@ -58,7 +57,11 @@ text-align: left;
   line-height: 2.5;
 }
 
-.form__wrapper-ty{
+.form__input{
+  @include form__input;
+}
+
+@mixin form__wrapper-ty{
   display: flex;
   flex-direction: column;
   width: 730px;
@@ -68,4 +71,8 @@ text-align: left;
   box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
   align-items: flex-end;
   padding: 70px 65px;
+}
+
+.form__wrapper-ty{
+  @include form__wrapper-ty;
 }

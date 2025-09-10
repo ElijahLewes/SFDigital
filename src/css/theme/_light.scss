@@ -1,112 +1,45 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-/* Global font-face declarations*/
-    @font-face {
-    font-family: 'Career';
-    src: url('./fonts/Career.otf') format('opentype');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
+.sfd__title-light{
+  @extend %sfd__title;
+  color: $Charcoal;
+}
 
-  @font-face {
-    font-family: 'Mona Sans Italics';
-    src: url('./fonts/MonaSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-  }
+.l212__title-light{
+  @extend %l212__title;
+  color: $Indigo-Dye;
+}
 
-  @font-face {
-    font-family: 'Mona Sans';
-    src: url('./fonts/MonaSans-VariableFont_wdth,wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
+.body__font-light{
+  @extend %body__font;
+  color: $Charcoal;
+}
 
-  @font-face {
-    font-family: 'GangsterGrotesk-Bold';
-    src: url('./fonts/GangsterGrotesk-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-  }
+/*SaSS Button Light Color Mode*/
+.sfd__button-dark{
+  @extend %button;
+  background-color: $Charcoal;
+  color: $Fawn;
+}
 
-  @font-face {
-    font-family: 'GangsterGrotesk-Regular';
-    src: url('./fonts/GangsterGrotesk-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'GangsterGrotesk-Light';
-    src: url('./fonts/GangsterGrotesk-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-  }
-/* Global font-face declarations*/
-
-/*BACKGROUND AND COLOR*/
-  :root{
-      background-color: var(--Fawn);
-      color: var(--Charcoal);
-  }
-/*BACKGROUND AND COLOR*/
-
-/*SFD Theme*/
-    :root.sfd {
-    --Charcoal: #2E4052;
-    --Fawn: #F2E5D7;
-    --Clover: #C6D8AF;
-    --Heartwood: #C97D60;
-    --Collard-Green: #648767;
-
-    font-family: 'Career', system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-  }
-/*SFD Theme*/
-
-
-/*Link212 Theme*/
-  :root.link212 {
-    --Charcoal: #2E4052;
-    --Isabelline: #FAF5F0;
-    --Chestnut: #98473E;
-    --Indigo-Dye: #134D67;
-    --Collard-Green: #648767;
-
-    font-family: 'GangsterGrotesk-Regular', system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-  }
-/*Link212 Theme*/
-
-/*BUTTON COLORING*/
-  :root {
-    --button-bg: var(--Charcoal);
-    --button-text: var(--Fawn);
-  }
-/*BUTTON COLORING*/
+.l212__button-dark{
+  @extend %button;
+  background-color: $Charcoal;
+  color: $Isabelline;
+}
+/*SaSS Button Light Color Mode*/
 
 /* TEXT STYLING*/
   a {
     font-weight: 500;
-    font-family: 'Mona Sans';
-    color: var(--Charcoal);
+    font-family: $body__font;
+    color: $Charcoal;
     text-decoration: inherit;
   }
 
   a:hover {
-    color: var(--Charcoal);
+    color: $Charcoal;
     text-decoration: underline;
-    text-decoration-color: var(--Charcoal);
+    text-decoration-color: $Charcoal;
     text-decoration-thickness: 2px;
     text-underline-offset: 3px;
   }
