@@ -2,55 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global font-face declarations*/
-    @font-face {
-    font-family: 'Career';
-    src: url('./fonts/Career.otf') format('opentype');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Mona Sans Italics';
-    src: url('./fonts/MonaSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Mona Sans';
-    src: url('./fonts/MonaSans-VariableFont_wdth,wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'GangsterGrotesk-Bold';
-    src: url('./fonts/GangsterGrotesk-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'GangsterGrotesk-Regular';
-    src: url('./fonts/GangsterGrotesk-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'GangsterGrotesk-Light';
-    src: url('./fonts/GangsterGrotesk-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-  }
-/* Global font-face declarations*/
 
 /*BACKGROUND AND COLOR*/
   :root{
@@ -67,7 +18,6 @@
     --Heartwood: #C97D60;
     --Collard-Green: #648767;
 
-    font-family: 'Career', system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
   }
