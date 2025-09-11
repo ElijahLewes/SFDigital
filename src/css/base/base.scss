@@ -1,5 +1,6 @@
-/*ScSS Variables*/
 
+
+/*ScSS Variables*/
 
 /* Global font-face declarations*/
   @font-face {
@@ -68,21 +69,21 @@ $body__font: "Mona Sans";
 $title__size: 80px;
 $body_size: 30px;
 
-.sfd__title {
+%sfd__title {
   font-family: $sfd__title-font;
   font-size: $title__size;
   line-height: 1.2;
   font-weight: 400;
 }
 
-.l212__title{
+%l212__title{
   font-family: $l212__title-font;
   font-size: $title__size;
   line-height: 1.2;
   font-weight: 400;
 }
 
-.body__font{
+%body__font{
   font-family: $body__font;
   font-size: $body_size;
   text-align: left;

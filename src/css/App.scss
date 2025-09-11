@@ -25,6 +25,6 @@
 
 
 /* theme import */
-@use './theme/dark.scss';
-@use './theme/light.scss';
-@use './theme/style.scss';
+@use './theme/_dark.scss';
+@use './theme/_light.scss';
+;
