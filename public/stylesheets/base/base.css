@@ -45,28 +45,6 @@
 /* Global font-face declarations*/
 /* Sass Color Variables*/
 /* Sass Color Variables*/
-.sfd__title {
-  font-family: "Career";
-  font-size: 80px;
-  line-height: 1.2;
-  font-weight: 400;
-}
-
-.l212__title {
-  font-family: "GangsterGrotesk";
-  font-size: 80px;
-  line-height: 1.2;
-  font-weight: 400;
-}
-
-.body__font {
-  font-family: "Mona Sans";
-  font-size: 30px;
-  text-align: left;
-  line-height: 1.2;
-  font-weight: 300;
-}
-
 /*BASE CLASSES*/
 .page__container {
   @apply w-full h-full flex flex-col items-start justify-center p-12;
