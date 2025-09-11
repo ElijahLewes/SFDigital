@@ -1,10 +1,10 @@
-/* Error: Undefined variable.
+/* Error: Can't find stylesheet to import.
  *   ,
- * 5 |   background-color: $Charcoal;
- *   |                     ^^^^^^^^^
+ * 1 | @use './base/base.scss';
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^
  *   '
- *   src/css/state/_contactformstates.scss 5:21  @use
- *   src/css/App.scss 24:1                       root stylesheet */
+ *   src/css/module/_contactform.scss 1:1  @use
+ *   src/css/App.scss 14:1                 root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -14,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 5 \2502    background-color: $Charcoal;\a   \2502                      ^^^^^^^^^\a   \2575 \a   src/css/state/_contactformstates.scss 5:21  @use\a   src/css/App.scss 24:1                       root stylesheet";
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use './base/base.scss';\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src/css/module/_contactform.scss 1:1  @use\a   src/css/App.scss 14:1                 root stylesheet";
 }
