@@ -1,3 +1,5 @@
+@use '../base/base' as *;
+
 .logo {
   @apply p-6 transition-[filter] duration-300;
 }

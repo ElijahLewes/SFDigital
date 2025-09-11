@@ -1,10 +1,10 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use './base/base.scss';
- *   | ^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   src/css/module/_contactform.scss 1:1  @use
- *   src/css/App.scss 14:1                 root stylesheet */
+/* Error: The target selector was not found.
+ * Use "@extend %button !optional" to avoid this error.
+ *    ,
+ * 20 |   @extend %button;
+ *    |   ^^^^^^^^^^^^^^^
+ *    '
+ *   src/css/theme/_light.scss 20:3  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -14,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use './base/base.scss';\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src/css/module/_contactform.scss 1:1  @use\a   src/css/App.scss 14:1                 root stylesheet";
+  content: 'Error: The target selector was not found.\aUse "@extend %button !optional" to avoid this error.\a    \2577 \a 20 \2502    @extend %button;\a    \2502    ^^^^^^^^^^^^^^^\a    \2575 \a   src/css/theme/_light.scss 20:3  root stylesheet';
 }

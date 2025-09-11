@@ -1,4 +1,4 @@
-@use './base/base.scss';
+@use '../base/base' as *;
 
 .form__wrapper-general{
   @extend %form__wrapper;
