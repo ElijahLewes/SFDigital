@@ -1,46 +1,48 @@
-@use '../base/base' as *;
+@use '../base/_base' as *;
+@use '../module/contactform' as *;
+
 
 .form__wrapper-general{
-  @extend %form__wrapper;
+  @extend %form__wrapper !optional;
   background-color: $Charcoal;
 }
 
 .form__wrapper-project{
-  @extend %form__wrapper;
+  @extend %form__wrapper !optional;
   background-color:#E1D5C8;
 }
 
 .form__wrapper-l212{
-  @extend %form__wrapper;
+  @extend %form__wrapper !optional;
   background-color: $Collard-Green;
 }
 
 .form__input-general .form__input-l212{
-  @extend %form__input;
+  @extend %form__input !optional;
   color: $Fawn;
   border-bottom: 1.4px solid $Fawn;
 }
 
 .form__input-project{
-  @extend %form__input;
+  @extend %form__input !optional;
   color: $Charcoal;
   border-bottom: 1.4px solid $Charcoal;
 }
 
 .form__wrapper-ty-general{
-  @extend %form_wrapper-ty;
+  @extend %form_wrapper-ty !optional;
   background-color: $Charcoal;
   color: $Fawn;
 }
 
 .form__wrapper-ty-project{
-  @extend %form_wrapper-ty;
+  @extend %form_wrapper-ty !optional;
   background-color:#E1D5C8;
   color: $Charcoal;
 }
 
 .form__wrapper-ty-l212{
-  @extend %form_wrapper-ty;
+  @extend %form_wrapper-ty !optional;
   background-color: $Collard-Green;
   color: $Fawn;
 }

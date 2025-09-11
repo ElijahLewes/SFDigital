@@ -1,5 +1,4 @@
-@use '../base/base' as *;
-@use './module/buttons' as *;
+@use '../base/base' as *;                                                  
 
 /* Placeholder buttons */
 %button {
@@ -35,7 +34,7 @@ button:focus-visible {
 }
 
 .home__btn{
-  @extend %button;
+  @extend %button !optional;
   opacity: 1;
 }
 
@@ -59,7 +58,7 @@ button:focus-visible {
 }
 
 .nav__btn-small {
-  @extend %small-button;
+  @extend %small-button !optional;
   opacity: 0.9;
   transition: opacity 0.3s ease-in-out;
 }

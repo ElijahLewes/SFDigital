@@ -1,4 +1,6 @@
-@use '../base/base' as *;
+@use '../base/_base' as *;
+@use '../module/buttons' as *;
+@use '../module/contactform' as *;
 
 /*BACKGROUND AND COLOR*/
   :root{
@@ -26,13 +28,13 @@
 
 /*SaSS Button Dark Color Mode*/
 .sfd__button-dark{
-  @extend %button;
+  @extend %button !optional;
   background-color: $Fawn;
   color: $Charcoal;
 }
 
 .l212__button-dark{
-  @extend %button;
+  @extend %button !optional;
   background-color: $Isabelline;
   color: $Charcoal;
 }

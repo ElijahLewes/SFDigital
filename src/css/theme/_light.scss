@@ -17,13 +17,13 @@
 
 /*SaSS Button Light Color Mode*/
 .sfd__button-dark{
-  @extend %button;
+  @extend %button !optional;
   background-color: $Charcoal;
   color: $Fawn;
 }
 
 .l212__button-dark{
-  @extend %button;
+  @extend %button !optional;
   background-color: $Charcoal;
   color: $Isabelline;
 }
