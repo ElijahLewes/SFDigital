@@ -68,10 +68,11 @@ export default function Home() {
           <Navbar />
 
           {/* Hero / Landing Section */}
-          <section id="home-container-1" className="page-container-column">
-            <div className="landing-container">
+          <section>
+      
+            <div className="page__container">
               {/* Left Side */}
-              <section className="home-title-container flex flex-col flex-1 justify-start p-8">
+              <section className="home__hero-wrapper">
                 <img
                   src="/images/SFD Dark Header.svg"
                   alt="SFDheader"

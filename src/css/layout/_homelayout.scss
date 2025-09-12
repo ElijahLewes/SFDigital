@@ -9,7 +9,16 @@
   @apply flex flex-row w-full h-screen justify-center items-center pr-8;
 }
 
-.home-title-container,
+.home__hero-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; /* box-border */
+  height: 900px; /* h-[900px] */
+  row-gap: 1rem; /* gap-y-4 → 1rem */
+}
+
 .home-project-cards-container {
   @apply flex flex-col justify-center items-center box-border h-[900px]  gap-y-4;
 }
