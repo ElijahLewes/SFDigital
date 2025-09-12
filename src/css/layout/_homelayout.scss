@@ -1,13 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@use '../base/_base' as *;
 
 
 /*HOME LANDING SECTION*/
-.landing-container {
-  @apply flex flex-row w-full h-screen justify-center items-center pr-8;
-}
 
 .home__hero-container{
   display: flex;
@@ -19,12 +13,28 @@
   row-gap: 1rem; /* gap-y-4 → 1rem */
 }
 
-.home-project-cards-container {
-  @apply flex flex-col justify-center items-center box-border h-[900px]  gap-y-4;
+.home__projectcards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 900px;
+  gap: 30px; /* gap-y-4 in Tailwind is 1rem */
 }
 
-.home-project-card {
-  @apply w-full max-w-[700px] items-center justify-center z-[1000];
+.home__projectcard {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+home__header {
+  width: 10px;
+  height: 10px;
 }
 
 .home-title-container {

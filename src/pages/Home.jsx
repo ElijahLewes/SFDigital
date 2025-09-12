@@ -43,56 +43,48 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Fullscreen background that morphs from the landing image */}
-      <motion.img
-        src="/images/carousel1.JPG"            // put file at /public/images/carousel1.JPG
-        alt="Background"
-        layoutId="landing-image"               // must match Landing
-        className="absolute inset-0 w-full h-full object-cover"
-        transition={{ type: "spring", stiffness: 120, damping: 18 }}
-      />
+    <div className="flex flex-col">
+      {/* Landing Section (only fills 100vh) */}
+      <section className="landing__container relative">
+        <motion.img
+          src="/images/remington.JPG"
+          alt="Background"
+          layoutId="landing-image"
+          className="absolute inset-0 w-full h-full object-cover"
+          transition={{ type: "spring", stiffness: 120, damping: 18 }}
+        />
 
-      {/* Optional: a dark overlay for text contrast */}
-      <div className="absolute inset-0 bg-black/30" />
+        {/* Hero / Landing Content */}
+        <motion.div
+          className="relative z-10 text-white"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.15, duration: 0.35 }}
+        >
+          <section className="home__hero-wrapper flex flex-col justify-center items-center min-h-screen">
+            <img
+              src="/images/sfd-title.svg"
+              alt="SFDheader"
+              className="home__header w-[600px] md:w-[800px] lg:w-[1000px] h-auto"
+            />
+            <p className="w-full mt-8">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              <br />
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div className="home-btn-container w-full flex flex-row mt-4">
+              <button className="home-btn">About Us</button>
+              <button className="home-btn">Work With Us</button>
+            </div>
+          </section>
+        </motion.div>
+      </section>
 
-      {/* Page content */}
-      <motion.div
-        className="relative z-10 text-white"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.15, duration: 0.35 }}
-      >
-        <div className="section-container flex flex-col justify-start min-h-screen">
-          {/* Navbar */}
-          <Navbar />
-
-          {/* Hero / Landing Section */}
-          <section>
-      
-            <div className="page__container">
-              {/* Left Side */}
-              <section className="home__hero-wrapper">
-                <img
-                  src="/images/SFD Dark Header.svg"
-                  alt="SFDheader"
-                  className="home-header-image self-start"
-                />
-                <p className="w-full mt-8">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  <br />
-                  sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua.
-                </p>
-                <div className="home-btn-container w-full flex flex-row mt-4">
-                  <button className="home-btn">About Us</button>
-                  <button className="home-btn">Work With Us</button>
-                </div>
-              </section>
-
-              {/* Right Side - Project Cards */}
-              <section
-                className="home-project-cards-container flex-1 gap-y-2 px-4"
+      <section>
+        <div className="page__container">
+      {/* Project Cards Section */}
+            <section
+                className="home__project-cards-container"
                 onMouseLeave={() => {
                   setActiveIndex(null);
                   setFlippedIndex(null);
@@ -109,42 +101,9 @@ export default function Home() {
                   />
                 ))}
               </section>
-            </div>
-          </section>
-
-          {/* About Us Section */}
-          <section className="page-container-column items-start justify-start gap-y-8">
-            <div className="about-us-section-container items-start text-left mt-[150px]">
-              <h1 className="about-us-subtitle">WHO ARE WE?</h1>
-              <div className="about-us-divider"></div>
-              <div className="about-us-text-container">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing <br />
-                  elit, sed do eiusmod tempor incididunt ut labore et <br />
-                  dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-
-            {/* Image carousel */}
-            <div className="carousel-container">
-              <Carousel />
-            </div>
-
-            {/* Mission Statement */}
-            <div className="about-us-section-container flex flex-col items-start mt-[190px]">
-              <h1 className="about-us-subtitle">OUR MISSION</h1>
-              <div className="about-us-divider w-[400px]"></div>
-              <div className="about-us-text-container text-left">
-                <p>
-                  Our mission is to provide exceptional digital solutions <br />
-                  that empower communities and foster growth.
-                </p>
-              </div>
-            </div>
-          </section>
         </div>
-      </motion.div>
+
+      </section>
     </div>
   );
 }

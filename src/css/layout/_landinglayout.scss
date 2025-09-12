@@ -1,5 +1,14 @@
+@use '../base/_base' as *;
 
 /*It's just a dog right now*/
-.landing-container {
-  @apply flex flex-row w-full h-screen justify-center items-center pr-8;
+.landing__container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/remington.JPG");
 }
