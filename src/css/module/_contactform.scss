@@ -1,4 +1,4 @@
-@use '../base/base' as *;
+@use '../base/_base' as *;
 
 .contactform__section{
 flex-direction: row;
@@ -28,17 +28,14 @@ text-align: left;
  box-shadow: -3px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-@mixin form__wrapper {
+
+.form__wrapper {
   padding: 40px;
   width: 730px;
   height: 85vh;
   border-radius: 10px 0;
   z-index: 2;
   box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
-}
-
-.form__wrapper {
-  @include form__wrapper;
 }
 
 /*this is the wrapper around the input field form*/
@@ -49,7 +46,7 @@ text-align: left;
   padding-top: 10px;
 }
 
- @mixin form__input{
+.form__input{
   background-color: transparent;
   border: none;
   padding: 0;
@@ -59,11 +56,7 @@ text-align: left;
   line-height: 2.5;
 }
 
-.form__input{
-  @include form__input;
-}
-
-@mixin form__wrapper-ty{
+.form__wrapper-ty{
   display: flex;
   flex-direction: column;
   width: 730px;
@@ -73,8 +66,4 @@ text-align: left;
   box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
   align-items: flex-end;
   padding: 70px 65px;
-}
-
-.form__wrapper-ty{
-  @include form__wrapper-ty;
 }

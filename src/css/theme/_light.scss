@@ -1,4 +1,5 @@
-@use '../base/base' as *;
+@use '../base/_base' as *;
+@use '../module/_buttons' as *;
 
 .sfd__title-light{
   @extend %sfd__title;
@@ -16,14 +17,14 @@
 }
 
 /*SaSS Button Light Color Mode*/
-.sfd__button-dark{
-  @extend %button !optional;
+.sfd__button-dark {
+  @extend button;
   background-color: $Charcoal;
   color: $Fawn;
 }
 
-.l212__button-dark{
-  @extend %button !optional;
+.l212__button-dark {
+  @extend button;
   background-color: $Charcoal;
   color: $Isabelline;
 }

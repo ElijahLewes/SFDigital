@@ -1,7 +1,7 @@
-@use '../base/base' as *;                                                  
+@use '../base/_base' as *;                                                  
 
-/* Placeholder buttons */
-%button {
+/* When extending button tag, don't use dots or %*/
+button {
   border-radius: 25px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -15,7 +15,7 @@
   opacity: 0.5;
 }
 
-%small-button {
+.small-button {
   @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
 }
 
@@ -33,8 +33,8 @@ button:focus-visible {
   text-underline-offset: 3px;
 }
 
-.home__btn{
-  @extend %button !optional;
+.home__btn {
+  @extend button;
   opacity: 1;
 }
 
@@ -58,7 +58,7 @@ button:focus-visible {
 }
 
 .nav__btn-small {
-  @extend %small-button !optional;
+  @extend .small-button;
   opacity: 0.9;
   transition: opacity 0.3s ease-in-out;
 }
@@ -67,7 +67,6 @@ button:focus-visible {
   background-color: #E1D5C8;
   opacity: 1;
 }
-
 
 .nav__btn-small {
   @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
