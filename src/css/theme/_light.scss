@@ -46,3 +46,9 @@
     text-underline-offset: 3px;
   }
 /* TEXT STYLING*/
+
+/*Navbar light color mode*/
+ 
+$nav__light-home: $Fawn; // call on this in the navbar states for home light mode text
+
+$nav__light-text: $Fawn;

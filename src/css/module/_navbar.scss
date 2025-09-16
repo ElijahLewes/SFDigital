@@ -1,62 +1,91 @@
 @use '../base/_base' as *;
 
-
+//text color will change in the state folder. standard transparent bg throughout website.
 .navbar__wrapper {
     width: 100%;
     position: fixed;
-    top: 0;
+    top: 20px;
     display: flex;
-    justify-content: space-between;
-    padding-left: 32px;  
-    padding-right: 32px; 
-    padding-top: 16px;   
-    padding-bottom: 16px;
-    z-index: 1000;      
+    flex-direction: row;
+    gap: 50px;
+    margin-left: 40px;
+    z-index: 1000;    
     background-color: transparent;
-    color: $Charcoal;
+    justify-content: flex-start; 
+    align-items: center;
 }
 
 .navbar__logo-wrapper {
-  @apply flex items-start gap-4;
+    display: flex;
+    flex-direction: row;
+    width: 30px;
+    height: 5px;
 }
 
 #navbar__logo {
-  @apply bg-[var(--Light)] text-[var(--Charcoal)] flex flex-row rounded-full w-[45px] h-[45px] items-center justify-center no-underline opacity-80  transition-all duration-500 ease-out;
+  background-color: transparent; 
+  color: $Fawn; // won't add color once we have logo svg            
+  display: flex;                      
+  flex-direction: row;               
+  width: 25px;                       
+  height: 5px;                      
+  align-items: center;              
+  justify-content: center;            
+  text-decoration: none;
+  font-family: $sfd__title-font;
+  font-size: 28px;
+  opacity: 0.8;                       
+  transition: all 0.5s ease-out;
 }
 
 #navbar__logo:hover {
-  @apply bg-[var(--Base)] text-[var(--Light)] opacity-100 scale-110 text-[16px];
+  opacity: 1;
+  transform: scale(1.9); 
+  font-size: 14px;
 }
 
 .navbar__links {
-  @apply flex items-end gap-8;
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
 }
 
-.navbar__btn {
-  @apply px-5 py-2 bg-[var(--Light)] text-[var(--Charcoal)] transition-opacity duration-300 cursor-pointer;
-  opacity: 0.5; /* makes text + background semi-transparent */
+.navbar__links a{
+  font-family: $body__font;
+  color: $Fawn;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
 }
 
-.navbar__btn:hover {
-  opacity: 1; /* fully visible on hover */
+.navbar__links a:hover{
+    text-decoration: underline;
+    color: $Fawn;
 }
 
-.navbar__btn-sm {
-  @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
+
+
+.navbar__btn-ig,
+.navbar__btn-yt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 0.9;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.navbar_btn-sm:hover {
-  background-color: #E1D5C8;
+.navbar__btn-ig {
+  width: 30px;
+  height: 30px;
+}
+
+.navbar__btn-yt {
+  width: 40px;
+  height: 30px;
+}
+
+.navbar__btn-ig:hover,
+.navbar__btn-yt:hover {
   opacity: 1;
-}
-
-.navbar__btn-sm-icon {
-  transition: transform 0.2s ease-in-out;
-  display: inline-block; 
-}
-
-.navbar__btn-sm:hover .navbar__btn-sm-icon {
-  transform: scale(1.2); 
+  transform: scale(1.08);
 }

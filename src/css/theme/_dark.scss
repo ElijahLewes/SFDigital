@@ -57,3 +57,7 @@
     text-underline-offset: 3px;
   }
 /* TEXT STYLING*/
+
+$nav__dark-home: $Charcoal; // call on this in the navbar states for home light mode text
+
+$nav__dark-text: $Charcoal;

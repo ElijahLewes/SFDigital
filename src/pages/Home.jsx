@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "../components/ProjectCard";
 import Navbar from "../components/Navbar.jsx";
-import Carousel from "../components/Carousel.jsx";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
