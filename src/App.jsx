@@ -1,4 +1,5 @@
-
+import "bulma/css/bulma.css"; // load Bulma globally
+import "./css/App.scss";
 import { useState } from 'react'
 import { AnimatePresence } from "framer-motion";
 import Landing from './pages/Landing.jsx'

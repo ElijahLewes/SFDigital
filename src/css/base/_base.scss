@@ -1,5 +1,4 @@
 
-
 /*ScSS Variables*/
 
 /* Global font-face declarations*/
@@ -62,6 +61,17 @@ $Isabelline: #FAF5F0;
 $Chestnut: #98473E;
 $Indigo-Dye: #134D67;
 /* Sass Color Variables*/
+
+:root{
+  --Charcoal: #{$Charcoal};
+  --Fawn: #{$Fawn};
+  --Clover: #{$Clover};
+  --Heartwood: #{$Heartwood};
+  --Collard-Green: #{$Collard-Green};
+  --Isabelline: #{$Isabelline};
+  --Chestnut: #{$Chestnut};
+  --Indigo-Dye: #{$Indigo-Dye};
+}
 
 $sfd__title-font: "Career";
 $l212__title-font: "GangsterGrotesk";

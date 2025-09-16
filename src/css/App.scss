@@ -1,3 +1,5 @@
+@use "bulma/sass/utilities/extends";
+
 /* base import */
 @use './base/base';
 
@@ -9,6 +11,7 @@
 
 
 /* modules import */
+@use './module/footer';
 @use './module/contactform';
 @use './module/buttons';
 @use './module/carousel';
@@ -20,6 +23,7 @@
 @use './module/text';
 
 @use './state/contactformstates';
+@use './state/notifs';
 
 /* theme import */
 @use './theme/dark';

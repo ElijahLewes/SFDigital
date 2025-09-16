@@ -1,49 +1,97 @@
-import React from 'react';
+import React, { useState } from "react";
+import "../css/state/_notifs.scss";
+import "../css/App.scss";
 
-function Footer() {
+export function Footer() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("contactus@streetfrontdigital.com");
+    setCopied(true);
+
+    // auto-hide after 4 seconds
+    setTimeout(() => {
+      setCopied(false);
+    }, 3000);
+  };
+
   return (
-    <footer className="footer-container h-[40vh] flex flex-row relative bg-[var(--Highlight)] text-[var(--Charcoal)] p-4 z-50">
-      <div className="left-side-footer w-1/2 flex flex-col items-start gap-y-6 h-full">
-        <div className="footer-subtitle font-bold leading-none" style={{ fontSize: 'clamp(3rem, 15vw, 9rem)' }}>
-          SFD
+    <footer className="footer__parent-container">
+
+      {/* LEFT SIDE */}
+      <div className="footer__left-container">
+        <div className="footer__icon-wrapper">
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/streetfrontdigital/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="footer__icon-ig">
+              <img src="images/footer-ig-light.svg" alt="footer instagram icon" />
+            </div>
+          </a>
+
+          {/* YouTube */}
+          <a
+            href="https://www.youtube.com/@StreetfrontDigital"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="footer__icon">
+              <img src="images/footer-yt-light.svg" alt="footer youtube icon" />
+            </div>
+          </a>
+
+          {/* Email */}
+          <button className="footer__icon-mail" onClick={copyEmail}>
+            <img src="images/footer-mail-light.svg" alt="footer email icon" />
+          </button>
         </div>
-         <div className="property items-start w-full">
-            <span className="text-xs font-bold text-left w-full">
-            &copy; {new Date().getFullYear()} SFD. All Rights Reserved.
-            </span>
+
+        <p className="footer__tagline">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+        </p>
+
+        <div className="footer__title-wrapper">
+          <p className="footer__title">SFD</p>
+          <img
+            src="images/footer-arrow.svg"
+            alt="diagonal arrow"
+            className="footer__arrow"
+          />
         </div>
       </div>
-      {/* Vertical divider */}
-      <div className="h-full w-px bg-[var(--Charcoal)] mx-6 self-center"></div>
 
-      <div className="right-side-footer w-1/2 flex flex-col items-center justify-center ">
-        <div className="flex flex-row justify-center items-start gap-16 w-full mt-0">
-          
-          {/* ABOUT column */}
-          <div className="flex flex-col items-start gap-y-2">
-            <span className="font-[Career] text-lg mb-2">ABOUT</span>
-            <a href="/team" className="hover:underline">Team</a>
-            <a href="/contact" className="hover:underline">Contact Us</a>
-          </div>
+      {/* DIVIDER */}
+      <div className="divider__vertical"></div>
 
-          {/* PROJECTS column */}
-          <div className="flex flex-col items-start gap-y-2">
-            <span className="font-[Career] text-lg mb-2">PROJECTS</span>
-            <a href="/link212" className="hover:underline">Link 212</a>
-            {/* Add more project links as needed */}
-          </div>
-
-          {/* CONTACT column */}
-          <div className="flex flex-col items-start gap-y-2">
-            <span className="font-[Career] text-lg mb-2">CONTACT</span>
-            <a href="/contact" className="hover:underline">Contact Form</a>
-            {/* Add more contact links as needed */}
-          </div>
-
+      {/* RIGHT SIDE */}
+      <div className="footer__right-container">
+        <div className="footer__right-column">
+          <p className="footer__subtitle">About</p>
+          <p className="footer__body-title">Who We Are</p>
+          <p className="footer__body-title">Our Mission</p>
+          <p className="footer__body-title">Meet the Team</p>
         </div>
-        <div className="footer-credits text-xs text-center mt-4 w-full">
-          <span>Powered by SFD</span>
+
+        <div className="footer__right-column">
+          <p className="footer__subtitle">Projects</p>
+          <p className="footer__body-title">Link 212</p>
         </div>
+
+        <div className="footer__right-column">
+          <p className="footer__subtitle">Contact</p>
+        </div>
+      </div>
+
+      {/* NOTIFICATION */}
+      <div className={`notif__copy ${copied ? "show" : ""}`}>
+        📋 Email copied to clipboard!
+        <button
+          className="notif__copy-delete"
+          onClick={() => setCopied(false)}
+        ></button>
       </div>
     </footer>
   );
