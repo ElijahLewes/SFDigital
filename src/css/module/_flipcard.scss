@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@use '../base/_base' as *;
 /* 
 Flip card experimentteam page */
 .flip__card-perspective {

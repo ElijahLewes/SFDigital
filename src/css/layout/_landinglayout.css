@@ -1,5 +1,0 @@
-
-/*It's just a dog right now*/
-.landing-container {
-  @apply flex flex-row w-full h-screen justify-center items-center pr-8;
-}

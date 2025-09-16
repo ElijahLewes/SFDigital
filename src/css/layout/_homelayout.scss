@@ -1,0 +1,73 @@
+@use '../base/_base' as *;
+
+
+/*HOME LANDING SECTION*/
+
+.home__hero-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; /* box-border */
+  height: 900px; /* h-[900px] */
+  row-gap: 1rem; /* gap-y-4 → 1rem */
+}
+
+.home__projectcards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 900px;
+  gap: 30px; /* gap-y-4 in Tailwind is 1rem */
+}
+
+.home__projectcard {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+home__header {
+  width: 10px;
+  height: 10px;
+}
+
+.home-title-container {
+  @apply text-left;
+}
+
+.home-btn-container {
+  @apply flex gap-8 mt-10;
+}  
+
+.home-btn {
+  @apply py-1 w-[180px] h-[40px] rounded-full font-semibold border-[var(--Charcoal)] border-2 bg-transparent text-[var(--Charcoal)];
+}
+/*HOME LANDING SECTION*/
+
+
+/*GENERAL SECTION*/
+.section-container{
+  @apply flex flex-col w-full gap-y-2 mb-[200px] ml-[80px];
+}
+
+.section-container:hover .divider{
+  width: 400px;
+  opacity: 1;
+}
+
+.section-container:hover .divider::after {
+  opacity: 1;
+}
+
+.section-container:hover .section-text-container{
+  opacity: 1;
+  transform: translateY(-95px)
+}
+/*GENERAL SECTION*/
+

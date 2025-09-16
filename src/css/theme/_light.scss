@@ -1,0 +1,48 @@
+@use '../base/_base' as *;
+@use '../module/_buttons' as *;
+
+.sfd__title-light{
+  @extend %sfd__title;
+  color: $Charcoal;
+}
+
+.l212__title-light{
+  @extend %l212__title;
+  color: $Indigo-Dye;
+}
+
+.body__font-light{
+  @extend %body__font;
+  color: $Charcoal;
+}
+
+/*SaSS Button Light Color Mode*/
+.sfd__button-dark {
+  @extend button;
+  background-color: $Charcoal;
+  color: $Fawn;
+}
+
+.l212__button-dark {
+  @extend button;
+  background-color: $Charcoal;
+  color: $Isabelline;
+}
+/*SaSS Button Light Color Mode*/
+
+/* TEXT STYLING*/
+  a {
+    font-weight: 500;
+    font-family: $body__font;
+    color: $Charcoal;
+    text-decoration: inherit;
+  }
+
+  a:hover {
+    color: $Charcoal;
+    text-decoration: underline;
+    text-decoration-color: $Charcoal;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+/* TEXT STYLING*/

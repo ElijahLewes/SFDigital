@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "sass-watch": "sass --watch src/css:public/stylesheets",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -11,6 +12,7 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "bulma": "^1.0.4",
     "flowbite": "^3.1.2",
     "flowbite-react": "^0.12.7",
     "framer-motion": "^12.23.12",
@@ -30,6 +32,7 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
     "postcss": "^8.5.6",
+    "sass-embedded": "^1.92.1",
     "tailwindcss": "^3.4.3",
     "vite": "^7.0.6"
   }

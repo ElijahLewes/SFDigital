@@ -1,0 +1,59 @@
+@use '../base/_base' as *;
+@use '../module/_buttons' as *;
+@use '../module/_contactform' as *;
+
+/*BACKGROUND AND COLOR*/
+  :root{
+      background-color: var(--Charcoal);
+      color: var(--Fawn);
+  }
+/*BACKGROUND AND COLOR*/
+
+/*SFD Theme*/
+.sfd__title-dark{
+  @extend %sfd__title;
+  color: $Fawn;
+}
+/*SFD Theme*/
+
+.l212__title-dark{
+  @extend %l212__title;
+  color: $Isabelline;
+}
+
+.body__font-dark{
+  @extend %body__font;
+  color: $Isabelline;
+}
+
+/*SaSS Button Dark Color Mode*/
+.sfd__button-dark {
+  @extend button;
+  background-color: $Fawn;
+  color: $Charcoal;
+}
+
+.l212__button-dark {
+  @extend button;
+  background-color: $Isabelline;
+  color: $Charcoal;
+}
+/*SaSS Button Dark Color Mode*/
+
+
+/* TEXT STYLING*/
+  a {
+    font-weight: 500;
+    font-family: $body__font;
+    color: $Fawn;
+    text-decoration: inherit;
+  }
+
+  a:hover {
+    color: $Fawn;
+    text-decoration: underline;
+    text-decoration-color: $Fawn;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+/* TEXT STYLING*/

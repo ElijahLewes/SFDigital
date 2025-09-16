@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@use '../base/_base' as *;
 
 .contactform__section{
 flex-direction: row;
@@ -30,14 +28,14 @@ text-align: left;
  box-shadow: -3px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.form__wrapper{
+
+.form__wrapper {
   padding: 40px;
   width: 730px;
   height: 85vh;
   border-radius: 10px 0;
   z-index: 2;
   box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
-
 }
 
 /*this is the wrapper around the input field form*/
@@ -69,3 +67,17 @@ text-align: left;
   align-items: flex-end;
   padding: 70px 65px;
 }
+
+//*Fill value dynamically from theme
+// .contactform_general{
+//   background color
+//   text color
+//   button color
+//   button text color
+//   button hover color
+//   button hover text color
+//   font family
+//   font size
+//   font weight
+//   line height
+//   border radius}*//

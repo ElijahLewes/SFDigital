@@ -1,5 +1,5 @@
-/*ScSS Variables*/
 
+/*ScSS Variables*/
 
 /* Global font-face declarations*/
   @font-face {
@@ -51,18 +51,56 @@
   }
 /* Global font-face declarations*/
 
-/*COLOR VARIABLES*/
+/* Sass Color Variables*/
+$Charcoal: #2E4052;
+$Fawn: #F2E5D7;
+$Clover: #C6D8AF;
+$Heartwood: #C97D60;
+$Collard-Green: #648767;
+$Isabelline: #FAF5F0;
+$Chestnut: #98473E;
+$Indigo-Dye: #134D67;
+/* Sass Color Variables*/
+
 :root{
-    --Charcoal: #2E4052;
-    --Fawn: #F2E5D7;
-    --Clover: #C6D8AF;
-    --Heartwood: #C97D60;
-    --Collard-Green: #648767;
-    --Isabelline: #FAF5F0;
-    --Chestnut: #98473E;
-    --Indigo-Dye: #134D67;
+  --Charcoal: #{$Charcoal};
+  --Fawn: #{$Fawn};
+  --Clover: #{$Clover};
+  --Heartwood: #{$Heartwood};
+  --Collard-Green: #{$Collard-Green};
+  --Isabelline: #{$Isabelline};
+  --Chestnut: #{$Chestnut};
+  --Indigo-Dye: #{$Indigo-Dye};
 }
-/*COLOR VARIABLES*/
+
+$sfd__title-font: "Career";
+$l212__title-font: "GangsterGrotesk";
+$body__font: "Mona Sans";
+$title__size: 80px;
+$body_size: 30px;
+
+%sfd__title {
+  font-family: $sfd__title-font;
+  font-size: $title__size;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+%l212__title{
+  font-family: $l212__title-font;
+  font-size: $title__size;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+%body__font{
+  font-family: $body__font;
+  font-size: $body_size;
+  text-align: left;
+  line-height: 1.2;
+  font-weight: 300;
+
+}
 
 /*BASE CLASSES*/
 .page__container {
@@ -72,12 +110,15 @@
   @apply flex flex-col w-full gap-y-1;
 }
 h1{
+  
+}
+%h2{
+  font-family: 'Career', sans-serif;
+  @apply text-5xl mb-2 text-left w-full;
+  transition: transform 1.4s ease;
 
 }
-h2{
-
-}
-h3{
+%h3{
 
 }
 a{

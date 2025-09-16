@@ -1,8 +1,7 @@
+@use '../base/_base' as *;
 
 .brand-subtitle {
-  font-family: 'Career', sans-serif;
-  @apply text-5xl mb-2 text-left w-full;
-  transition: transform 1.4s ease;
+  
 }
 .brand-subtitle:hover {
   transform: translateY(-10px);

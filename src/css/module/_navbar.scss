@@ -1,11 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@use '../base/_base' as *;
 
 
 .navbar__wrapper {
-  @apply w-full fixed top-0 flex justify-between px-8 py-4 z-[1000] bg-[var(--Light)];
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 32px;  
+    padding-right: 32px; 
+    padding-top: 16px;   
+    padding-bottom: 16px;
+    z-index: 1000;      
+    background-color: transparent;
+    color: $Charcoal;
 }
 
 .navbar__logo-wrapper {

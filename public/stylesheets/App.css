@@ -1,0 +1,885 @@
+/* base import */
+/*ScSS Variables*/
+/* Global font-face declarations*/
+@font-face {
+  font-family: "Career";
+  src: url("./fonts/Career.otf") format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans Italics";
+  src: url("./fonts/MonaSans-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans";
+  src: url("./fonts/MonaSans-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GangsterGrotesk-Bold";
+  src: url("./fonts/GangsterGrotesk-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GangsterGrotesk-Regular";
+  src: url("./fonts/GangsterGrotesk-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GangsterGrotesk-Light";
+  src: url("./fonts/GangsterGrotesk-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+/* Global font-face declarations*/
+/* Sass Color Variables*/
+/* Sass Color Variables*/
+.sfd__title-light, .sfd__title-dark {
+  font-family: "Career";
+  font-size: 80px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.l212__title-light, .l212__title-dark {
+  font-family: "GangsterGrotesk";
+  font-size: 80px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.body__font-light, .body__font-dark {
+  font-family: "Mona Sans";
+  font-size: 30px;
+  text-align: left;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+/*BASE CLASSES*/
+.page__container {
+  @apply w-full h-full flex flex-col items-start justify-center p-12;
+}
+
+.section__container {
+  @apply flex flex-col w-full gap-y-1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  @apply p-8;
+}
+
+.section__container:hover .divider {
+  width: 100%;
+  opacity: 1;
+}
+
+.section__container:hover .divider::after {
+  opacity: 1;
+}
+
+.section__container:hover .sectiontion__container--text {
+  opacity: 1;
+  transform: translateY(-95px);
+}
+
+.section__container:hover .brand__subtitle {
+  transform: translateX(830px);
+}
+
+.section__container--text {
+  text-align: left;
+  opacity: 0;
+  transform: translateY(0px);
+  transition: transform 1.4s ease, opacity 1s ease-in-out;
+  z-index: 1;
+  width: 450px;
+}
+
+.header__wrapper-2col {
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  width: 650px;
+  align-items: start;
+  gap: 10px;
+}
+
+.header__leftcol .header__right {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  height: 350px;
+  width: 350px;
+  align-items: end;
+}
+
+.header__text {
+  font-size: 60px;
+  color: var(--Indigo-Dye);
+  line-height: 1;
+}
+
+.text_description {
+  font-family: "Mona Sans";
+  font-weight: 500;
+  line-height: 1.4;
+  font-size: 19px;
+  text-align: left;
+}
+
+/* layout import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*HOME LANDING SECTION*/
+.landing-container {
+  @apply flex flex-row w-full h-screen justify-center items-center pr-8;
+}
+
+.home-title-container,
+.home-project-cards-container {
+  @apply flex flex-col justify-center items-center box-border h-[900px] gap-y-4;
+}
+
+.home-project-card {
+  @apply w-full max-w-[700px] items-center justify-center z-[1000];
+}
+
+.home-title-container {
+  @apply text-left;
+}
+
+.home-btn-container {
+  @apply flex gap-8 mt-10;
+}
+
+.home-btn {
+  @apply py-1 w-[180px] h-[40px] rounded-full font-semibold border-[var(--Charcoal)] border-2 bg-transparent text-[var(--Charcoal)];
+}
+
+/*HOME LANDING SECTION*/
+/*GENERAL SECTION*/
+.section-container {
+  @apply flex flex-col w-full gap-y-2 mb-[200px] ml-[80px];
+}
+
+.section-container:hover .divider {
+  width: 400px;
+  opacity: 1;
+}
+
+.section-container:hover .divider::after {
+  opacity: 1;
+}
+
+.section-container:hover .section-text-container {
+  opacity: 1;
+  transform: translateY(-95px);
+}
+
+/*GENERAL SECTION*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+#header__wrapper--row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 500px;
+  padding: 90px;
+  margin-top: 80px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var();
+}
+
+.header__wrapper-l212 {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 650px;
+  align-items: start;
+  gap: 10px;
+}
+
+.header__right-l212 {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  height: 350px;
+  width: 350px;
+  align-items: end;
+}
+
+.l212-header-right img {
+  width: 50px;
+  height: 50px;
+}
+
+.l212__quote-start {
+  position: relative;
+  z-index: 0;
+  right: 300px;
+  top: 20px;
+}
+
+.l212__quote-end {
+  position: relative;
+  z-index: 0;
+  left: 30px;
+  bottom: 20px;
+}
+
+/*It's just a dog right now*/
+.landing-container {
+  @apply flex flex-row w-full h-screen justify-center items-center pr-8;
+}
+
+/*General Page Layout*/
+.page__container {
+  @apply w-full h-full flex flex-col items-start justify-center p-12;
+}
+
+.page__container-column {
+  @apply min-h-screen w-full flex flex-col;
+}
+
+.page__container-row {
+  @apply h-screen w-full flex flex-row;
+}
+
+.footer__subtitle {
+  font-family: "Career", sans-serif;
+  @apply mb-2;
+}
+
+/*General Page Layout*/
+#l212-nbd-menu-wrapper {
+  width: 100%;
+  height: 650px;
+  display: flex;
+  flex-direction: row;
+  background-image: url("/images/l212/nbd-menu-grain.png");
+}
+
+/* modules import */
+/* base import */
+.contactform__section {
+  flex-direction: row;
+  width: 105%;
+  height: 400px;
+  justify-content: right;
+  z-index: 10;
+}
+
+.tab__container {
+  flex-direction: column;
+  justify-content: end;
+  gap: 25px;
+  z-index: -1;
+  width: 430px;
+  position: absolute;
+  right: 650px;
+  margin-top: 30px;
+  height: 540px;
+}
+
+.tab__button {
+  border-radius: 35px;
+  height: 120px;
+  font-size: 20px;
+  text-align: left;
+  box-shadow: -3px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.form__wrapper {
+  padding: 40px;
+  width: 730px;
+  height: 85vh;
+  border-radius: 10px 0;
+  z-index: 2;
+  box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*this is the wrapper around the input field form*/
+.form__wrapper-userinput {
+  justify-content: space-between;
+  height: 90%;
+  z-index: 0;
+  padding-top: 10px;
+}
+
+.form__input {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 20px;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 2.5;
+}
+
+.form__wrapper-ty {
+  display: flex;
+  flex-direction: column;
+  width: 730px;
+  height: 80vh;
+  border-radius: 10px 0;
+  z-index: 2;
+  box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
+  align-items: flex-end;
+  padding: 70px 65px;
+}
+
+/* base import */
+/* Placeholder buttons */
+.sfd__button-dark, .l212__button-dark, .home__btn {
+  border-radius: 25px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  opacity: 0.5;
+}
+
+.nav__btn-small {
+  @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
+}
+
+button:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+button:focus,
+button:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-color: var(--Collard-Green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.home__btn {
+  opacity: 1;
+}
+
+.home-btn-container {
+  @apply flex gap-8 mt-10;
+}
+
+.home__btn:hover {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  transition: 0.3s ease-in-out;
+}
+
+.carousel__btns {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 100% !important; /* or 0 if you want squares */
+  background-color: var(--Light) !important;
+  transition: background-color 0.3s ease !important;
+  transform: scale(-40%);
+}
+
+.nav__btn-small {
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.nav__btn-small:hover {
+  background-color: #E1D5C8;
+  opacity: 1;
+}
+
+.nav__btn-small {
+  @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.nav__btn-small {
+  @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+.nav__btn-small:hover {
+  background-color: #E1D5C8;
+  opacity: 1;
+}
+.nav__btn-small:hover .social-icon {
+  transform: scale(1.2);
+}
+
+/*CONTACT FORM PAGE*/
+.sm__container-ig { /*Buttons on the contact page header*/
+  display: flex;
+  flex-direction: row;
+  background-color: var(--Charcoal);
+  color: var(--Light);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 180px;
+}
+
+.sm__container-yt {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--Charcoal);
+  color: var(--Light);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 250px;
+}
+
+/*CONTACT FORM PAGE*/
+.form__btn-submit {
+  background-color: var(--Highlight);
+  color: var(--Charcoal);
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-left: 20px;
+  width: 130px;
+  height: 50px;
+  border: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.form__btn-newmsg {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  background-color: transparent;
+  margin-top: 25px;
+  align-items: center;
+  text-align: right;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+/* base import */
+.carouse__wrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* base import */
+.divider {
+  position: relative;
+  width: 0px; /* starting width */
+  height: 2px;
+  background-color: var(--Charcoal);
+  display: block;
+  transition: width 0.8s ease-in-out;
+  opacity: 0;
+  margin-bottom: 4px;
+  z-index: 0;
+}
+
+.divider::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--Charcoal);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.divider__container:hover .divider {
+  width: 400px;
+  opacity: 1;
+}
+
+.divider__container:hover .divider::after {
+  opacity: 1;
+}
+
+/* base import */
+/* 
+Flip card experimentteam page */
+.flip__card-perspective {
+  perspective: 1000px;
+}
+
+.flip__card-transform-style {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.flip__-180 {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.profile_card-back {
+  width: 300px;
+  height: 500px;
+  text-align: left;
+  justify-content: space-between;
+}
+
+/* base import */
+.logo {
+  @apply p-6 transition-[filter] duration-300;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.6666666667));
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em rgba(97, 218, 251, 0.6666666667));
+}
+
+.logo__container {
+  @apply flex items-start gap-4;
+}
+
+/* base import */
+.map__wrapper {
+  width: 600px;
+  text-align: left;
+}
+
+.map__wrapper img {
+  height: 650px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu__nav-l212 {
+  position: relative;
+  background-color: var(--Charcoal);
+  width: 3px;
+  align-self: self-start;
+  height: 650px;
+  justify-content: start;
+}
+
+.menu__dot-l212 {
+  position: absolute;
+  background-color: var(--Charcoal);
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+}
+
+.menu__container {
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+}
+
+.menu__container a {
+  font-family: "Mona Sans";
+  font-weight: 600;
+  font-size: 32px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  height: 40px;
+  align-items: center;
+  gap: 2px;
+}
+
+.menu__item-l212 {
+  color: var(--Charcoal);
+  opacity: 50%;
+  height: 50px;
+}
+
+.menu__imgwrapper-l212 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 650px;
+  width: 500px;
+}
+
+.menu__imgwrapper-nbd img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu__title-l212 {
+  position: absolute;
+  z-index: 50;
+  justify-content: end;
+  align-items: end;
+  opacity: 100%;
+}
+
+.menu__title-l212 p {
+  font-family: "Mona Sans";
+  font-weight: 700;
+  font-size: 120px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  color: var(--Isabelline);
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-align: right;
+  text-shadow: 1px -1px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* base import */
+.navbar__wrapper {
+  @apply w-full fixed top-0 flex justify-between px-8 py-4 z-[1000] bg-[var(--Light)];
+}
+
+.navbar__logo-wrapper {
+  @apply flex items-start gap-4;
+}
+
+#navbar__logo {
+  @apply bg-[var(--Light)] text-[var(--Charcoal)] flex flex-row rounded-full w-[45px] h-[45px] items-center justify-center no-underline opacity-80 transition-all duration-500 ease-out;
+}
+
+#navbar__logo:hover {
+  @apply bg-[var(--Base)] text-[var(--Light)] opacity-100 scale-110 text-[16px];
+}
+
+.navbar__links {
+  @apply flex items-end gap-8;
+}
+
+.navbar__btn {
+  @apply px-5 py-2 bg-[var(--Light)] text-[var(--Charcoal)] transition-opacity duration-300 cursor-pointer;
+  opacity: 0.5; /* makes text + background semi-transparent */
+}
+
+.navbar__btn:hover {
+  opacity: 1; /* fully visible on hover */
+}
+
+.navbar__btn-sm {
+  @apply flex rounded-full p-2 h-[40px] w-[60px] justify-center items-center;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbar_btn-sm:hover {
+  background-color: #E1D5C8;
+  opacity: 1;
+}
+
+.navbar__btn-sm-icon {
+  transition: transform 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.navbar__btn-sm:hover .navbar__btn-sm-icon {
+  transform: scale(1.2);
+}
+
+/* base import */
+.brand-subtitle:hover {
+  transform: translateY(-10px);
+}
+
+.form__ty-p { /*the text inside the thank you message part of form*/
+  text-align: right;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.2;
+  opacity: 90%;
+}
+
+.l212-header-right p {
+  text-align: right;
+  font-family: "Mona Sans";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 70%;
+}
+
+/* base import */
+/* modules import */
+.form__wrapper-general {
+  background-color: #2E4052;
+}
+
+.form__wrapper-project {
+  background-color: #E1D5C8;
+}
+
+.form__wrapper-l212 {
+  background-color: #648767;
+}
+
+.form__input-general .form__input-l212 {
+  color: #F2E5D7;
+  border-bottom: 1.4px solid #F2E5D7;
+}
+
+.form__input-project {
+  color: #2E4052;
+  border-bottom: 1.4px solid #2E4052;
+}
+
+.form__wrapper-ty-general {
+  background-color: #2E4052;
+  color: #F2E5D7;
+}
+
+.form__wrapper-ty-project {
+  background-color: #E1D5C8;
+  color: #2E4052;
+}
+
+.form__wrapper-ty-l212 {
+  background-color: #648767;
+  color: #F2E5D7;
+}
+
+/* theme import */
+/* base import */
+/* modules import */
+/*BACKGROUND AND COLOR*/
+:root {
+  background-color: var(--Charcoal);
+  color: var(--Fawn);
+}
+
+/*BACKGROUND AND COLOR*/
+/*SFD Theme*/
+.sfd__title-dark {
+  color: #F2E5D7;
+}
+
+/*SFD Theme*/
+.l212__title-dark {
+  color: #FAF5F0;
+}
+
+.body__font-dark {
+  color: #FAF5F0;
+}
+
+/*SaSS Button Dark Color Mode*/
+.sfd__button-dark {
+  background-color: #F2E5D7;
+  color: #2E4052;
+}
+
+.l212__button-dark {
+  background-color: #FAF5F0;
+  color: #2E4052;
+}
+
+/*SaSS Button Dark Color Mode*/
+/* TEXT STYLING*/
+a {
+  font-weight: 500;
+  font-family: "Mona Sans";
+  color: #F2E5D7;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #F2E5D7;
+  text-decoration: underline;
+  text-decoration-color: #F2E5D7;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* TEXT STYLING*/
+/* base import */
+.sfd__title-light {
+  color: #2E4052;
+}
+
+.l212__title-light {
+  color: #134D67;
+}
+
+.body__font-light {
+  color: #2E4052;
+}
+
+/*SaSS Button Light Color Mode*/
+.sfd__button-dark {
+  background-color: #2E4052;
+  color: #F2E5D7;
+}
+
+.l212__button-dark {
+  background-color: #2E4052;
+  color: #FAF5F0;
+}
+
+/*SaSS Button Light Color Mode*/
+/* TEXT STYLING*/
+a {
+  font-weight: 500;
+  font-family: "Mona Sans";
+  color: #2E4052;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #2E4052;
+  text-decoration: underline;
+  text-decoration-color: #2E4052;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* TEXT STYLING*/
+
+/*# sourceMappingURL=App.css.map */

@@ -1,8 +1,9 @@
-
+import "bulma/css/bulma.css"; // load Bulma globally
+import "./css/App.scss";
 import { useState } from 'react'
 import { AnimatePresence } from "framer-motion";
 import Landing from './pages/Landing.jsx'
-import './css/App.css'
+import './css/App.scss'
 import OnPageLoad from './components/OnPageLoad.jsx'
 import Navbar from './components/Navbar.jsx'
 import Home from './pages/Home.jsx'
@@ -13,6 +14,7 @@ import Remington from './pages/NeighborhoodPages/Remington.jsx'
 import Footer from './components/Footer.jsx'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import 'flowbite';
+import { i } from 'framer-motion/client';
 
 function App() {
   const [count, setCount] = useState(0)
