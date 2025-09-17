@@ -3,14 +3,13 @@
 //text color will change in the state folder. standard transparent bg throughout website.
 .navbar__wrapper {
     width: 100%;
-    position: fixed;
-    top: 20px;
+    position: sticky;
+    top: 40px;
     display: flex;
     flex-direction: row;
     gap: 50px;
     margin-left: 40px;
-    z-index: 1000;    
-    background-color: transparent;
+    z-index: 1000;   
     justify-content: flex-start; 
     align-items: center;
 }

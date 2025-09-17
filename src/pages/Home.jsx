@@ -1,11 +1,12 @@
-// src/pages/Home.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "../components/ProjectCard";
-import Navbar from "../components/Navbar.jsx";
+import "../css/layout/_landinglayout.scss";
+import ContactUs from "./ContactUs.jsx";
 
 export default function Home() {
-  const [activeIndex, setActiveIndex] = useState(0);
+
+  const [activeIndex, setActiveIndex] = useState(null);
   const [flippedIndex, setFlippedIndex] = useState(null);
 
   const handleHover = (index) => {
@@ -20,71 +21,57 @@ export default function Home() {
   };
 
   const projectData = [
-    {
-      title: "Project 1",
-      shortDescription: "Brief description of Project 1.",
-      longDescription: "Full project description and goals for Project 1...",
-      imageSrc: "/images/projectCardPics/pCardFiller.png",
-    },
-    {
-      title: "Project 2",
-      shortDescription: "Quick look at Project 2.",
-      longDescription: "Details and background of Project 2...",
-      imageSrc: "/images/projectCardPics/pCardFiller.png",
-      defaultState: false,
-    },
-    {
-      title: "Project 3",
-      shortDescription: "Overview of Project 3.",
-      longDescription: "Full project description and collaborators for Project 3...",
-      imageSrc: "/images/projectCardPics/pCardFiller.png",
-    },
+    { title: "Project 1", shortDescription: "Brief description", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
+    { title: "Project 2", shortDescription: "Quick look", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
+    { title: "Project 3", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
+    { title: "Project 4", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
+    { title: "Project 5", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
+    { title: "Project 6", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
   ];
 
   return (
-    <div className="flex flex-col">
-      {/* Landing Section (only fills 100vh) */}
-      <section className="landing__container relative">
+    <div className="page__container">
+      <section className="landing__section">
         <motion.img
           src="/images/remington.JPG"
           alt="Background"
-          layoutId="landing-image"
-          className="absolute inset-0 w-full h-full object-cover"
-          transition={{ type: "spring", stiffness: 120, damping: 18 }}
+          initial={{ scale: 0.99 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          style={{
+            width: "100%",      
+            height: "100%",    
+            objectFit: "cover",
+            position: "absolute", 
+            top: 0,
+            left: 0       // behind content
+          }}
         />
 
-        {/* Hero / Landing Content */}
-        <motion.div
-          className="relative z-10 text-white"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.15, duration: 0.35 }}
-        >
-          <section className="home__hero-wrapper flex flex-col justify-center items-center min-h-screen">
-            <img
-              src="/images/sfd-title.svg"
-              alt="SFDheader"
-              className="home__header w-[600px] md:w-[800px] lg:w-[1000px] h-auto"
-            />
-            <p className="w-full mt-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              <br />
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <div className="home-btn-container w-full flex flex-row mt-4">
-              <button className="home-btn">About Us</button>
-              <button className="home-btn">Work With Us</button>
-            </div>
-          </section>
-        </motion.div>
-      </section>
+            {/* Overlay */}
+            <div className="landing__overlay"> </div>
 
-      <section>
-        <div className="page__container">
-      {/* Project Cards Section */}
-            <section
-                className="home__project-cards-container"
-                onMouseLeave={() => {
+          {/* Landing Content */}
+          <motion.div
+            className="landing__wrapper"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            <img src="/images/sfd-title-left.svg" alt="SFD Header" className="landing__header" />
+            <p className="landing__tagline">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div className="landing__btn-wrapper">
+              <button>About Us</button>
+              <button>Work With Us</button>
+            </div>
+            </motion.div>
+        </section>
+      
+      <section className="home__section">
+          <div className="home__projectcards-container"
+            onMouseLeave={() => {
                   setActiveIndex(null);
                   setFlippedIndex(null);
                 }}
@@ -99,9 +86,12 @@ export default function Home() {
                     onClick={() => handleClick(index)}
                   />
                 ))}
-              </section>
-        </div>
+          </div>
 
+          <div className="contactus__container">
+          <ContactUs />
+          </div>
+      
       </section>
     </div>
   );

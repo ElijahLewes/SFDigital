@@ -1,14 +1,68 @@
 @use '../base/_base' as *;
 
 /*It's just a dog right now*/
-.landing__container {
-  position: relative;
-  overflow: hidden;
+.landing__section {
+  position: static;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  justify-content: center;
+  margin-bottom: 400px;
+}
+
+.landing__wrapper{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  padding: 0;
+  top: 0px;
+  width: 100%;
+}
+
+.landing__header{
+  width: 1100px;
+}
+
+.landing__tagline{
+  font-family: $body__font;
+  color: $Fawn;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.3;
+  width: 380px;
+  position: relative;
+  height: 90px;
+  align-self: self-start;
+  left: 115px;
+}
+
+.landing__btn-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 1200px;
+  padding-left: 40px;
+}
+
+.landing__preview{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/images/remington.JPG");
+  position: relative;
+  z-index: 1;
+}
+
+.landing__preview-img{
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  display: flex;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 15px;
 }

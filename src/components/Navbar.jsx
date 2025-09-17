@@ -11,22 +11,22 @@ function NavButton({ to, label }) {
 
 function Navbar() {
   const location = useLocation();
-  const isHome = location.pathname === "/"; // true if we are on the home page
+  const isHome = location.pathname === "/"; 
 
   return (
-    <nav className={isHome ? "navbar__home" : "navbar__default"}>
-      {/* Logo */}
-      <div className="navbar__logo-wrapper">
-        <Link id="navbar__logo" to="/">
-          SFD
-        </Link>
-      </div>
+    <>
+      <nav className={`navbar__wrapper ${isHome ? "navbar__home" : "navbar__default"}`}>
+        <div className="navbar__logo-wrapper">
+          <Link id="navbar__logo" to="/">
+            SFD
+          </Link>
+        </div>
 
-      {/* Nav Links */}
-      <div className="navbar__links">
+        <div className="navbar__links">
         <NavButton to="/link212" label="Link 212" />
-        <NavButton to="/contact" label="Contact Us" />
-        <NavButton to="/team" label="Meet the Team" />
+        <NavButton to="/contact" label="Contact" />
+        <NavButton to="/team" label="About" />
+        </div>
 
         {/* Social icons */}
         <div className="navbar__btn-ig">
@@ -50,9 +50,8 @@ function Navbar() {
          />
         </a>
         </div>
-
-      </div>
-    </nav>
+      </nav>
+</>
   );
 }
 

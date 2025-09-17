@@ -1,6 +1,8 @@
 @use '../base/_base' as *;
 @use '../module/_navbar' as *;
 
+$navbar__light-home: $Fawn;
+$navbar__light-default: $Charcoal;
 
 .navbar__home{
     @extend .navbar__wrapper;
@@ -9,5 +11,5 @@
 
 .navbar__default{
     @extend .navbar__wrapper;
-    color: $navbar__light-text //  Color should change b/t light and dark mode so create navbar color modes.
+    color: $navbar__light-default; //  Color should change b/t light and dark mode so create navbar color modes.
 }

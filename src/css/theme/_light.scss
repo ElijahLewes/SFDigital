@@ -1,5 +1,16 @@
 @use '../base/_base' as *;
 @use '../module/_buttons' as *;
+@use '../module/_contactform' as *;
+@use '../module/navbar' as *;
+
+
+$light__bg: $Fawn;
+$light__text: $Charcoal;
+
+body{
+  background-color: $light__bg;
+  color: $light__text;
+}
 
 .sfd__title-light{
   @extend %sfd__title;
@@ -17,15 +28,13 @@
 }
 
 /*SaSS Button Light Color Mode*/
-.sfd__button-dark {
+.sfd__button-light {
   @extend button;
-  background-color: $Charcoal;
   color: $Fawn;
 }
 
-.l212__button-dark {
+.l212__button-light {
   @extend button;
-  background-color: $Charcoal;
   color: $Isabelline;
 }
 /*SaSS Button Light Color Mode*/
@@ -51,4 +60,4 @@
  
 $nav__light-home: $Fawn; // call on this in the navbar states for home light mode text
 
-$nav__light-text: $Fawn;
+$nav__light-default: $Fawn;
