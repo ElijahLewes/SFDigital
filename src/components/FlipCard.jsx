@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import EmailDark from "../icons/EmailDark";
 import GlobeDark from "../icons/GlobeDark";
 
@@ -11,85 +11,84 @@ const FlipCard = ({
   email,
   website,
   color,
-  colorhvr
+  colorhvr,
+  flipped: controlledFlipped,        // optional controlled prop
+  onFlipChange,                      // optional controlled callback
+  className = "",
 }) => {
-  const [flipped, setFlipped] = useState(false);
-  const [hovered, setHovered] = useState(false);
+  const [internalFlipped, setInternalFlipped] = useState(false);
+  const isControlled = typeof controlledFlipped === "boolean";
+  const flipped = isControlled ? controlledFlipped : internalFlipped;
+
+  const setFlipped = (next) => {
+    const value = typeof next === "function" ? next(flipped) : next;
+    if (!isControlled) setInternalFlipped(value);
+    if (onFlipChange) onFlipChange(value);
+  };
+
+  const toggleFlip = () => setFlipped((v) => !v);
+  const onKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleFlip();
+    }
+  };
 
   return (
     <div
-      className="w-full h-[540px] perspective"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      className={`flip-card ${className}`}
+      role="button"
+      tabIndex={0}
+      onClick={toggleFlip}
+      onKeyDown={onKeyDown}
+      style={{
+        // CSS vars used by SCSS (optional accent colors)
+        "--flip-accent": color || "#0f172a",
+        "--flip-accent-hover": colorhvr || "#0b1220",
+      }}
+      aria-pressed={flipped}
     >
-      {/* Flip Button */}
-      <div
-        className="flip-btn absolute flex flex-col bg-[var(--Charcoal)] 
-        rounded-full w-[65px] h-[25px] text-[var(--Light)] items-center 
-        z-[1] mt-5 ml-[340px] cursor-pointer transition-transform 
-        duration-300 ease-in-out hover:scale-110"
-        onClick={() => setFlipped(!flipped)}
-      >
-        <p>Flip</p>
-      </div>
-
-      {/* Card */}
-      <div
-        className={`relative w-full h-full transition-transform duration-1200 transform-style preserve-3d ${
-          flipped ? 'rotate-y-180' : ''
-        }`}
-      >
-
+      <div className={`flip-card__inner ${flipped ? "is-flipped" : ""}`}>
         {/* FRONT */}
-        <div
-          className={`absolute w-full h-[530px] backface-hidden flex justify-center items-center rounded-[30px] overflow-hidden transition-colors duration-300 ${
-            hovered ? colorhvr : color
-          }`}
-        >
-          <img
-            src={imageSrc}
-            alt={`${fName} ${lName}`}
-            className="w-full h-[600px] object-contain transition-transform duration-300 ease-in-out hover:scale-110"
-          />
+        <div className="flip-card__face flip-card__front" aria-hidden={flipped}>
+          {imageSrc && (
+            <div className="flip-card__image">
+              <img src={imageSrc} alt={`${fName || ""} ${lName || ""}`} />
+            </div>
+          )}
+          <div className="flip-card__content">
+            <h3 className="flip-card__name">
+              {fName} {lName}
+            </h3>
+            {description && (
+              <p className="flip-card__desc">{description}</p>
+            )}
+          </div>
         </div>
 
         {/* BACK */}
         <div
-          className={`absolute w-full h-[530px] backface-hidden rotate-y-180 ${colorhvr} text-[var(--text-dark)] flex flex-col items-start justify-start gap-y-8 pt-16 pl-8 rounded-[30px]`}
+          className="flip-card__face flip-card__back"
+          aria-hidden={!flipped}
         >
-          <div className="container">
-            <h3 className="Career text-5xl font-bold mb-2 leading-[60px] text-left w-full">
-              {fName} <br /> {lName}
-            </h3>
-            <p className="text-[18px] text-left">{description}</p>
-          </div>
-          <div className="bio-container h-[130px]">
-          <p className="text-md mt-4 text-left font">{bio}</p>
-          </div>
-          {/* Contact Section */}
-          <div className="container flex flex-col leading-[8px] font-bold gap-3 mt-4">
-            {/* Email */}
-            <div className="flex items-center gap-2">
-              <EmailDark className="Email-container" />
-              <a 
-                href={`mailto:${email}`} 
-                className="text-md text-left hover:underline"
-              >
-                {email}
-              </a>
-            </div>
-
-            {/* Website */}
-            <div className="flex items-center gap-2">
-              <GlobeDark className="website-container" />
-              <a 
-                href={website} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-md text-left hover:underline"
-              >
-                {website}
-              </a>
+          <div className="flip-card__content">
+            {bio && <p className="flip-card__bio">{bio}</p>}
+            <div className="flip-card__links">
+              {email && (
+                <a href={`mailto:${email}`} className="flip-card__link">
+                  {email}
+                </a>
+              )}
+              {website && (
+                <a
+                  href={website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flip-card__link"
+                >
+                  {website}
+                </a>
+              )}
             </div>
           </div>
         </div>
