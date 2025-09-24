@@ -1,68 +1,67 @@
 @use '../base/_base' as *;
 
-//text color will change in the state folder. standard transparent bg throughout website.
+// base wrapper (your existing styles)
 .navbar__wrapper {
-    width: 100%;
-    position: sticky;
-    top: 40px;
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    margin-left: 40px;
-    z-index: 1000;   
-    justify-content: flex-start; 
-    align-items: center;
+  width: 100%;
+  position: sticky;
+  top: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-left: 40px;
+  z-index: 1000;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .navbar__logo-wrapper {
-    display: flex;
-    flex-direction: row;
-    width: 30px;
-    height: 5px;
+  display: flex;
+  flex-direction: row;
+  width: 30px;
+  height: 5px;
 }
 
+// ✅ Use currentColor so variants control color
 #navbar__logo {
-  background-color: transparent; 
-  color: $Fawn; // won't add color once we have logo svg            
-  display: flex;                      
-  flex-direction: row;               
-  width: 25px;                       
-  height: 5px;                      
-  align-items: center;              
-  justify-content: center;            
+  background-color: transparent;
+  color: currentColor;
+  display: flex;
+  flex-direction: row;
+  width: 25px;
+  height: 5px;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   font-family: $sfd__title-font;
   font-size: 28px;
-  opacity: 0.8;                       
+  opacity: 0.8;
   transition: all 0.5s ease-out;
-}
+  transform-origin: left center;
 
 #navbar__logo:hover {
   opacity: 1;
-  transform: scale(1.9); 
-  font-size: 14px;
+  transform: scale(1.1); // (1.9 was huge; reduces layout jump)
 }
 
 .navbar__links {
-    display: flex;
-    flex-direction: row;
-    gap: 35px;
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
 }
 
-.navbar__links a{
+// ✅ Inherit color from variant
+.navbar__links a {
   font-family: $body__font;
-  color: $Fawn;
+  color: currentColor;
   font-size: 20px;
   font-weight: 400;
   text-decoration: none;
 }
 
-.navbar__links a:hover{
-    text-decoration: underline;
-    color: $Fawn;
+.navbar__links a:hover {
+  text-decoration: underline;
 }
-
-
+}
 
 .navbar__btn-ig,
 .navbar__btn-yt {
@@ -72,11 +71,9 @@
   opacity: 0.9;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
-
 .navbar__btn-ig {
   width: 30px;
-  height: 30px;
-}
+  height: 30px;}
 
 .navbar__btn-yt {
   width: 40px;
@@ -87,4 +84,20 @@
 .navbar__btn-yt:hover {
   opacity: 1;
   transform: scale(1.08);
+}
+
+// ---Variant Styling---------------------
+
+//Add additional variants as needed for special pages like link212
+
+// default (fallback)
+.navbar__default {
+  background: $Charcoal;
+  color: $Isabelline
+}
+
+// home
+.navbar__home {
+  background: transparent;
+
 }
