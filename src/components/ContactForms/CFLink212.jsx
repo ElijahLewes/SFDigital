@@ -20,9 +20,9 @@ function CFLink212({ activeTab }) {
   if (activeTab !== 'support') return null;
 
   return (
-    <div className="form-container">
+    <div className="form__wrapper">
       {showThankYou ? (
-        <div className="ty-msg-l212-form">
+        <div className="form__wrapper-ty-l212">
           <p className="text-[var(--Light)] w-[450px]">
             Thank you for contacting us! <br />We will do our best to get back to you within the next 3 business days.
           </p>
@@ -35,22 +35,22 @@ function CFLink212({ activeTab }) {
           </button>
         </div>
       ) : (
-        <div className={`l212-form-wrapper transition-all duration-500 ${showForm ? 'opacity-100' : 'opacity-50 overflow-hidden'}`}>
-          <form className="contact-form flex flex-col gap-4">
+        <div className={`form__wrapper-l212 transition-all duration-500 ${showForm ? 'opacity-100' : 'opacity-50 overflow-hidden'}`}>
+          <form className="form__wrapper-userinput flex flex-col gap-4">
             <h3 className="text-[25px] font-bold text-[var(--Light)]">Link 212 Support</h3>
             <input 
               type="text" 
               placeholder="Your Name" 
-              className="l212-form-input"
+              className="form__input-l212"
               required
             />
             <input 
               type="email" 
               placeholder="Your Email" 
-              className="l212-form-input"
+              className="form__input-l212"
               required
             />
-            <select className="l212-form-input" required>
+            <select className="form__input-l212" required>
               <option value="">Select Issue Type</option>
               <option value="technical">Technical Support</option>
               <option value="billing">Billing Question</option>
@@ -60,7 +60,7 @@ function CFLink212({ activeTab }) {
             <textarea 
               placeholder="Describe Your Issue" 
               rows="2" 
-              className="l212-form-input"
+              className="form__input-l212"
               style={{ paddingTop: '5px' }}
               required
             />

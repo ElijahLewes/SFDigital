@@ -1,13 +1,15 @@
 @use '../base/_base' as *;
 @use '../module/_buttons' as *;
 @use '../module/_contactform' as *;
+@use '../module/navbar' as *;
 
-/*BACKGROUND AND COLOR*/
-  :root{
-      background-color: var(--Charcoal);
-      color: var(--Fawn);
-  }
-/*BACKGROUND AND COLOR*/
+$dark__bg: $Charcoal;
+$dark__text: $Fawn;
+
+body{
+  background-color: $dark__bg;
+  color: $dark__text;
+}
 
 /*SFD Theme*/
 .sfd__title-dark{
@@ -57,3 +59,7 @@
     text-underline-offset: 3px;
   }
 /* TEXT STYLING*/
+
+$nav__dark-home: $Charcoal; // call on this in the navbar states for home light mode text
+
+$nav__dark-text: $Charcoal;

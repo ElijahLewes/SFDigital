@@ -1,5 +1,54 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+export default function Navbar() {
+  const { pathname } = useLocation();
+
+  // Extend mapping for additional custom navbar designs. Likely for link212 page.
+  const [navbarState, setNavbarState] = useState("default"); // "home" | "contact" | "team" | "link212" | "default"
+
+  useEffect(() => {
+    if (pathname === "/home" || pathname === "/") setNavbarState("home");
+    // else if (pathname === "/contact") setNavbarState("contact");
+    // else if (pathname === "/team") setNavbarState("team");
+    // else if (pathname === "/link212") setNavbarState("link212");
+    else setNavbarState("default");
+  }, [pathname]);
+
+  // map state -> global class name. Uncomment/add as needed.
+  const variant =
+    navbarState === "home" ? "navbar__home" :
+    // navbarState === "contact" ? "navbar__contact" :
+    // navbarState === "team" ? "navbar__team" :
+    // navbarState === "link212" ? "navbar__link212" :
+    "navbar__default";
+
+  return (
+    <nav className={`navbar__wrapper ${variant}`}>
+      <div className="navbar__logo-wrapper">
+        <Link id="navbar__logo" to="/">SFD</Link>
+      </div>
+
+      <div className="navbar__links">
+        <NavButton to="/link212" label="Link 212" />
+        <NavButton to="/contact" label="Contact" />
+        <NavButton to="/team" label="About" />
+      </div>
+
+      {/* Social icons */}
+      <div className="navbar__btn-ig">
+        <a href="https://www.instagram.com/streetfrontdigital/" target="_blank" rel="noopener noreferrer">
+          <img src="/images/ig-icon-light.svg" alt="instagram icon" />
+        </a>
+      </div>
+      <div className="navbar__btn-yt">
+        <a href="https://www.youtube.com/@StreetfrontDigital" target="_blank" rel="noopener noreferrer">
+          <img src="/images/yt-icon-light.svg" alt="youtube icon" />
+        </a>
+      </div>
+    </nav>
+  );
+}
 
 function NavButton({ to, label }) {
   return (
@@ -8,47 +57,3 @@ function NavButton({ to, label }) {
     </Link>
   );
 }
-
-function Navbar() {
-  return (
-    <nav className="fixed top-0 flex flex-row justify-start items-center z-[1000] bg-[var(--Light)] w-full py-5 px-8">
-      {/* Logo */}
-      <div className="mr-8">
-        <Link id="navbar-logo" to="/" className="font-bold text-xl">
-          SFD
-        </Link>
-      </div>
-
-      {/* Nav Links */}
-      <div className="flex gap-6 items-start">
-        <NavButton to="/link212" label="Link 212" />
-        <NavButton to="/contact" label="Contact Us" />
-        <NavButton to="/team" label="Meet the Team" />
-
-        {/* Social icons */}
-        <div className="sm-navbar-btn">
-          <a
-          href="https://instagram.com/yourprofile"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         <img src="/images/ig-nav-light.svg" alt="instagram icon" 
-         className="w-[28px] h-[28px]"/>
-        </a>
-        </div>
-        <div className="sm-navbar-btn">
-        <a
-          href="https://youtube.com/yourchannel"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         <img src="/images/yt-nav-light.svg" alt="youtube icon" 
-         className="w-[50px] h-[38px]"/>
-        </a>
-        </div>
-      </div>
-    </nav>
-  );
-}
-
-export default Navbar;

@@ -1,18 +1,25 @@
-@use '../base/_base' as *;                                                  
+@use '../base/_base' as *; 
+
 
 /* When extending button tag, don't use dots or %*/
 button {
-  border-radius: 25px;
-  border: 1px solid transparent;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  border-color: $Fawn;
+  color: $Fawn;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 19px;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--button-bg);
-  color: var(--button-text);
+  background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
-  opacity: 0.5;
+  opacity: 0.8;
+  margin-right: 20px;
+  height: 45px; 
+  width: auto;
+  padding: 5px 40px;
+  align-items: center;
 }
 
 .small-button {
@@ -21,7 +28,9 @@ button {
 
 button:hover {
   opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  background-color: $Heartwood;
+  border-color: transparent;
 }
 
 button:focus,
@@ -91,11 +100,18 @@ button:focus-visible {
 
 
 /*CONTACT FORM PAGE*/
+.sm__container{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 .sm__container-ig{ /*Buttons on the contact page header*/
   display: flex;
   flex-direction: row;
-  background-color: var(--Charcoal);
-  color: var(--Light);
+  background-color: $Charcoal;
+  color: $Fawn;
   gap: 10px;
   align-items: center;
   justify-content: center;
@@ -106,13 +122,13 @@ button:focus-visible {
 .sm__container-yt{
   display: flex;
   flex-direction: row;
-  background-color: var(--Charcoal);
-  color: var(--Light);
+  background-color: $Charcoal;
+  color: $Fawn;
   gap: 10px;
   align-items: center;
   justify-content: center;
   height: 50px;
-  width: 250px;
+  width: 280px;
 }
 /*CONTACT FORM PAGE*/
 

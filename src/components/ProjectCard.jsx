@@ -1,4 +1,5 @@
 import React from 'react';
+import "../css/layout/_homelayout.scss";
 
 const ProjectCard = ({
   title,
@@ -12,59 +13,34 @@ const ProjectCard = ({
 }) => {
   return (
 <div
-  className={`
-    home-project-card
-    transition-all duration-500 cursor-pointer
-    ${isActive ? 'h-[300px] basis-[60%]' : 'h-[200px] basis-[8%]'}
-    overflow-visible
-    relative
-  `}
+  className={`home__projectcard ${isActive ? "active" : "inactive"}`}
   onMouseEnter={onHover}
   onClick={onClick}
 >
-{/* Front & Back Container */}
-      <div
-        className={`
-          relative w-full h-full transition-transform duration-700 transform-style preserve-3d
-          ${isFlipped ? 'rotate-y-180' : ''}
-        `}
-      >
-{/* Front */}
-<div
-  className={`
-    absolute inset-0 backface-hidden p-4
-    ${isActive ? 'rounded-[50px]' : 'rounded-[25px]'}
-    flex flex-col justify-end
-    text-[var(--text-light)]
-    transition-all duration-500
-    ${isActive ? '' : 'bg-[var(--Heartwood)]'}  //
-  `}
-  style={{
-    backgroundImage: isActive ? `url(${imageSrc})` : 'none',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }}
->
-  <h2 className="text-xl font-bold">{title}</h2>
-  {isActive && <p className="mt-2 text-sm">{shortDescription}</p>}
-</div>
-
-
-{/* Back */}
-<div
-  className={`
-    absolute inset-0 backface-hidden rotate-y-180 p-4
-    ${isActive ? 'rounded-[50px]' : 'rounded-[25px]'}
-    bg-[var(--Accent)] text-[var(--text-light)]
-    flex flex-col justify-start
-  `}
->
-  <h2 className="text-xl font-bold">{title}</h2>
-  <p className="mt-2 text-sm">{longDescription}</p>
-</div>
-
-              </div>
+  {/* Front & Back Container */}
+  <div className={`home__projectcard-inner ${isFlipped ? "flipped" : ""}`}>
+    
+    {/* Front */}
+    <div
+      className={`home__projectcard-front ${isActive ? "active" : "inactive"}`}
+      style={{
+        backgroundImage: `url(${imageSrc})`,
+      }}
+    >
+      {/* ... front content */}
     </div>
+
+    {/* Back */}
+    <div
+      className={`home__projectcard-back ${isActive ? "active" : "inactive"}`}
+    >
+      <h2 className="home__projectcard-title">{title}</h2>
+      <p className="home__projectcard-desc">{longDescription}</p>
+    </div>
+
+  </div>
+</div>
+
   );
 };
 

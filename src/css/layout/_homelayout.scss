@@ -3,58 +3,122 @@
 
 /*HOME LANDING SECTION*/
 
-.home__hero-container{
+.home__section{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box; /* box-border */
-  height: 900px; /* h-[900px] */
-  row-gap: 1rem; /* gap-y-4 → 1rem */
+  flex: 1;
+  width: 100%; /* h-[900px] */ /* gap-y-4 → 1rem */
 }
 
 .home__projectcards-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
   height: 900px;
-  gap: 30px; /* gap-y-4 in Tailwind is 1rem */
+  width: 100%;
+  gap: 10px;
+  margin: 200px;
 }
 
 .home__projectcard {
-  width: 100%;
-  max-width: 700px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  overflow: visible;
+  position: relative;
+
+  &.active{
+    height: 650px;
+    width: 50px;
+    flex-basis: 30%;
+  }
+
+  &.inactive{
+    height: 600px;
+    width: 25px;
+    flex-basis: 8%;
+  }
+
+  &-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+  
+    &.flipped{
+      transform: rotateY(180deg);
+    }
+  }
+
+  &-front, &-back{
+    position: absolute;
+    inset: 0;
+    padding: 10px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: flex;
+    transition: all 0.5s ease;
+
+    &.active{
+      border-radius: 15px;
+    }
+
+    &.inactive{
+      border-radius: 23px;
+    }
+  }
+
+  &-front{
+    justify-content: center;
+    color: $Fawn;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: none;
+
+
+    &.inactive{
+    }
+  }
+
+  &-back{
+    justify-content: flex-start;
+    transform: rotateY(180deg);
+    background-color: $Heartwood;
+    color: $Fawn;
+  }
+
+  &-title{
+    font-size: 25px;
+    font-family: $sfd__title-font;
+  }
+
+  &-desc{
+    margin-top: 20px;
+    font-family: $body__font;
+    font-size: 18px;
+  }
+
 }
 
-home__header {
-  width: 10px;
-  height: 10px;
-}
 
-.home-title-container {
-  @apply text-left;
-}
-
-.home-btn-container {
-  @apply flex gap-8 mt-10;
-}  
-
-.home-btn {
-  @apply py-1 w-[180px] h-[40px] rounded-full font-semibold border-[var(--Charcoal)] border-2 bg-transparent text-[var(--Charcoal)];
-}
 /*HOME LANDING SECTION*/
 
 
 /*GENERAL SECTION*/
-.section-container{
-  @apply flex flex-col w-full gap-y-2 mb-[200px] ml-[80px];
+.section__container {
+  display: flex;           
+  flex-direction: column;
+  position: relative;
+  width: 100%;           
+  min-height: 90vh;
+  margin-bottom: 800px; 
 }
+
 
 .section-container:hover .divider{
   width: 400px;

@@ -1,19 +1,21 @@
 @use '../base/_base' as *;
+@use '../theme/dark' as *;
+@use '../theme/light' as *;
 
 /*General Page Layout*/
 .page__container {
-  width: 100%;
-  height: 800px;
+  min-width: 100vw;
+  min-height: 100vh;
+  justify-content: center;
+  margin: 0;
+  background-color: $light__bg;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* items-start */
-  justify-content: center;
-  padding: 3rem; /* p-12 → 3rem */
 }
 
 .page__container-column {
   @apply min-h-screen w-full flex flex-col;
-}
+} 
 
 .page__container-row {
   @apply h-screen w-full flex flex-row;

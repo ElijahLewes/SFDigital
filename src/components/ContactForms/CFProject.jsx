@@ -19,9 +19,9 @@ function CFProject({ activeTab }) {
   if (activeTab !== 'project') return null;
 
   return (
-    <div className="form-container">
+    <div className="form__wrapper">
       {showThankYou ? (
-        <div className="ty-msg-project-form">
+        <div className="form__wrapper-ty-project">
           <p className="text-[var(--Charcoal)] w-[450px]">
             Thank you for contacting us! <br /> We will do our best to get back to you within the next 3 business days.
           </p>
@@ -35,8 +35,8 @@ function CFProject({ activeTab }) {
           </button>
         </div>
       ) : (
-        <div className={`project-form-wrapper transition-all duration-500 ${showForm ? 'opacity-100' : 'opacity-0 overflow-hidden'}`}>
-          <form className="contact-form flex flex-col">
+        <div className={`form__wrapper-project transition-all duration-500 ${showForm ? 'opacity-100' : 'opacity-0 overflow-hidden'}`}>
+          <form className="form__wrapper-userinput flex flex-col">
             <h3 className="text-[25px] font-bold">Project Inquiry</h3>
             <input 
               type="text" 
@@ -47,19 +47,19 @@ function CFProject({ activeTab }) {
             <input 
               type="text" 
               placeholder="Project Type" 
-              className="project-form-input"
+              className="form__input-project"
               required
             />
             <input 
               type="text" 
               placeholder="Budget Range" 
-              className="project-form-input"
+              className="form__input-project"
               required
             />
             <textarea 
               placeholder="Project Description" 
               rows="2" 
-              className="project-form-input"
+              className="form__input-project"
               style={{ paddingTop: '5px' }}
               required
             />
