@@ -27,5 +27,5 @@
 @use './state/navbarstates';
 
 /* theme import */
-@use './theme/dark';
-@use './theme/light';
+@use './theme/_themes.scss';
+

@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import '../css/theme/_themes.scss';
+
 
 export default function Navbar() {
   const { pathname } = useLocation();
@@ -25,6 +27,10 @@ export default function Navbar() {
   
     // set theme controls
     const [theme, setTheme] = useState("light");
+     
+    useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
 
   return (
 
@@ -50,7 +56,7 @@ export default function Navbar() {
           <img src="/images/yt-icon-light.svg" alt="youtube icon" />
         </a>
       </div>
-      <button onClick={() => setTheme(theme === "light-theme" ? "dark-theme" : "light-theme")}>
+      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
         Toggle Theme
       </button>
     </nav>

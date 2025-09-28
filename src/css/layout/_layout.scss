@@ -1,6 +1,6 @@
 @use '../base/_base' as *;
-@use '../theme/dark' as *;
-@use '../theme/light' as *;
+
+@use '../theme/_themes.scss' as *;
 
 /*General Page Layout*/
 .page__container {
@@ -8,7 +8,7 @@
   min-height: 100vh;
   justify-content: center;
   margin: 0;
-  background-color: $light__bg;
+  background-color: background;
   display: flex;
   flex-direction: column;
 }

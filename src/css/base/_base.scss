@@ -202,4 +202,19 @@ img{
   text-align: left;
 }
 
+/* TEXT STYLING*/
+  a {
+    font-weight: 500;
+    font-family: $body__font;
+    color: $Charcoal;
+    text-decoration: inherit;
+  }
 
+  a:hover {
+    color: $Charcoal;
+    text-decoration: underline;
+    text-decoration-color: $Charcoal;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+/* TEXT STYLING*/

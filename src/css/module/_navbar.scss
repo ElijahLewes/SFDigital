@@ -1,7 +1,10 @@
 @use '../base/_base' as *;
+@use '../theme/_themes.scss' as *;
+
 
 // base wrapper (your existing styles)
 .navbar__wrapper {
+  background: nav-background;
   width: 100%;
   position: sticky;
   top: 0;
@@ -26,7 +29,7 @@
 // ✅ Use currentColor so variants control color
 #navbar__logo {
   background-color: transparent;
-  color: currentColor;
+  color: background;
   display: flex;
   flex-direction: row;
   width: 25px;
@@ -54,7 +57,7 @@
 // ✅ Inherit color from variant
 .navbar__links a {
   font-family: $body__font;
-  color: currentColor;
+  color: text;
   font-size: 20px;
   font-weight: 400;
   text-decoration: none;
@@ -94,8 +97,7 @@
 
 // default (fallback)
 .navbar__default {
-  background: $Charcoal;
-  color: $Isabelline
+  background: nav-background;
 }
 
 // home
