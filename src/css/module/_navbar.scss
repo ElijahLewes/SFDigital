@@ -4,11 +4,13 @@
 .navbar__wrapper {
   width: 100%;
   position: sticky;
-  top: 40px;
+  top: 0;
+  // Keep height relative to view port becuase navbar isn't wrapped in page container
+  height: 15vh;
   display: flex;
   flex-direction: row;
   gap: 50px;
-  margin-left: 40px;
+  padding: 10px 20px;
   z-index: 1000;
   justify-content: flex-start;
   align-items: center;

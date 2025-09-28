@@ -22,8 +22,12 @@ export default function Navbar() {
     // navbarState === "team" ? "navbar__team" :
     // navbarState === "link212" ? "navbar__link212" :
     "navbar__default";
+  
+    // set theme controls
+    const [theme, setTheme] = useState("light");
 
   return (
+
     <nav className={`navbar__wrapper ${variant}`}>
       <div className="navbar__logo-wrapper">
         <Link id="navbar__logo" to="/">SFD</Link>
@@ -46,6 +50,9 @@ export default function Navbar() {
           <img src="/images/yt-icon-light.svg" alt="youtube icon" />
         </a>
       </div>
+      <button onClick={() => setTheme(theme === "light-theme" ? "dark-theme" : "light-theme")}>
+        Toggle Theme
+      </button>
     </nav>
   );
 }

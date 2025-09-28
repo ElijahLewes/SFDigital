@@ -1,0 +1,10 @@
+@each $name, $map in $themes {
+  [data-theme="#{$name}"] { @include emit-theme-vars($map); }
+}
+/* Defaults if no theme applied */
+:root { @include emit-theme-vars(map.get($themes, light)); }
+
+/* Respect user OS setting when you haven't set a theme yet */
+@media (prefers-color-scheme: dark) {
+  :root { @include emit-theme-vars(map.get($themes, dark)); }
+}

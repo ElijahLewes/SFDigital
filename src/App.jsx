@@ -12,6 +12,7 @@ import Team from './pages/Team.jsx';
 import ContactUs from './pages/ContactUs.jsx';
 import Remington from './pages/NeighborhoodPages/Remington.jsx';
 import Footer from './components/Footer.jsx';
+import { useSyncExternalStore } from "react";
 
 
 function App() {
@@ -19,9 +20,10 @@ function App() {
 
   const isLanding = location.pathname === "/";
 
+
   return (
     <>
-      {/* Show Navbar only if not landing */}
+    {/* Show Navbar only if not landing */}
       {!isLanding && <Navbar />}
 
       <AnimatePresence mode="wait" initial={false}>
