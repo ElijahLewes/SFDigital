@@ -1,4 +1,4 @@
-import "bulma/css/bulma.css";
+
 import "./css/App.scss";
 import { AnimatePresence } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -19,6 +19,7 @@ function App() {
   const location = useLocation();
 
   const isLanding = location.pathname === "/";
+
 
 
   return (

@@ -39,7 +39,7 @@ export default function Navbar() {
         <Link id="navbar__logo" to="/">SFD</Link>
       </div>
 
-      <div className="navbar__links">
+      <div className="navbçar__links">
         <NavButton to="/link212" label="Link 212" />
         <NavButton to="/contact" label="Contact" />
         <NavButton to="/team" label="About" />

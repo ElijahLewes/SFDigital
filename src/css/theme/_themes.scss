@@ -17,7 +17,7 @@ $themes: (
     l212-title: $Indigo-Dye,
     sfd-button: $Fawn,
     l212-button: $Isabelline,
-    nav-background: $Charcoal
+    nav-background: $Fawn
   ),
   dark: (
     background: $Charcoal,
@@ -27,19 +27,21 @@ $themes: (
     l212-title: $Clover,
     sfd-button: $Charcoal,
     l212-button: $Collard-Green,
-    nav-background: $Fawn
+    nav-background: $Charcoal
   )
 );
 
-// Generate [data-theme="..."] scopes
-@each $name, $map in $themes {
-  [data-theme="#{$name}"] { @include emit-theme-vars($map); }
-}
-
-/* Defaults if no theme applied */
+/* 1) Set a default first (light) */
 :root { @include emit-theme-vars(map.get($themes, light)); }
 
-/* Respect user OS setting when you haven't set a theme yet */
-// @media (prefers-color-scheme: dark) {
-//   :root { @include emit-theme-vars(map.get($themes, dark)); }
-// }
+/* 2) Then override by theme (these now win in the cascade) */
+@each $name, $map in $themes {
+  :root[data-theme="#{$name}"] { @include emit-theme-vars($map); }
+}
+
+/* Optional: respect OS preference when no data-theme is set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include emit-theme-vars(map.get($themes, dark));
+  }
+}
