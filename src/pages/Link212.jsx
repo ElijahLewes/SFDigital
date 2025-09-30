@@ -70,13 +70,15 @@ function Link212() {
   };
 
   return (
-    <div className="bg-[var(--Isabelline)] min-h-screen">
+    <div className="page__container">
+    <div className="min-h-screen">
       {/* HEADER */}
-      <section id="l212-header-wrapper">
-        <div className="l212-header">
-          <p>Link 212</p>
-          <div className="divider" />
-          <div className="l212-descript">
+      <section id="l212-header">
+        <div id="header__wrapper--row">
+        
+          <p className="l212__title header__right-l212">Link 212</p>
+          <div className="divider-l212" />
+          <div className="text__description-l212">
             <p>
               Link 212 cultivates civic pride among young adults in Baltimore
               through shared local knowledge, neighborhood connections, and
@@ -87,7 +89,7 @@ function Link212() {
             </p>
           </div>
         </div>
-        <div className="l212-header-right">
+          <div className="l212-header-right">
           <img
             src="images/l212/quote-start.svg"
             alt="starting quote"
@@ -103,6 +105,7 @@ function Link212() {
             className="l212-end-quote"
           />
         </div>
+      
       </section>
 
       {/* MAP + MENU + PREVIEW */}
@@ -209,6 +212,7 @@ function Link212() {
         </div>
       </section>
     </div>
+  </div>
   );
 }
 

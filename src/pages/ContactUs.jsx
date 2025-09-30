@@ -8,6 +8,7 @@ function ContactUs() {
   const [activeTab, setActiveTab] = useState('general');
 
   return (
+    <div className="page-container">
     <div className="contactus__container">
       {/* Title + Socials */}
       <section className="contactform__section">
@@ -79,6 +80,7 @@ function ContactUs() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
 

@@ -11,6 +11,8 @@
   background-color: background;
   display: flex;
   flex-direction: column;
+  background: var(--background);
+  color: var(--text);
 }
 
 .page__container-column {

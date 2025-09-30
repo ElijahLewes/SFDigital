@@ -56,14 +56,7 @@ const FlipCard = ({
               <img src={imageSrc} alt={`${fName || ""} ${lName || ""}`} />
             </div>
           )}
-          <div className="flip-card__content">
-            <h3 className="flip-card__name">
-              {fName} {lName}
-            </h3>
-            {description && (
-              <p className="flip-card__desc">{description}</p>
-            )}
-          </div>
+         
         </div>
 
         {/* BACK */}
@@ -72,6 +65,14 @@ const FlipCard = ({
           aria-hidden={!flipped}
         >
           <div className="flip-card__content">
+             <div className="flip-card__content">
+            <h3 className="flip-card__name">
+              {fName} {lName}
+            </h3>
+            {description && (
+              <p className="flip-card__desc">{description}</p>
+            )}
+          </div>
             {bio && <p className="flip-card__bio">{bio}</p>}
             <div className="flip-card__links">
               {email && (
