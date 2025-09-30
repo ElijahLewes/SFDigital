@@ -33,29 +33,30 @@ html, body {
     font-display: swap;
   }
 
-  @font-face {
-    font-family: 'GangsterGrotesk-Bold';
-    src: url('./fonts/GangsterGrotesk-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-  }
+@font-face {
+  font-family: "Gangster Grotesk";
+  src: url("./fonts/GangsterGrotesk-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
-  @font-face {
-    font-family: 'GangsterGrotesk-Regular';
-    src: url('./fonts/GangsterGrotesk-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+@font-face {
+  font-family: "Gangster Grotesk";
+  src: url("./fonts/GangsterGrotesk-Regular.woff2") format("woff2");
+  font-weight: 400; /* regular */
+  font-style: normal;
+  font-display: swap;
+}
 
-  @font-face {
-    font-family: 'GangsterGrotesk-Light';
-    src: url('./fonts/GangsterGrotesk-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-  }
+@font-face {
+  font-family: "Gangster Grotesk";
+  src: url("./fonts/GangsterGrotesk-Bold.woff2") format("woff2");
+  font-weight: 700; /* bold */
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Global font-face declarations*/
 
 /* Sass Color Variables*/
@@ -86,18 +87,19 @@ $body__font: "Mona Sans";
 $title__size: 80px;
 $body_size: 30px;
 
-%sfd__title {
+.sfd__title {
   font-family: $sfd__title-font;
   font-size: $title__size;
   line-height: 1.2;
   font-weight: 400;
 }
 
-%l212__title{
+.l212__title{
   font-family: $l212__title-font;
   font-size: $title__size;
   line-height: 1.2;
   font-weight: 400;
+  color: var(--title);
 }
 
 %body__font{
@@ -110,17 +112,14 @@ $body_size: 30px;
 }
 
 /*BASE CLASSES*/
-.page__container {
-  @apply w-full h-full flex flex-col items-start justify-center p-12;
-  background: var(--background);
-}
+
 .section__container{
   @apply flex flex-col w-full gap-y-1;
 }
 h1{
   
 }
-%h2{
+h2{
   font-family: 'Career', sans-serif;
   @apply text-5xl mb-2 text-left w-full;
   transition: transform 1.4s ease;
@@ -200,6 +199,7 @@ img{
   line-height: 1.4;
   font-size: 19px;
   text-align: left;
+  color: var(--body-color)
 }
 
 /* TEXT STYLING*/

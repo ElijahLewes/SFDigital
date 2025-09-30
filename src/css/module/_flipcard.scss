@@ -81,8 +81,6 @@ Flip card experimentteam page */
 
 .flip-card__image {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
   background: #111827;
 }
 .flip-card__image img {
@@ -208,8 +206,8 @@ Flip card experimentteam page */
 /* Optional content helpers */
 .flip-card__image {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #111827;
+  height: 100%;
+  
 }
 .flip-card__image img {
   width: 100%;
