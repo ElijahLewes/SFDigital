@@ -33,7 +33,7 @@ const FlipCard = ({
       toggleFlip();
     }
   };
-
+ 
   return (
     <div
       className={`flip-card ${className}`}
