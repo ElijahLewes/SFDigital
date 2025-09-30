@@ -112,6 +112,7 @@ $body_size: 30px;
 /*BASE CLASSES*/
 .page__container {
   @apply w-full h-full flex flex-col items-start justify-center p-12;
+  background: var(--background);
 }
 .section__container{
   @apply flex flex-col w-full gap-y-1;
@@ -190,7 +191,6 @@ img{
 
 .header__text{
   font-size: 60px;
-  color: var(--Indigo-Dye);
   line-height: 1;
 }
 
