@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import '../css/theme/_themes.scss';
+
 
 export default function Navbar() {
   const { pathname } = useLocation();
@@ -22,14 +24,22 @@ export default function Navbar() {
     // navbarState === "team" ? "navbar__team" :
     // navbarState === "link212" ? "navbar__link212" :
     "navbar__default";
+  
+    // set theme controls
+    const [theme, setTheme] = useState("light");
+     
+    useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
 
   return (
+
     <nav className={`navbar__wrapper ${variant}`}>
       <div className="navbar__logo-wrapper">
         <Link id="navbar__logo" to="/">SFD</Link>
       </div>
 
-      <div className="navbar__links">
+      <div className="navbçar__links">
         <NavButton to="/link212" label="Link 212" />
         <NavButton to="/contact" label="Contact" />
         <NavButton to="/team" label="About" />
@@ -46,6 +56,9 @@ export default function Navbar() {
           <img src="/images/yt-icon-light.svg" alt="youtube icon" />
         </a>
       </div>
+      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        Toggle Theme
+      </button>
     </nav>
   );
 }

@@ -1,14 +1,19 @@
-@use '../base/_base' as *;
+@use '../base/_base.scss' as *;
+@use '../theme/_themes.scss' as *;
+
 
 // base wrapper (your existing styles)
 .navbar__wrapper {
+  background: var(--nav-background);
   width: 100%;
   position: sticky;
-  top: 40px;
+  top: 0;
+  // Keep height relative to view port becuase navbar isn't wrapped in page container
+  height: 15vh;
   display: flex;
   flex-direction: row;
   gap: 50px;
-  margin-left: 40px;
+  padding: 10px 20px;
   z-index: 1000;
   justify-content: flex-start;
   align-items: center;
@@ -23,8 +28,8 @@
 
 // ✅ Use currentColor so variants control color
 #navbar__logo {
-  background-color: transparent;
-  color: currentColor;
+background-color: transparent;
+  color: background;
   display: flex;
   flex-direction: row;
   width: 25px;
@@ -44,19 +49,17 @@
 }
 
 .navbar__links {
+  color: var(--text);
   display: flex;
   flex-direction: row;
   gap: 35px;
-}
-
-// ✅ Inherit color from variant
-.navbar__links a {
-  font-family: $body__font;
-  color: currentColor;
   font-size: 20px;
   font-weight: 400;
   text-decoration: none;
+  font-family: $body__font;
 }
+
+
 
 .navbar__links a:hover {
   text-decoration: underline;
@@ -92,8 +95,7 @@
 
 // default (fallback)
 .navbar__default {
-  background: $Charcoal;
-  color: $Isabelline
+  background: nav-background;
 }
 
 // home

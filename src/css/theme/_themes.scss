@@ -1,0 +1,47 @@
+@use '../base/_base.scss' as *;
+@use "sass:map";
+
+// Emits CSS variables like --background, --text, etc.
+@mixin emit-theme-vars($theme-map) {
+  @each $token, $value in $theme-map {
+    --#{$token}: #{$value};
+  }
+}
+
+$themes: (
+  light: (
+    background: $Fawn,
+    color: $Charcoal,
+    title: $Charcoal,
+    body-color: $Charcoal,
+    l212-title: $Indigo-Dye,
+    sfd-button: $Fawn,
+    l212-button: $Isabelline,
+    nav-background: $Fawn
+  ),
+  dark: (
+    background: $Charcoal,
+    color: $Fawn,
+    title: $Fawn,
+    body-color: $Fawn,
+    l212-title: $Clover,
+    sfd-button: $Charcoal,
+    l212-button: $Collard-Green,
+    nav-background: $Charcoal
+  )
+);
+
+/* 1) Set a default first (light) */
+:root { @include emit-theme-vars(map.get($themes, light)); }
+
+/* 2) Then override by theme (these now win in the cascade) */
+@each $name, $map in $themes {
+  :root[data-theme="#{$name}"] { @include emit-theme-vars($map); }
+}
+
+/* Optional: respect OS preference when no data-theme is set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include emit-theme-vars(map.get($themes, dark));
+  }
+}
