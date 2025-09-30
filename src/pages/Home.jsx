@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "../components/ProjectCard";
 import "../css/layout/_landinglayout.scss";
@@ -6,9 +6,31 @@ import ContactUs from "./ContactUs.jsx";
 import FlipCard from "/src/components/FlipCard.jsx";
 
 export default function Home() {
-
   const [activeIndex, setActiveIndex] = useState(null);
   const [flippedIndex, setFlippedIndex] = useState(null);
+
+  // Observe the HERO (motion.div) directly
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        document.documentElement.setAttribute(
+          "data-nav",
+          entry.isIntersecting ? "at-hero" : "after-hero"
+        );
+      },
+      { threshold: 0.1 } // hero considered visible if ≥10% in view
+    );
+
+    // Default while hero is visible
+    document.documentElement.setAttribute("data-nav", "at-hero");
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   const handleHover = (index) => {
     setActiveIndex(index);
@@ -32,7 +54,8 @@ export default function Home() {
 
   return (
     <div className="page__container">
-      <section className="landing__section">
+      {/* Attach ref to your hero motion.div */}
+      <motion.div ref={heroRef} className="landing__section">
         <motion.img
           src="/images/remington.JPG"
           alt="Background"
@@ -68,8 +91,9 @@ export default function Home() {
               <button>Work With Us</button>
             </div>
             </motion.div>
-        </section>
-       <section className=" items-start justify-start gap-y-8 px-4 md:px-16">
+      </motion.div>
+
+      <section className=" items-start justify-start gap-y-8 px-4 md:px-16">
         <div className="about-us-section-container items-start text-left mt-[150px]">
           <h2>WHO ARE WE?</h2>
           <div className="about-us-divider"></div>

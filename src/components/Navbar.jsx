@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import '../css/theme/_themes.scss';
 
@@ -6,31 +6,23 @@ import '../css/theme/_themes.scss';
 export default function Navbar() {
   const { pathname } = useLocation();
 
-  // Extend mapping for additional custom navbar designs. Likely for link212 page.
-  const [navbarState, setNavbarState] = useState("default"); // "home" | "contact" | "team" | "link212" | "default"
+  // Start in the correct variant on first render (no flash)
+  const initialVariant =
+    pathname === "/" || pathname === "/home" ? "home" : "default";
+  const [navbarState, setNavbarState] = useState(initialVariant);
 
   useEffect(() => {
-    if (pathname === "/home" || pathname === "/") setNavbarState("home");
-    // else if (pathname === "/contact") setNavbarState("contact");
-    // else if (pathname === "/team") setNavbarState("team");
-    // else if (pathname === "/link212") setNavbarState("link212");
-    else setNavbarState("default");
+    setNavbarState(pathname === "/" || pathname === "/home" ? "home" : "default");
   }, [pathname]);
 
-  // map state -> global class name. Uncomment/add as needed.
-  const variant =
-    navbarState === "home" ? "navbar__home" :
-    // navbarState === "contact" ? "navbar__contact" :
-    // navbarState === "team" ? "navbar__team" :
-    // navbarState === "link212" ? "navbar__link212" :
-    "navbar__default";
-  
-    // set theme controls
-    const [theme, setTheme] = useState("light");
+  // set theme controls
+  const [theme, setTheme] = useState("light");
      
-    useEffect(() => {
+  useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
+
+  const variant = navbarState === "home" ? "navbar__home" : "navbar__default";
 
   return (
 
