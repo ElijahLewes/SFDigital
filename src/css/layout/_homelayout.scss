@@ -9,7 +9,8 @@
   justify-content: center;
   align-items: center;
   flex: 1;
-  width: 100%; /* h-[900px] */ /* gap-y-4 → 1rem */
+  width: 100%;
+ /* h-[900px] */ /* gap-y-4 → 1rem */
 }
 
 .home__projectcards-container {
@@ -20,7 +21,6 @@
   height: 900px;
   width: 100%;
   gap: 10px;
-  margin: 200px;
 }
 
 .home__projectcard {

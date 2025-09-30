@@ -20,24 +20,24 @@ function CFLink212({ activeTab }) {
   if (activeTab !== 'support') return null;
 
   return (
-    <div className="form__wrapper">
+    <div className="form__wrapper-l212">
       {showThankYou ? (
-        <div className="form__wrapper-ty-l212">
-          <p className="text-[var(--Light)] w-[450px]">
-            Thank you for contacting us! <br />We will do our best to get back to you within the next 3 business days.
-          </p>
-          <button 
-            onClick={handleNewMessage}
-            className="new-msg-btn text-[var(--Light)] hover:opacity-100"
-          >
-            <ArrowAngularTopRight />
-            Send Another Message
-          </button>
-        </div>
+         <div className="form__wrapper-ty-l212">
+            <p>
+              Thank you for contacting us! <br />We will do our best to get back to you within 3 business days.
+            </p>
+            <div className="form__newmsg-wrapper">
+              <button 
+                onClick={handleNewMessage}
+                className="form__btn-newmsg-l212"
+              >
+              <ArrowAngularTopRight />
+                Send Another Message
+              </button>
+              </div>
+          </div>
       ) : (
-        <div className={`form__wrapper-l212 transition-all duration-500 ${showForm ? 'opacity-100' : 'opacity-50 overflow-hidden'}`}>
-          <form className="form__wrapper-userinput flex flex-col gap-4">
-            <h3 className="text-[25px] font-bold text-[var(--Light)]">Link 212 Support</h3>
+          <form className="form__wrapper-userinput">
             <input 
               type="text" 
               placeholder="Your Name" 
@@ -66,7 +66,6 @@ function CFLink212({ activeTab }) {
             />
             <ContactFormSubmitBtn onFormSubmit={handleFormSubmit} />
           </form>
-        </div>
       )}
     </div>
   );

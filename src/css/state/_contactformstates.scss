@@ -4,47 +4,73 @@
 
 .form__wrapper-general{
   @extend .form__wrapper;
-  background-color: $Charcoal;
+  background-color: var(--contactGeneral-background);
+  color: var(--contactGeneral-text);
 }
 
 .form__wrapper-project{
   @extend .form__wrapper;
-  background-color:#E1D5C8;
+  background-color: var(--contactProject-background);
+  color: var(--contactProject-text);
 }
 
 .form__wrapper-l212{
   @extend .form__wrapper;
-  background-color: $Collard-Green;
+  background-color: var(--contactL212-background);
+  color: var(--contactL212-text);
 }
 
-.form__input-general .form__input-l212{
-  @extend .form__input;
-  color: $Fawn;
-  border-bottom: 1.4px solid $Fawn;
-}
 
-.form__input-project{
-  @extend .form__input;
-  color: $Charcoal;
-  border-bottom: 1.4px solid $Charcoal;
+.form__input{
+  padding: 0;
+  margin: 0 20px;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 2.5;
+  display: block;
+
+  &-general{
+  background-color: transparent;
+  color: var(--contactGeneral-text);
+  border: none;
+  border-bottom: 1.8px solid var(--contactGeneral-text);
+  font-family: $body__font;
+  font-size: 18px;
+  }
+
+  &-l212{
+  background-color: transparent;
+  color:var(--color);
+  border: none;
+  border-bottom: 1.9px solid var(--contactL212-text);
+  font-family: $body__font;
+  font-size: 18px;
+  font-weight: 500;
+  }
+
+  &-project{
+  background-color: transparent;
+  color: var(--contactGeneral-text);
+  border: none;
+  border-bottom: 1.8px solid var(--contactGeneral-text);
+  font-family: $body__font;
+  font-size: 18px;
+  }
 }
 
 .form__wrapper-ty-general{
   @extend .form__wrapper-ty;
-  background-color: $Charcoal;
-  color: $Fawn;
+  background-color: transparent;
 }
 
 .form__wrapper-ty-project{
   @extend .form__wrapper-ty;
-  background-color:#E1D5C8;
-  color: $Charcoal;
+  background-color: transparent;
 }
 
 .form__wrapper-ty-l212{
   @extend .form__wrapper-ty;
-  background-color: $Collard-Green;
-  color: $Fawn;
+  background-color: transparent;
 }
 
 

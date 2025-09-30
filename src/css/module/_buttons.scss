@@ -20,6 +20,11 @@ button {
   width: auto;
   padding: 5px 40px;
   align-items: center;
+  text-decoration: none;
+}
+
+button:hover{
+  text-decoration: none;
 }
 
 .small-button {
@@ -107,7 +112,8 @@ button:focus-visible {
   margin-top: 50px;
   margin-bottom: 20px;
 }
-.sm__container-ig{ /*Buttons on the contact page header*/
+
+.sm__container-ig {
   display: flex;
   flex-direction: row;
   background-color: $Charcoal;
@@ -117,6 +123,11 @@ button:focus-visible {
   justify-content: center;
   height: 50px;
   width: 180px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .sm__container-yt{
@@ -130,38 +141,17 @@ button:focus-visible {
   height: 50px;
   width: 280px;
 }
-/*CONTACT FORM PAGE*/
 
-.form__btn-submit{
-  background-color: var(--Highlight);
-  color: var(--Charcoal);
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  margin-left: 20px;
-  width: 130px;
+.sm__container-ig img{
+  width: 32px;
   height: 50px;
-  border: 20px;
-  font-size: 20px;
-  font-weight: 700;
-  text-transform:uppercase;
 }
 
-.form__btn-newmsg{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 10px;
-  font-weight: 600;
-  font-size: 20px;
-  background-color: transparent;
-  margin-top: 25px;
-  align-items: center;
-  text-align: right;
-  padding: 0;
-  justify-content: flex-end;
-  
-}
 
+.sm__container-yt img {
+  width: 45px;
+  height: 50px;
+}
+/*CONTACT FORM PAGE*/
 
 

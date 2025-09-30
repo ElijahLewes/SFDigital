@@ -17,11 +17,11 @@ function ContactFormSubmitBtn({ onFormSubmit }) {
   };
 
   return (
-    <div className="submit-btn-wrapper flex w-full justify-end pr-[20px]">
+    <div className="form__btn-wrapper">
     <button 
       type="submit"
       onClick={handleSubmit} 
-      className="contact-form-submit-btn hover:opacity-100 transition-all duration-300"
+      className="form__btn-submit"
       disabled={isSubmitted}
     >
       {isSubmitted ? 'Sent!' : 'Submit'}
