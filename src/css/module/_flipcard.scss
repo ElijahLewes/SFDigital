@@ -57,7 +57,7 @@ Flip card experimentteam page */
   -webkit-backface-visibility: hidden;
   display: grid;
   grid-template-rows: auto 1fr;
-  background: #fff;
+
   border: 1px solid rgba(15, 23, 42, 0.15);
   border-radius: 12px;
   overflow: hidden;
@@ -112,7 +112,36 @@ Flip card experimentteam page */
   color: #e5e7eb;
   line-height: 1.5;
 }
+/* Ensure the front is filled entirely by the image */
+.flip-card__front {
+  position: relative;
+  display: block; /* override grid from .flip-card__face */
+  background: transparent;
+}
 
+.flip-card__front .flip-card__image {
+  position: absolute;
+  inset: 0;         /* top/right/bottom/left: 0 */
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card__front .flip-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cover the whole face */
+  display: block;
+}
+
+/* Hide any front content so only the image shows */
+.flip-card__front .flip-card__content {
+  display: none;
+}
+
+/* Remove default white panel */
+.flip-card__face {
+  background: transparent;
+}
 .flip-card__links {
   display: grid;
   gap: 8px;
@@ -152,7 +181,6 @@ Flip card experimentteam page */
     display: none;
   }
 }
-// ...existing code...
 
 /* FlipCard base styles matching FlipCard.jsx */
 .flip-card {
@@ -228,6 +256,9 @@ Flip card experimentteam page */
 .flip-card__links { display: grid; gap: 8px; }
 .flip-card__link { color: #cbd5e1; text-decoration: underline; }
 .flip-card__link:hover { color: #ffffff; }
+
+
+
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
