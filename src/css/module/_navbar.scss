@@ -40,7 +40,8 @@
   font-family: $sfd__title-font;
   font-size: 28px;
   opacity: 0.8;
-  transition: all 0.5s ease-out;
+  // Only animate the hover transform; avoid color/background fades
+  transition: transform 0.5s ease-out;
   transform-origin: left center;
 }
 
@@ -77,7 +78,8 @@
   padding: 6px 14px;
   line-height: 1;
   text-decoration: none;
-  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+  // Remove color/background/border transitions to prevent fade on scroll
+  transition: none;
 }
 .nav-btn:hover {
   background-color: currentColor;
@@ -89,7 +91,8 @@
 .navbar__wrapper.navbar__home {
   background: transparent;
   color: $Fawn;
-  transition: color .2s ease, background-color .2s ease;
+  // Remove transitions so scroll change is instantaneous
+  transition: none;
 }
 
 /* After hero: adopt theme colors (text = var(--color), bg = var(--background)) */
