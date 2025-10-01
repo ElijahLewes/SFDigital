@@ -44,13 +44,13 @@ export default function Home() {
   };
 
   const projectData = [
-    { title: "Project 1", shortDescription: "Brief description", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-2.jpg" },
-        { title: "Project 5", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-14.jpg" },
-    { title: "Project 3", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-10.jpg" },
-    { title: "Project 4", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-11.jpg" },
-    { title: "Project 6", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-16.jpg" },
-    { title: "Project 6", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-18.jpg" },
-    { title: "Project 6", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-20.jpg" }
+    { title: "Project 1", shortDescription: "Brief description", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-2.webp" },
+    { title: "Project 5", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-14.webp" },
+    { title: "Project 3", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-10.webp" },
+    { title: "Project 4", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-11.webp" },
+    { title: "Project 6", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-16.webp" },
+    { title: "Project 6", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-18.webp" },
+    { title: "Project 6", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-20.webp" }
   ];
 
   return (
@@ -104,6 +104,7 @@ export default function Home() {
                 {projectData.map((project, index) => (
                   <ProjectCard
                     key={index}
+                    index={index}              // pass index if you want a small stagger
                     {...project}
                     isActive={activeIndex === index}
                     isFlipped={flippedIndex === index}
