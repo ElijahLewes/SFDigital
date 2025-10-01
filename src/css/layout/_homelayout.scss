@@ -16,10 +16,10 @@
 .home__projectcards-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 900px;
-  width: 100%;
+  width: 98%;
   gap: 10px;
 }
 
@@ -30,15 +30,15 @@
   position: relative;
 
   &.active{
-    height: 650px;
+    height: 590px;
     width: 50px;
-    flex-basis: 30%;
+    flex-basis: 35%;
   }
 
   &.inactive{
-    height: 600px;
-    width: 25px;
-    flex-basis: 8%;
+    height: 590px;
+    width: 45px;
+    flex-basis: 16%;
   }
 
   &-inner{
@@ -67,7 +67,7 @@
     }
 
     &.inactive{
-      border-radius: 23px;
+      border-radius: 18px;
     }
   }
 

@@ -12,8 +12,8 @@
   height: 15vh;
   display: flex;
   flex-direction: row;
-  gap: 50px;
-  padding: 10px 20px;
+  gap: 30px;
+  padding: 10px 40px;
   z-index: 1000;
   justify-content: flex-start;
   align-items: center;
@@ -59,13 +59,19 @@
   font-weight: 400;
   font-family: $body__font;
 }
-.navbar__links a,
+.navbar__links a{
+  transition: text-decoration 0.5s ease-in-out;
+  border: none;
+}
 .navbar__links a:visited {
   color: currentColor;
   text-decoration: none;
+  border: none;
 }
 .navbar__links a:hover {
   text-decoration: underline;
+  transition: currentColor;
+  background-color: transparent;
 }
 
 /* Optional: "button-style" links also inherit color */

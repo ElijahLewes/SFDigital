@@ -3,40 +3,40 @@
 .contactus__container{
   min-height: 100vh;
   width: 100%;
-  flex: 1;
   display: flex;
   flex-direction: column;
-
+  padding: 0;
 }
 
 .contactform__wrapper{
   display: flex;
   flex-direction: row;
   position: relative;
-  justify-content: end;
+  justify-content: flex-end;
   width: 100%;
+  padding: 0;
 }
 
 .contactform__section{
-flex-direction: row;
-width: 100%;
-height: 400px;
-justify-content: right;
-z-index: 0;
-margin: 0 80px;
+  flex-direction: row;
+  width: 100%;
+  height: 400px;
+  justify-content: flex-end;
+  z-index: 0;
+  padding: 0 30px;
 }
 
 .tab__container{
-display: flex;
-flex-direction: column;
-justify-content:end;
-gap: 25px;
-z-index:0;
-width: 800px;
-position: absolute;
-right: 150px;
-margin: 20px 0;
-height: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content:end;
+  gap: 25px;
+  z-index:0;
+  width: 800px;
+  position: absolute;
+  right: 150px;
+  margin: 20px 0;
+  height: 540px;
 }
 
 .tab__button {
@@ -46,32 +46,17 @@ height: 540px;
   font-size: 20px;
   text-align: left;
   box-shadow: -3px 2px 4px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-
-  &.general{
-    background-color: var(--contactGeneral-background);
-    color: var(--contactGeneral-text);
-  }
-  
-  &.active.project, &.inactive.project {
-    background-color: var(--contactProject-background);
-    color: var(--contactProject-text);
-  }
-
-  &.active.l212, &.inactive.l212 {
-    background-color: var(--contactL212-background);
-    color: var(--contactL212-text);
-  }
 }
 
 
 .form__wrapper {
   display: flex;
   flex-direction: column;
-  padding: 60px 40px;
+  padding: 40px 40px;
   width: 730px;
-  height: 85vh;
-  border-radius: 10px 0;
+  justify-content: flex-end;
+  height: 80vh;
+  border-radius: 10px 0 0;
   z-index: 2;
   box-shadow: -3px -2.5px 4px rgba(0, 0, 0, 0.2);
 }
