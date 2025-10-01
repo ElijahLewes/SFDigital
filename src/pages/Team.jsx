@@ -20,6 +20,33 @@ function Team() {
           </p>
         </div>
 
+              <section className=" items-start justify-start gap-y-8 px-4 md:px-16">
+        <div className="about-us-section-container items-start text-left mt-[150px]">
+          <h2>WHO ARE WE?</h2>
+          <div className="about-us-divider"></div>
+          <div className="about-us-text-container">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing <br />
+              elit, sed do eiusmod tempor incididunt ut labore et <br />
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+
+        {/* Mission Statement */}
+        <div className="about-us-section-container flex flex-col items-start mt-[190px]">
+          <h2 className="about-us-subtitle">OUR MISSION</h2>
+          <div className="about-us-divider w-[400px]"></div>
+          <div className="about-us-text-container text-left">
+            <p>
+              Our mission is to provide exceptional digital solutions <br />
+              that empower communities and foster growth.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
         {/* Team cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full">
           <FlipCard

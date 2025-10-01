@@ -17,7 +17,7 @@ function CFLink212({ activeTab }) {
   };
 
   // Updated to check for the correct activeTab value
-  if (activeTab !== 'support') return null;
+  if (activeTab !== 'l212') return null;
 
   return (
     <div className="form__wrapper-l212">

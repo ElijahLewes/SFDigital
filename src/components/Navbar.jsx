@@ -57,7 +57,7 @@ export default function Navbar() {
         <Link id="navbar__logo" to="/">SFD</Link>
       </div>
 
-      {/* fixed class name so link styles apply */}
+
       <div className="navbar__links">
         <NavButton to="/link212" label="Link 212" />
         <NavButton to="/contact" label="Contact" />

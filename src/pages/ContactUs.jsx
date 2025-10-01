@@ -7,11 +7,6 @@ import "../css/App.scss";
 function ContactUs() {
   const [activeTab, setActiveTab] = useState('general');
 
-
-  const [isGeneralInactive, setIsGeneralInactive] = useState(false);
-  const [isProjectInactive, setIsProjectInactive] = useState(false);
-  const [isL212Inactive, setIsL212Inactive] = useState(false);
-
   return (
     <div className="page-container">
     <div className="contactus__container">
@@ -56,30 +51,26 @@ function ContactUs() {
       {/* Form Section */}
       <div className="contactform__wrapper">
         {/* Tab Navigation */}
-        <div className="tab__container">
+       <div className="tab__container">
           <button
-            className={`tab__button ${
-              activeTab === 'general' ? 'active' : ''
-            } ${isGeneralInactive ? 'inactive' : ''}`}
-            onClick={() => !isGeneralInactive && setActiveTab('general')}
+            className={`tab__button-general ${activeTab === 'general' ? 'active' : ''}`}
+            onClick={() => setActiveTab('general')}
           >
             General
           </button>
+
           <button
-            className={`tab__button ${
-              activeTab === 'project' ? 'active' : ''
-            } ${isProjectInactive ? 'inactive' : ''}`}
-            onClick={() => !isProjectInactive && setActiveTab('project')}
+            className={`tab__button-project ${activeTab === 'project' ? 'active' : ''}`}
+            onClick={() => setActiveTab('project')}
           >
             Projects
           </button>
+
           <button
-            className={`tab__button ${
-              activeTab === 'l212' ? 'active' : ''
-            } ${isL212Inactive ? 'inactive' : ''}`}
-            onClick={() => !isL212Inactive && setActiveTab('l212')}
+            className={`tab__button-l212 ${activeTab === 'l212' ? 'active' : ''}`}
+            onClick={() => setActiveTab('l212')}
           >
-            Link212
+            Link 212
           </button>
         </div>
 

@@ -44,12 +44,13 @@ export default function Home() {
   };
 
   const projectData = [
-    { title: "Project 1", shortDescription: "Brief description", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
-    { title: "Project 2", shortDescription: "Quick look", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
-    { title: "Project 3", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
-    { title: "Project 4", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
-    { title: "Project 5", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
-    { title: "Project 6", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/pCardFiller.png" },
+    { title: "Project 1", shortDescription: "Brief description", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-2.jpg" },
+        { title: "Project 5", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-14.jpg" },
+    { title: "Project 3", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-10.jpg" },
+    { title: "Project 4", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-11.jpg" },
+    { title: "Project 6", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-16.jpg" },
+    { title: "Project 6", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-18.jpg" },
+    { title: "Project 6", shortDescription: "Overview", longDescription: "...", imageSrc: "/images/projectCardPics/Remington-20.jpg" }
   ];
 
   return (
@@ -92,32 +93,6 @@ export default function Home() {
             </div>
             </motion.div>
       </motion.div>
-
-      <section className=" items-start justify-start gap-y-8 px-4 md:px-16">
-        <div className="about-us-section-container items-start text-left mt-[150px]">
-          <h2>WHO ARE WE?</h2>
-          <div className="about-us-divider"></div>
-          <div className="about-us-text-container">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing <br />
-              elit, sed do eiusmod tempor incididunt ut labore et <br />
-              dolore magna aliqua.
-            </p>
-          </div>
-        </div>
-
-        {/* Mission Statement */}
-        <div className="about-us-section-container flex flex-col items-start mt-[190px]">
-          <h2 className="about-us-subtitle">OUR MISSION</h2>
-          <div className="about-us-divider w-[400px]"></div>
-          <div className="about-us-text-container text-left">
-            <p>
-              Our mission is to provide exceptional digital solutions <br />
-              that empower communities and foster growth.
-            </p>
-          </div>
-        </div>
-      </section>
 
       <section className="home__section">
           <div className="home__projectcards-container"

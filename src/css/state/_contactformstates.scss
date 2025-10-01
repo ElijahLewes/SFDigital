@@ -20,6 +20,28 @@
   color: var(--contactL212-text);
 }
 
+.tab__button-general{
+  @extend .tab__button;
+  background-color: var(--contactGeneral-background);
+  color: var(--contactGeneral-text);
+  opacity: 70%;
+
+  &.active{
+    opacity: 100%;
+  }
+  }
+
+.tab__button-project{
+  @extend .tab__button;
+  background-color: var(--contactProject-background);
+  color: var(--contactProject-text);
+  }
+
+.tab__button-l212{
+  @extend .tab__button;
+  background-color: var(--contactL212-background);
+  color: var(--contactL212-text);
+}
 
 .form__input{
   padding: 0;
@@ -33,16 +55,16 @@
   background-color: transparent;
   color: var(--contactGeneral-text);
   border: none;
-  border-bottom: 1.8px solid var(--contactGeneral-text);
+  border-bottom: 2px solid var(--contactGeneral-text);
   font-family: $body__font;
   font-size: 18px;
   }
 
   &-l212{
   background-color: transparent;
-  color:var(--color);
+  color:var(contactL212-text);
   border: none;
-  border-bottom: 1.9px solid var(--contactL212-text);
+  border-bottom: 2px solid var(--contactL212-text);
   font-family: $body__font;
   font-size: 18px;
   font-weight: 500;
@@ -52,7 +74,7 @@
   background-color: transparent;
   color: var(--contactGeneral-text);
   border: none;
-  border-bottom: 1.8px solid var(--contactGeneral-text);
+  border-bottom: 2px solid var(--contactGeneral-text);
   font-family: $body__font;
   font-size: 18px;
   }

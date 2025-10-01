@@ -4,8 +4,9 @@
 
 /*General Page Layout*/
 .page__container {
-  min-width: 100vw;
+  min-width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
   justify-content: center;
   margin: 0;
   background-color: background;
@@ -13,7 +14,6 @@
   flex-direction: column;
   background: var(--background);
   color: var(--text);
-  padding: 20px;
 }
 
 .page__container-column {
