@@ -19,18 +19,32 @@
   display: flex;
   flex-direction: column;
   height: 300px;
-  width: 650px;
   align-items: start;
   gap: 10px;
 }
 
+.divider-l212{
+  border-left: 1px solid var(--text);
+  width: 2px;
+  height: 50px;
+  margin: 0 10px;
+}
+
 .header__right-l212{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   z-index: 10;
   height: 350px;
-  width: 350px;
-  align-items: end;
+  width: 50%;
+  align-items: center;
+}
+
+.text__description-l212{
+  width: 50%;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--body-color);
+  font-family: 'Open Sans', sans-serif;
 }
 
 .l212-header-right img{

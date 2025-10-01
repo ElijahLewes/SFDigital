@@ -21,7 +21,7 @@ function Team() {
         </div>
 
         {/* Team cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full">
           <FlipCard
             imageSrc="/images/profilePics/LaurL ver3.svg"
             fName="Laur"

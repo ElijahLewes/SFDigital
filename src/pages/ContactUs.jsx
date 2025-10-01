@@ -7,6 +7,11 @@ import "../css/App.scss";
 function ContactUs() {
   const [activeTab, setActiveTab] = useState('general');
 
+
+  const [isGeneralInactive, setIsGeneralInactive] = useState(false);
+  const [isProjectInactive, setIsProjectInactive] = useState(false);
+  const [isL212Inactive, setIsL212Inactive] = useState(false);
+
   return (
     <div className="page-container">
     <div className="contactus__container">
@@ -53,22 +58,28 @@ function ContactUs() {
         {/* Tab Navigation */}
         <div className="tab__container">
           <button
-            onClick={() => setActiveTab('general')}
-            className={`tab__button ${activeTab === 'general' ? 'active' : ''}`}
+            className={`tab__button ${
+              activeTab === 'general' ? 'active' : ''
+            } ${isGeneralInactive ? 'inactive' : ''}`}
+            onClick={() => !isGeneralInactive && setActiveTab('general')}
           >
             General
           </button>
           <button
-            onClick={() => setActiveTab('project')}
-            className={`tab__button ${activeTab === 'project' ? 'active' : ''}`}
+            className={`tab__button ${
+              activeTab === 'project' ? 'active' : ''
+            } ${isProjectInactive ? 'inactive' : ''}`}
+            onClick={() => !isProjectInactive && setActiveTab('project')}
           >
             Projects
           </button>
           <button
-            onClick={() => setActiveTab('support')}
-            className={`tab__button ${activeTab === 'support' ? 'active' : ''}`}
+            className={`tab__button ${
+              activeTab === 'l212' ? 'active' : ''
+            } ${isL212Inactive ? 'inactive' : ''}`}
+            onClick={() => !isL212Inactive && setActiveTab('l212')}
           >
-            Link 212
+            Link212
           </button>
         </div>
 

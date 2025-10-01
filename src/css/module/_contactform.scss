@@ -46,23 +46,21 @@ height: 540px;
   font-size: 20px;
   text-align: left;
   box-shadow: -3px 2px 4px rgba(0, 0, 0, 0.4);
-  background-color: $Charcoal;
-  color: $Fawn;
   transition: all 0.3s ease;
 
-  &.active.general {
-    background-color: $Charcoal;
-    color: $Fawn;
+  &.general{
+    background-color: var(--contactGeneral-background);
+    color: var(--contactGeneral-text);
+  }
+  
+  &.active.project, &.inactive.project {
+    background-color: var(--contactProject-background);
+    color: var(--contactProject-text);
   }
 
-  &.active.project {
-    background-color: #E1D5C8;
-    color: $Charcoal;
-  }
-
-  &.active.support {
-    background-color: $Collard-Green;
-    color: $Fawn;
+  &.active.l212, &.inactive.l212 {
+    background-color: var(--contactL212-background);
+    color: var(--contactL212-text);
   }
 }
 

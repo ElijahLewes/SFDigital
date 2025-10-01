@@ -26,10 +26,10 @@
   height: 5px;
 }
 
-// ✅ Use currentColor so variants control color
+/* Logo inherits the navbar color */
 #navbar__logo {
-background-color: transparent;
-  color: background;
+  background-color: transparent;
+  color: currentColor;
   display: flex;
   flex-direction: row;
   width: 25px;
@@ -42,64 +42,77 @@ background-color: transparent;
   opacity: 0.8;
   transition: all 0.5s ease-out;
   transform-origin: left center;
+}
 
 #navbar__logo:hover {
   opacity: 1;
-  transform: scale(1.1); // (1.9 was huge; reduces layout jump)
+  transform: scale(1.1);
 }
 
+/* Links inherit the navbar color */
 .navbar__links {
-  color: var(--text);
+  color: currentColor;
   display: flex;
   flex-direction: row;
   gap: 35px;
   font-size: 20px;
   font-weight: 400;
-  text-decoration: none;
   font-family: $body__font;
 }
-
-
-
+.navbar__links a,
+.navbar__links a:visited {
+  color: currentColor;
+  text-decoration: none;
+}
 .navbar__links a:hover {
   text-decoration: underline;
 }
-}
 
-.navbar__btn-ig,
-.navbar__btn-yt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.9;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-.navbar__btn-ig {
-  width: 30px;
-  height: 30px;}
-
-.navbar__btn-yt {
-  width: 40px;
-  height: 30px;
-}
-
-.navbar__btn-ig:hover,
-.navbar__btn-yt:hover {
-  opacity: 1;
-  transform: scale(1.08);
-}
-
-// ---Variant Styling---------------------
-
-//Add additional variants as needed for special pages like link212
-
-// default (fallback)
-.navbar__default {
-  background: nav-background;
-}
-
-// home
-.navbar__home {
+/* Optional: "button-style" links also inherit color */
+.nav-btn {
+  color: currentColor;
   background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  line-height: 1;
+  text-decoration: none;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+}
+.nav-btn:hover {
+  background-color: currentColor;
+  color: var(--nav-background); // good contrast against the filled button
+  text-decoration: none;
+}
 
+/* Home: start transparent with Fawn text for contrast over hero */
+.navbar__wrapper.navbar__home {
+  background: transparent;
+  color: $Fawn;
+  transition: color .2s ease, background-color .2s ease;
+}
+
+/* After hero: adopt theme colors (text = var(--color), bg = var(--background)) */
+:root[data-nav="after-hero"] .navbar__wrapper.navbar__home {
+  background: var(--background);
+  color: var(--color);
+}
+
+/* Ensure links/buttons/logo inherit navbar color so they switch together */
+#navbar__logo,
+.navbar__links,
+.navbar__links a,
+.navbar__links a:visited,
+.nav-btn {
+  color: currentColor;
+}
+.nav-btn {
+  background: transparent;
+  border: 1px solid currentColor;
+}
+
+/* Default variant (non-home) uses theme vars at all times */
+.navbar__wrapper.navbar__default {
+  background: var(--nav-background);
+  color: var(--color);
 }
