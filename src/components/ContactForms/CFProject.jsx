@@ -19,29 +19,28 @@ function CFProject({ activeTab }) {
   if (activeTab !== 'project') return null;
 
   return (
-    <div className="form__wrapper">
+    <div className="form__wrapper-project">
       {showThankYou ? (
-        <div className="form__wrapper-ty-project">
-          <p className="text-[var(--Charcoal)] w-[450px]">
-            Thank you for contacting us! <br /> We will do our best to get back to you within the next 3 business days.
-          </p>
-          <button 
-            onClick={handleNewMessage}
-            className=" new-msg-btn text-[var(--Charcoal)]] rounded hover:opacity-100"
-            
-          >
-             <ArrowAngularTopRight />
-            Send Another Message
-          </button>
-        </div>
+         <div className="form__wrapper-ty-project">
+            <p>
+              Thank you for contacting us! <br />We will do our best to get back to you within 3 business days.
+            </p>
+            <div className="form__newmsg-wrapper">
+              <button 
+                onClick={handleNewMessage}
+                className="form__btn-newmsg-project"
+              >
+                <ArrowAngularTopRight />
+                  Send Another Message
+              </button>
+            </div>
+          </div>
       ) : (
-        <div className={`form__wrapper-project transition-all duration-500 ${showForm ? 'opacity-100' : 'opacity-0 overflow-hidden'}`}>
-          <form className="form__wrapper-userinput flex flex-col">
-            <h3 className="text-[25px] font-bold">Project Inquiry</h3>
+          <form className="form__wrapper-userinput">
             <input 
               type="text" 
               placeholder="Company Name" 
-              className="project-form-input"
+              className="form__input-project"
               required
             />
             <input 
@@ -65,7 +64,6 @@ function CFProject({ activeTab }) {
             />
             <ContactFormSubmitBtn onFormSubmit={handleFormSubmit} />
           </form>
-        </div>
       )}
     </div>
   );

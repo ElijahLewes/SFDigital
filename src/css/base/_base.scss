@@ -85,13 +85,14 @@ $sfd__title-font: "Career";
 $l212__title-font: "GangsterGrotesk";
 $body__font: "Mona Sans";
 $title__size: 80px;
-$body_size: 30px;
+$body__size: 30px;
 
 .sfd__title {
   font-family: $sfd__title-font;
   font-size: $title__size;
   line-height: 1.2;
   font-weight: 400;
+  color: var(--title);
 }
 
 .l212__title{
@@ -104,7 +105,7 @@ $body_size: 30px;
 
 %body__font{
   font-family: $body__font;
-  font-size: $body_size;
+  font-size: $body__size; 
   text-align: left;
   line-height: 1.2;
   font-weight: 300;
@@ -128,8 +129,8 @@ h2{
 %h3{
 
 }
-a{
-
+a {
+text-decoration: none;
 }
 p {
 

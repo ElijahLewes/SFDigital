@@ -25,17 +25,18 @@ function CFGeneral({ activeTab }) {
           <p>
             Thank you for contacting us! <br />We will do our best to get back to you within 3 business days.
           </p>
+          <div className="form__newmsg-wrapper">
           <button 
             onClick={handleNewMessage}
-            className="new-msg-btn"
+            className="form__btn-newmsg-general"
           >
             <ArrowAngularTopRight />
             Send Another Message
           </button>
+          </div>
         </div>
       ) : (
         <form className="form__wrapper-userinput">
-          <h3 className="body__font">General Inquiry</h3>
           <input 
             type="text"
             placeholder="Your Name" 
