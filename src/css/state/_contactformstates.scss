@@ -14,10 +14,10 @@
   color: var(--contactProject-text);
 }
 
-.form__wrapper-l212{
+.form__wrapper-support{
   @extend .form__wrapper;
-  background-color: var(--contactL212-background);
-  color: var(--contactL212-text);
+  background-color: var(--contactSupport-background);
+  color: var(--contactSupport-text);
 }
 
 .tab__button-general{
@@ -25,22 +25,66 @@
   background-color: var(--contactGeneral-background);
   color: var(--contactGeneral-text);
   opacity: 70%;
+  transition: transform 1s ease, opacity 0.3s ease;
+
+  &.inactive{
+    opacity: 70%;
+    transform: translateX(220px);
+  }
 
   &.active{
     opacity: 100%;
+    transform: translateX(0px);
   }
+
+  &.inactive:hover {
+    transform: translateX(170px);
   }
+}
 
 .tab__button-project{
   @extend .tab__button;
   background-color: var(--contactProject-background);
   color: var(--contactProject-text);
+  transition: transform 0.5s ease-in-out;
+  
+
+  &.inactive{
+    opacity: 70%;
+    transform: translateX(220px);
   }
 
-.tab__button-l212{
+  &.active{
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+
+  &.inactive:hover {
+    transform: translateX(170px);
+  }
+
+  }
+
+.tab__button-support{
   @extend .tab__button;
-  background-color: var(--contactL212-background);
-  color: var(--contactL212-text);
+  background-color: var(--contactSupport-background);
+  color: var(--contactSupport-text);
+  transition: transform 0.5s ease;
+
+  &.inactive{
+    opacity: 70%;
+    transform: translateX(220px);
+  }
+
+  &.active{
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+
+  &.inactive:hover {
+    transform: translateX(170px);
+  }
+
 }
 
 .form__input{
@@ -60,11 +104,12 @@
   font-size: 18px;
   }
 
-  &-l212{
+  
+  &-support{
   background-color: transparent;
-  color:var(contactL212-text);
+  color:var(contactSupport-text);
   border: none;
-  border-bottom: 2px solid var(--contactL212-text);
+  border-bottom: 2px solid var(--contactSupport-text);
   font-family: $body__font;
   font-size: 18px;
   font-weight: 500;
@@ -80,6 +125,11 @@
   }
 }
 
+.tab__divider-general, .tab__divider-project, .tab__divider-support{
+  @extend .tab__divider;
+  background-color: var(--contact-divider);
+}
+
 .form__wrapper-ty-general{
   @extend .form__wrapper-ty;
   background-color: transparent;
@@ -90,7 +140,7 @@
   background-color: transparent;
 }
 
-.form__wrapper-ty-l212{
+.form__wrapper-ty-support{
   @extend .form__wrapper-ty;
   background-color: transparent;
 }

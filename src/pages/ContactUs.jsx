@@ -1,7 +1,7 @@
  import React, { useState } from 'react';
 import CFGeneral from '../components/ContactForms/CFGeneral.jsx';
 import CFProject from '../components/ContactForms/CFProject.jsx';
-import CFLink212 from '../components/ContactForms/CFLink212.jsx';
+import CFSupport from '../components/ContactForms/CFSupport.jsx';
 import "../css/App.scss";
 
 function ContactUs() {
@@ -53,24 +53,42 @@ function ContactUs() {
         {/* Tab Navigation */}
        <div className="tab__container">
           <button
-            className={`tab__button-general ${activeTab === 'general' ? 'active' : ''}`}
+            className={`tab__button-general ${activeTab === 'general' ? 'active' : 'inactive'}`}
             onClick={() => setActiveTab('general')}
           >
-            General
+             <p className="tab__title">
+              General
+            </p>
+            <div className="tab__divider-general"></div>
+            <p className="tab__body">
+              Interested in collaborating with us? <br></br> Tell us about yourself!
+            </p>
           </button>
 
           <button
-            className={`tab__button-project ${activeTab === 'project' ? 'active' : ''}`}
+            className={`tab__button-project ${activeTab === 'project' ? 'active' : 'inactive'}`}
             onClick={() => setActiveTab('project')}
           >
-            Projects
+            <p className="tab__title">
+              Project
+            </p>
+            <div className="tab__divider-project"></div>
+            <p className="tab__body">
+              Interested in collaborating with us? <br></br> Tell us about yourself!
+            </p>
           </button>
 
           <button
-            className={`tab__button-l212 ${activeTab === 'l212' ? 'active' : ''}`}
-            onClick={() => setActiveTab('l212')}
+            className={`tab__button-support ${activeTab === 'support' ? 'active' : 'inactive'}`}
+            onClick={() => setActiveTab('support')}
           >
-            Link 212
+            <p className="tab__title">
+              Support
+            </p>
+            <div className="tab__divider-support"></div>
+            <p className="tab__body">
+              Interested in collaborating with us? <br></br> Tell us about yourself!
+            </p>
           </button>
         </div>
 
@@ -78,7 +96,7 @@ function ContactUs() {
         <div className="form__wrapper-userinput">
           <CFGeneral activeTab={activeTab} />
           <CFProject activeTab={activeTab} />
-          <CFLink212 activeTab={activeTab} />
+          <CFSupport activeTab={activeTab} />
         </div>
       </div>
     </div>

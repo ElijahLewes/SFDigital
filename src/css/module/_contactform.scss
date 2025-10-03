@@ -34,7 +34,7 @@
   z-index:0;
   width: 800px;
   position: absolute;
-  right: 150px;
+  right: 190px;
   margin: 20px 0;
   height: 540px;
 }
@@ -46,6 +46,26 @@
   font-size: 20px;
   text-align: left;
   box-shadow: -3px 2px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.5s ease-in-out;
+  margin: 0;
+}
+
+.tab__title{
+  font-family: $body__font;
+  font-size: 20px;
+}
+
+.tab__divider{
+  width: 50px;
+  height: 2px;
+}
+
+.tab__body{
+  font-family: $body__font;
+  font-size: 14px;
+  width: 160px;
+  line-height: 1.2;
+  margin-top: 4px;
 }
 
 
@@ -86,6 +106,7 @@
   font-size: 24px;
   font-weight: 600;
   text-align: right;
+  opacity: 85%;
 }
 
 .form__btn-wrapper{
@@ -125,14 +146,33 @@
   align-items: center;
   justify-content: end;
   border: none;
-  transform:scale(1);
   padding: 0;
+  opacity: 50%;
+  animation-name: form__newmsg-btn-pulse;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+  @keyframes form__newmsg-btn-pulse {
+    0%{
+      transform: scale(1);      
+    }
+
+    50%{
+      transform: scale(1.02);      
+    }
+
+    100%{
+      transform: scale(1);      
+    }
+
+  }
 }
 
 .form__newmsg-wrapper button:hover{
   background-color: transparent;
-  transform: scale(1.02);
-  transition:transform 0.5s ease-in-out;
+  opacity: 100%;
+  transition:opacity 0.5s ease-in-out;
 }
 
 .form__btn-newmsg{
@@ -149,8 +189,8 @@
     font-size: 20px;
   }
 
-  &-l212{
-    color: var(--contactL212-text);
+  &-support{
+    color: var(--contactSupport-text);
     margin-top: 25px;
     font-weight: 600;
     font-size: 20px;

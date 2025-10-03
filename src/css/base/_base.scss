@@ -93,6 +93,7 @@ $body__size: 30px;
   line-height: 1.2;
   font-weight: 400;
   color: var(--title);
+  margin-bottom: 20px;
 }
 
 .l212__title{
@@ -103,12 +104,13 @@ $body__size: 30px;
   color: var(--title);
 }
 
-%body__font{
+.body__font{
   font-family: $body__font;
-  font-size: $body__size; 
+  font-size: 20px;
   text-align: left;
   line-height: 1.2;
-  font-weight: 300;
+  font-weight: 400;
+  color: var(--color);
 
 }
 

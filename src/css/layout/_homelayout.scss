@@ -26,7 +26,7 @@
 .home__projectcard {
   transition: all 0.5s ease;
   cursor: pointer;
-  overflow: visible;
+  overflow: hidden;
   position: relative;
 
   &.active{
@@ -37,12 +37,12 @@
 
   &.inactive{
     height: 590px;
-    width: 45px;
+    width: 50px;
     flex-basis: 16%;
   }
 
   &-inner{
-    position: relative;
+    position: relat ive;
     width: 100%;
     height: 100%;
     transition: transform 0.7s;
@@ -105,6 +105,11 @@
 
 }
 
+.home__projectcard img{
+  object-fit: cover;
+  object-position: center;
+  background-image: none;
+}
 
 /*HOME LANDING SECTION*/
 

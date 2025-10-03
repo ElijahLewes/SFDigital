@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ContactFormSubmitBtn from './ContactFormSubmitBtn';
 import ArrowAngularTopRight from '../../icons/ArrowLight';
 
-function CFLink212({ activeTab }) {
+function CFSupport({ activeTab }) {
   const [showForm, setShowForm] = useState(true);
   const [showThankYou, setShowThankYou] = useState(false);
 
@@ -17,19 +17,19 @@ function CFLink212({ activeTab }) {
   };
 
   // Updated to check for the correct activeTab value
-  if (activeTab !== 'l212') return null;
+  if (activeTab !== 'support') return null;
 
   return (
-    <div className="form__wrapper-l212">
+    <div className="form__wrapper-support">
       {showThankYou ? (
-         <div className="form__wrapper-ty-l212">
+         <div className="form__wrapper-ty-support">
             <p>
               Thank you for contacting us! <br />We will do our best to get back to you within 3 business days.
             </p>
             <div className="form__newmsg-wrapper">
               <button 
                 onClick={handleNewMessage}
-                className="form__btn-newmsg-l212"
+                className="form__btn-newmsg-support"
               >
               <ArrowAngularTopRight />
                 Send Another Message
@@ -41,16 +41,16 @@ function CFLink212({ activeTab }) {
             <input 
               type="text" 
               placeholder="Your Name" 
-              className="form__input-l212"
+              className="form__input-support"
               required
             />
             <input 
               type="email" 
               placeholder="Your Email" 
-              className="form__input-l212"
+              className="form__input-support"
               required
             />
-            <select className="form__input-l212" required>
+            <select className="form__input-support" required>
               <option value="">Select Issue Type</option>
               <option value="technical">Technical Support</option>
               <option value="billing">Billing Question</option>
@@ -60,7 +60,7 @@ function CFLink212({ activeTab }) {
             <textarea 
               placeholder="Describe Your Issue" 
               rows="2" 
-              className="form__input-l212"
+              className="form__input-support"
               style={{ paddingTop: '5px' }}
               required
             />
@@ -71,4 +71,4 @@ function CFLink212({ activeTab }) {
   );
 }
 
-export default CFLink212;
+export default CFSupport;

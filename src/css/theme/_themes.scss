@@ -21,13 +21,14 @@ $themes: (
     nav-background: $Fawn,
     contactGeneral-background: $Charcoal,
     contactGeneral-text: $Fawn,
-    contactL212-background: #E1D5C8,
-    contactL212-text: $Charcoal,
+    contactSupport-background: $Heartwood,
+    contactSupport-text: $Fawn,
     contactProject-background: $Collard-Green,
     contactProject-text: $Fawn,
     contact-submit-btn: $Clover,
     contact-arrow-background: $Clover,
-    contact-arrow: $Charcoal
+    contact-arrow: $Charcoal,
+    contact-divider: $Fawn
 
   ),
   dark: (
@@ -42,13 +43,14 @@ $themes: (
     nav-background: $Charcoal,
     contactGeneral-background: $Fawn,
     contactGeneral-text: $Charcoal,
-    contactL212-background: $Heartwood,
-    contactL212-text: $Charcoal,
+    contactSupport-background: $Heartwood,
+    contactSupport-text: $Charcoal,
     contactProject-background: $Clover,
     contactProject-text: $Charcoal,
     contact-submit-btn: $Charcoal,
     contact-arrow-background: $Charcoal,
-    contact-arrow: $Fawn
+    contact-arrow: $Fawn,
+    contact-divider: $Charcoal
 
 
   )
