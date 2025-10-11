@@ -1,8 +1,18 @@
 @use '../base/_base' as *;
 
+#l212__nbd-menu-wrapper{
+  width: 100vw;
+  height: 650px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  background-image: url("/images/l212/nbd-menu-grain.png");
+} 
+
 .map__wrapper{
-  width: 600px;
+  width: 500px;
   text-align: left;
+  height: 90vh;
 }
 
 .map__wrapper img{
@@ -13,15 +23,17 @@
 
 .menu__nav-l212{
   position:relative;
-  background-color:var(--Charcoal);
+  background-color:var(--color);
   width: 3px;
   align-self: self-start;
   height: 650px;
   justify-content: start;
+  z-index: 1;
 }
 
 .menu__dot-l212{
   position: absolute;
+  transform: translateX(-6px);
   background-color: var(--Charcoal);
   border-radius: 100%;
   width: 15px;
@@ -34,17 +46,26 @@
   width: 900px;
 }
 
-.menu__container a{
-  font-family: "Mona Sans";
+.menu__items-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-top: 60px;
+}
+
+
+.menu__items a{
+  font-family: $body__font;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 34px;
   text-align: left;
   display: flex;
   flex-direction: row;
-  width: 800px;
   height: 40px;
   align-items: center;
   gap:2px;
+  margin-bottom: 55px;
+  padding-left: 20px;
 }
 
 .menu__item-l212{
@@ -56,17 +77,16 @@
 .menu__imgwrapper-l212{
   position: relative;
   display: flex;
-  flex-direction: column;
   height: 650px;
   width: 500px;
 }
 
-.menu__imgwrapper-nbd img{
-  position:absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+.menu__imgwrapper-l212 img{
+  position: absolute;
+  height: 900px;
   object-fit: cover;
+  object-position: center;
+
 }
 
 .menu__title-l212{

@@ -4,16 +4,21 @@
 
 /*General Page Layout*/
 .page__container {
-  min-width: 100%;
+  max-width: 100%;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
   justify-content: center;
   margin: 0;
   background-color: background;
   display: flex;
   flex-direction: column;
   background: var(--background);
-  color: var(--text);
+  color: var(--color);
+}
+
+.l212__page-container{
+  @extend .page__container;
+  background-color: var(--l212-background);
 }
 
 .page__container-column {
@@ -29,12 +34,3 @@
   @apply mb-2;
 }
 
-/*General Page Layout*/
-
-#l212-nbd-menu-wrapper{
-  width: 100%;
-  height: 650px;
-  display: flex;
-  flex-direction: row;
-  background-image: url("/images/l212/nbd-menu-grain.png");
-}
