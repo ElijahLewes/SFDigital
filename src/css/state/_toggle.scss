@@ -1,0 +1,48 @@
+.toggle {
+  position: relative;
+  width: 30px;
+  height: 28px;
+  border-radius: 25px;
+  border: 2px solid var(--toggle-border);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+
+  .toggle-circle {
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--toggle-circle);
+    transform: translateY(-50%) translateX(0);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* Light vs Dark movement */
+  &.light .toggle-circle {
+    transform: translateY(-50%) translateX(0);
+  }
+  &.dark .toggle-circle {
+    transform: translateY(-50%) translateX(55px);
+  }
+
+  /* NEW: Hero mode (home hero section) */
+  &.hero {
+    $Fawn: #F2E5D7;
+    border-color: $Fawn; // same as navbar contrast color
+    .toggle-circle {
+      background-color: $Fawn;
+    }
+  }
+
+  /* L212 variants */
+  &.l212-light,
+  &.l212-dark {
+    border-color: var(--l212-toggle-border);
+    .toggle-circle {
+      background-color: var(--l212-toggle-circle);
+    }
+  }
+}

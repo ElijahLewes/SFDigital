@@ -1,5 +1,6 @@
 @use '../base/_base.scss' as *;
 @use '../theme/_themes.scss' as *;
+@use '../state/toggle' as *;
 
 
 // base wrapper (your existing styles)
@@ -7,16 +8,32 @@
   background: var(--nav-background);
   width: 100%;
   position: sticky;
-  top: 0;
+  top:0;
   // Keep height relative to view port becuase navbar isn't wrapped in page container
-  height: 15vh;
+  height: 13vh;
   display: flex;
   flex-direction: row;
-  gap: 30px;
-  padding: 10px 40px;
+  gap: 80px;
+  padding-left: 60px;
   z-index: 1000;
-  justify-content: flex-start;
+  justify-content: space-between;
+}
+
+.navbar__right-wrapper{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 60px;
+  margin-right: 60px;
+}
+
+.navbar__left-wrapper{
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
 }
 
 .navbar__logo-wrapper {
@@ -47,7 +64,7 @@
 
 #navbar__logo:hover {
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.01);
 }
 
 /* Links inherit the navbar color */
@@ -55,7 +72,7 @@
   color: currentColor;
   display: flex;
   flex-direction: row;
-  gap: 35px;
+  gap: 50px;
   font-size: 20px;
   font-weight: 400;
   font-family: $body__font;
@@ -75,18 +92,15 @@
   background-color: transparent;
 }
 
-/* Optional: "button-style" links also inherit color */
-.nav-btn {
-  color: currentColor;
-  background: transparent;
-  border: 1px solid currentColor;
-  border-radius: 9999px;
-  padding: 6px 14px;
-  line-height: 1;
-  text-decoration: none;
-  // Remove color/background/border transitions to prevent fade on scroll
-  transition: none;
+
+.navbar__btn-wrapper{
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
 }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 .nav-btn:hover {
   background-color: currentColor;
@@ -104,15 +118,44 @@
 .navbar__btn-yt img {
   width: 35px;  /* default size */
   height: auto; /* keeps aspect ratio */
+=======
+
+.navbar__btn-ig img{
+  width: 35px;  /* default size */
+  height: auto; /* keeps aspect ratio */
+}
+
+.navbar__btn-yt img {
+  width: 44px;  /* default size */
+  height: auto; /* keeps aspect ratio */
+}
+
+/* Base styles */
+.navbar__btn-ig img {
+  width: 35px;
+  height: auto;
+}
+
+.navbar__btn-yt img {
+  width: 44px;
+  height: auto;
+>>>>>>> l212Refactoring
 }
 
 /* When dark theme is active */
 [data-theme="dark"] .navbar__btn-ig img {
+<<<<<<< HEAD
   width: 28px; /* slightly smaller, for example */
 }
 
 
 >>>>>>> Stashed changes
+=======
+  width: 32px; /* slightly smaller, for example */
+}
+
+
+>>>>>>> l212Refactoring
 /* Home: start transparent with Fawn text for contrast over hero */
 .navbar__wrapper.navbar__home {
   background: transparent;
@@ -144,4 +187,10 @@
 .navbar__wrapper.navbar__default {
   background: var(--nav-background);
   color: var(--color);
+}
+
+.navbar__wrapper.navbar__link212{
+  background-image: var(--l212-bg-img);
+  color: var(--color); // or whatever text color you want on that page
+  transition: none;
 }
