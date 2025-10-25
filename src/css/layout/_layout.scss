@@ -4,21 +4,15 @@
 
 /*General Page Layout*/
 .page__container {
-  max-width: 100%;
+  width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   justify-content: center;
-  margin: 0;
-  background-color: background;
+  align-items: center;
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
-  background: var(--background);
   color: var(--color);
-}
-
-.l212__page-container{
-  @extend .page__container;
-  background-color: var(--l212-background);
 }
 
 .page__container-column {

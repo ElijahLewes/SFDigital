@@ -11,10 +11,15 @@
 $themes: (
   light: (
     background: $Fawn,
-    l212-background: $Isabelline,
+    l212-background: $Indigo-Dye,
+    l212-bg-img: url("../images/l212/light-grain-bg.png"),
+    l212-text: $Isabelline,
+    l212-menu-nav: $Isabelline,
+    l212-divider: $Charcoal,
     color: $Charcoal,
     title: $Charcoal,
     body-color: $Charcoal,
+    l212-body-color: $Charcoal,
     l212-title: $Indigo-Dye,
     button: $Charcoal,
     sfd-button-text: $Fawn,
@@ -28,15 +33,24 @@ $themes: (
     contactProject-text: $Fawn,
     contact-submit-btn: $Clover,
     contact-arrow-background: $Clover,
-    contact-arrow: $Charcoal
+    contact-arrow: $Charcoal,
+    toggle-border: $Charcoal,
+    toggle-circle: $Charcoal,
+    l212-toggle-border: $Charcoal,
+    l212-toggle-circle: $Charcoal
 
   ),
   dark: (
     background: $Charcoal,
-    l212-background: $Chestnut,
+    l212-background: $Charcoal,
+    l212-bg-img: url("../images/l212/dark-grain-bg.png"),
+    l212-text: $Isabelline,
+    l212-menu-nav: $Isabelline,
+    l212-divider: $Isabelline,
     color: $Fawn,
     title: $Fawn,
     body-color: $Fawn,
+    l212-body-color: $Isabelline,
     l212-title: $Clover,
     button: $Fawn,
     sfd-button-text: $Charcoal,
@@ -50,7 +64,11 @@ $themes: (
     contactProject-text: $Charcoal,
     contact-submit-btn: $Charcoal,
     contact-arrow-background: $Charcoal,
-    contact-arrow: $Fawn
+    contact-arrow: $Fawn,
+    toggle-border: $Fawn,
+    toggle-circle: $Fawn,
+    l212-toggle-border: $Isabelline,
+    l212-toggle-circle: $Isabelline
 
 
   )

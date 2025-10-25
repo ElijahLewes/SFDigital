@@ -7,6 +7,36 @@ function Link212() {
   const menuRef = useRef(null);
   const DOT_SIZE = 16;
 
+const [theme, setTheme] = useState(
+    document.documentElement.getAttribute("data-theme") || "light"
+  );
+
+  // 🟢 Watch for theme changes from outside (Navbar toggle)
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setTheme(document.documentElement.getAttribute("data-theme"));
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  // 🟢 Compute background image based on theme
+  const l212HeaderBg =
+    theme === "light"
+      ? 'url("../images/l212/light-grain-bg.png")'
+      : 'url("../images/l212/dark-grain-bg.png")';
+
+  // 🟢 Apply header background when theme changes
+  useEffect(() => {
+    const headerEl = document.getElementById("l212-header");
+    if (headerEl) {
+      headerEl.style.backgroundImage = l212HeaderBg;
+    }
+  }, [theme, l212HeaderBg]);
+
   const menuItems = [
     {
       label: "Remington",
@@ -69,15 +99,13 @@ function Link212() {
     setHoverIndex(null);
   };
 
+  
   return (
-    <div className="l212__page-container">
-    <div className="min-h-screen">
+    <div className="page__container">
       {/* HEADER */}
       <section id="l212-header">
-        <div id="header__wrapper--row">
-
           <div className="l212__header-left">
-            <p className="l212__title header__right-l212">Link 212</p>
+            <p className="l212__title header__right-l212">LINK 212</p>
           <div className="divider-l212" />
           <div className="l212__text-description">
             <p>
@@ -109,12 +137,10 @@ function Link212() {
             className="l212__quote-end"
           />
         </div>
-        </div>
-      
       </section>
 
       {/* MAP + MENU + PREVIEW */}
-      <section id="l212__nbd-menu-wrapper" className="flex">
+      <section id="l212__nbd-menu-wrapper">
         <div className="interactive-map-container">
           <div className="map__wrapper">
             <img
@@ -150,13 +176,14 @@ function Link212() {
                       opacity: hoverIndex === null || hoverIndex === index ? 1 : 0.4,
                       x: hoverIndex === index ? 10 : 0, // move right 10px when hovered
                     }}
+                    style={{textDecoration: "none"}}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
                     {hoverIndex === index && (
                       <motion.img
-                        src="images/l212/right-arrow-l212.svg"
+                        src="images/l212/l212-right-arrow.svg"
+                        className="menu__arrow"
                         alt="right arrow"
-                        className="w-[40px] h-[40px]"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -227,7 +254,6 @@ function Link212() {
           </div>
         </div>
       </section>
-    </div>
   </div>
   );
 }

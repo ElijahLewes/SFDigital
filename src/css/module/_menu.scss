@@ -1,12 +1,12 @@
 @use '../base/_base' as *;
 
 #l212__nbd-menu-wrapper{
-  width: 100vw;
+  width: 100%;
   height: 650px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  background-image: url("/images/l212/nbd-menu-grain.png");
+  background-color: var(--l212-background);
 } 
 
 .map__wrapper{
@@ -23,18 +23,18 @@
 
 .menu__nav-l212{
   position:relative;
-  background-color:var(--color);
-  width: 3px;
-  align-self: self-start;
+  background-color:var(--l212-menu-nav);
+  width: 4px;
+  margin-left: 10px;
   height: 650px;
   justify-content: start;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .menu__dot-l212{
   position: absolute;
   transform: translateX(-6px);
-  background-color: var(--Charcoal);
+  background-color: var(--l212-text);
   border-radius: 100%;
   width: 15px;
   height: 15px;
@@ -51,10 +51,11 @@
   flex-direction: column;
   width: 400px;
   margin-top: 60px;
+  color: var(--l212-text);
 }
 
 
-.menu__items a{
+.menu__items a {
   font-family: $body__font;
   font-weight: 600;
   font-size: 34px;
@@ -63,15 +64,20 @@
   flex-direction: row;
   height: 40px;
   align-items: center;
-  gap:2px;
+  gap:10px;
   margin-bottom: 55px;
   padding-left: 20px;
+  color: var(--l212-text);
+  text-decoration: none;
 }
 
-.menu__item-l212{
-  color: var(--Charcoal);
-  opacity: 50%;
-  height: 50px;
+.menu__arrow{
+  width: 30px;
+  height: auto;
+}
+
+.menu__items a:hover{
+  color: var(--l212-text);
 }
 
 .menu__imgwrapper-l212{
@@ -109,3 +115,4 @@
   text-align: right;
   text-shadow: 1px -1px 6px rgba(0, 0, 0, 0.3);
 }
+
