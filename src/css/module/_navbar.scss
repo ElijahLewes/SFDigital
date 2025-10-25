@@ -87,12 +87,32 @@
   // Remove color/background/border transitions to prevent fade on scroll
   transition: none;
 }
+<<<<<<< Updated upstream
 .nav-btn:hover {
   background-color: currentColor;
   color: var(--nav-background); // good contrast against the filled button
   text-decoration: none;
 }
 
+=======
+
+.navbar__btn-ig img{
+  width: 30px;  /* default size */
+  height: auto; /* keeps aspect ratio */
+}
+
+.navbar__btn-yt img {
+  width: 35px;  /* default size */
+  height: auto; /* keeps aspect ratio */
+}
+
+/* When dark theme is active */
+[data-theme="dark"] .navbar__btn-ig img {
+  width: 28px; /* slightly smaller, for example */
+}
+
+
+>>>>>>> Stashed changes
 /* Home: start transparent with Fawn text for contrast over hero */
 .navbar__wrapper.navbar__home {
   background: transparent;
