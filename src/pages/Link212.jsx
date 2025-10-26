@@ -7,6 +7,36 @@ function Link212() {
   const menuRef = useRef(null);
   const DOT_SIZE = 16;
 
+const [theme, setTheme] = useState(
+    document.documentElement.getAttribute("data-theme") || "light"
+  );
+
+  // 🟢 Watch for theme changes from outside (Navbar toggle)
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setTheme(document.documentElement.getAttribute("data-theme"));
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  // 🟢 Compute background image based on theme
+  const l212HeaderBg =
+    theme === "light"
+      ? 'url("../images/l212/light-grain-bg.png")'
+      : 'url("../images/l212/dark-grain-bg.png")';
+
+  // 🟢 Apply header background when theme changes
+  useEffect(() => {
+    const headerEl = document.getElementById("l212-header");
+    if (headerEl) {
+      headerEl.style.backgroundImage = l212HeaderBg;
+    }
+  }, [theme, l212HeaderBg]);
+
   const menuItems = [
     {
       label: "Remington",
@@ -17,13 +47,13 @@ function Link212() {
     {
       label: "Jones Falls",
       img: "/images/l212/jonesfalls.JPG",
-      position: { bottom: "5px", left: "-60px" },
+      position: { bottom: "5px", left: "-90px" },
       width: "400px",
     },
     {
       label: "Abell",
       img: "/images/l212/abell.JPG",
-      position: { bottom: "10px", left: "-80px" },
+      position: { bottom: "10px", left: "-100px" },
       width: "400px",
     },
   ];
@@ -69,16 +99,15 @@ function Link212() {
     setHoverIndex(null);
   };
 
+  
   return (
     <div className="page__container">
-    <div className="min-h-screen">
       {/* HEADER */}
       <section id="l212-header">
-        <div id="header__wrapper--row">
-        
-          <p className="l212__title header__right-l212">Link 212</p>
+          <div className="l212__header-left">
+            <p className="l212__title header__right-l212">LINK 212</p>
           <div className="divider-l212" />
-          <div className="text__description-l212">
+          <div className="l212__text-description">
             <p>
               Link 212 cultivates civic pride among young adults in Baltimore
               through shared local knowledge, neighborhood connections, and
@@ -89,29 +118,31 @@ function Link212() {
             </p>
           </div>
         </div>
-          <div className="l212-header-right">
+
+          <div className="l212__header-right">
           <img
             src="images/l212/quote-start.svg"
             alt="starting quote"
-            className="l212-start-quote"
+            className="l212__quote-start"
           />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+          <div className="l212__quote">
+            <p className="l212__quote-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
           <img
             src="images/l212/quote-end.svg"
             alt="ending quote"
-            className="l212-end-quote"
+            className="l212__quote-end"
           />
         </div>
-      
       </section>
 
       {/* MAP + MENU + PREVIEW */}
-      <section id="l212-nbd-menu-wrapper" className="flex">
+      <section id="l212__nbd-menu-wrapper">
         <div className="interactive-map-container">
-          <div className="map-wrapper">
+          <div className="map__wrapper">
             <img
               src="images/l212/remington-map.svg"
               alt="remington map"
@@ -120,38 +151,39 @@ function Link212() {
           </div>
         </div>
 
-        <div className="nbd-menu-nav relative w-[3px] bg-[var(--Charcoal)] h-[650px] mx-4">
+        <div className="menu__nav-l212">
           <motion.div
-            className="nbd-menu-dot absolute w-4 h-4 bg-[var(--Charcoal)] rounded-full -translate-x-1/2"
+            className="menu__dot-l212"
             animate={{ top: dotTop }}
             transition={{ type: "tween", duration: 0.2, ease: "easeInOut" }}
           />
+
         </div>
 
         <div
-          className="nbd-menu-container flex"
+          className="menu__container"
           ref={menuRef}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
-          <aside className="flex flex-col justify-start items-start p-8 w-[400px]">
-            <ul className="w-full">
+          <div className="menu__items-wrapper">
+            <ul>
               {menuItems.map((item, index) => (
-                <li key={index} className="my-2">
+                <li key={index} className="menu__items">
                   <motion.a
                     href="#"
-                    className="flex items-center gap-4"
                     animate={{
                       opacity: hoverIndex === null || hoverIndex === index ? 1 : 0.4,
                       x: hoverIndex === index ? 10 : 0, // move right 10px when hovered
                     }}
+                    style={{textDecoration: "none"}}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
                     {hoverIndex === index && (
                       <motion.img
-                        src="images/l212/right-arrow-l212.svg"
+                        src="images/l212/l212-right-arrow.svg"
+                        className="menu__arrow"
                         alt="right arrow"
-                        className="w-[40px] h-[40px]"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -163,16 +195,15 @@ function Link212() {
                 </li>
               ))}
             </ul>
-          </aside>
+          </div>
 
-          <div className="l212-menu-pic relative w-[500px] h-[650px]">
+          <div className="menu__imgwrapper-l212">
             {menuItems.map((item, index) => (
               <motion.img
                 key={item.img}
                 src={item.img}
-                alt={item.label}
-                className="absolute inset-0 w-full h-full object-cover"
-                initial={{ opacity: 0 }}
+                className="menu__imgwrapper-nbd"
+                initial={{ opacity: 0, x: 250 }} // start 20px left & hidden
                 animate={{
                   opacity:
                     hoverIndex === index
@@ -180,13 +211,17 @@ function Link212() {
                       : hoverIndex === null && index === 0
                       ? 1
                       : 0,
-                }}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
+                  x:
+                    hoverIndex === index
+                      ? 25 // slide into position
+                      : 250, // move left when inactive
+                  }}
+                transition={{ duration: 0.75, ease: "easeInOut" }}
               />
             ))}
 
-            <div
-              className="nbd-big-title absolute text-[120px] font-bold text-[var(--Isabelline)] right-0"
+            <motion.div
+              className="menu__title-l212"
               style={{
                 bottom:
                   hoverIndex !== null
@@ -201,17 +236,24 @@ function Link212() {
                     ? menuItems[hoverIndex].width || "300px"
                     : menuItems[0].width || "300px",
               }}
+              initial={{x: -20 }}
+              animate={{
+                x:
+                  hoverIndex !== null
+                    ? -20 // slide 10px to the right when hovered
+                    : 100, // return to default when no hover
+              }}
+              transition={{ duration: 0.75, ease: "easeInOut" }}
             >
               <p>
                 {hoverIndex !== null
                   ? menuItems[hoverIndex].label
                   : menuItems[0].label}
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
-    </div>
   </div>
   );
 }
