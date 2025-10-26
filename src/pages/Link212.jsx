@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function Link212() {
   const [dotTop, setDotTop] = useState(0);
   const [hoverIndex, setHoverIndex] = useState(null);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
   const DOT_SIZE = 16;
 
   const menuItems = [
@@ -13,18 +15,21 @@ function Link212() {
       img: "/images/l212/remington.JPG",
       position: { bottom: "10px", left: "-70px" },
       width: "300px",
+      route: "/neighborhoods/remington",
     },
     {
       label: "Jones Falls",
       img: "/images/l212/jonesfalls.JPG",
       position: { bottom: "5px", left: "-60px" },
       width: "400px",
+      route: null,
     },
     {
       label: "Abell",
       img: "/images/l212/abell.JPG",
       position: { bottom: "10px", left: "-80px" },
       width: "400px",
+      route: null,
     },
   ];
 
@@ -67,6 +72,12 @@ function Link212() {
 
   const handleMouseLeave = () => {
     setHoverIndex(null);
+  };
+
+  const handleMenuClick = (item) => {
+    if (item.route) {
+      navigate(item.route);
+    }
   };
 
   return (
@@ -138,9 +149,9 @@ function Link212() {
             <ul className="w-full">
               {menuItems.map((item, index) => (
                 <li key={index} className="my-2">
-                  <motion.a
-                    href="#"
-                    className="flex items-center gap-4"
+                  <motion.button
+                    onClick={() => handleMenuClick(item)}
+                    className={`flex items-center gap-4 bg-transparent border-none text-left ${item.route ? 'cursor-pointer' : 'cursor-default'}`}
                     animate={{
                       opacity: hoverIndex === null || hoverIndex === index ? 1 : 0.4,
                       x: hoverIndex === index ? 10 : 0, // move right 10px when hovered
@@ -159,7 +170,7 @@ function Link212() {
                       />
                     )}
                     {item.label}
-                  </motion.a>
+                  </motion.button>
                 </li>
               ))}
             </ul>
