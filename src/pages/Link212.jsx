@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function Link212() {
   const [dotTop, setDotTop] = useState(0);
   const [hoverIndex, setHoverIndex] = useState(null);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
   const DOT_SIZE = 16;
 
 const [theme, setTheme] = useState(
@@ -43,18 +45,21 @@ const [theme, setTheme] = useState(
       img: "/images/l212/remington.JPG",
       position: { bottom: "10px", left: "-70px" },
       width: "300px",
+      route: "/neighborhoods/remington",
     },
     {
       label: "Jones Falls",
       img: "/images/l212/jonesfalls.JPG",
       position: { bottom: "5px", left: "-90px" },
       width: "400px",
+      route: null,
     },
     {
       label: "Abell",
       img: "/images/l212/abell.JPG",
       position: { bottom: "10px", left: "-100px" },
       width: "400px",
+      route: null,
     },
   ];
 
@@ -97,6 +102,12 @@ const [theme, setTheme] = useState(
 
   const handleMouseLeave = () => {
     setHoverIndex(null);
+  };
+
+  const handleMenuClick = (item) => {
+    if (item.route) {
+      navigate(item.route);
+    }
   };
 
   
@@ -191,7 +202,7 @@ const [theme, setTheme] = useState(
                       />
                     )}
                     {item.label}
-                  </motion.a>
+                  </motion.button>
                 </li>
               ))}
             </ul>
