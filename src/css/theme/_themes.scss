@@ -11,7 +11,7 @@
 $themes: (
   light: (
     background: $Fawn,
-    section-bg: url("../images/fawn-grain-bg.png"),
+    section-bg: url("../images/heartwood-grain-bg.png"),
     l212-background: $Indigo-Dye,
     l212-bg-img: url("../images/l212/light-grain-bg.png"),
     l212-text: $Isabelline,
@@ -39,8 +39,9 @@ $themes: (
     toggle-circle: $Charcoal,
     l212-toggle-border: $Charcoal,
     l212-toggle-circle: $Charcoal,
-    left-column: $Clover,
+    left-column: $Fawn,
     right-column:$Heartwood,
+    flip-card-hover: $Heartwood,
 
   ),
   dark: (
@@ -74,7 +75,7 @@ $themes: (
     l212-toggle-border: $Isabelline,
     l212-toggle-circle: $Isabelline,
     left-column: $Collard-Green,
-    right-column: $Charcoal
+    right-column: $Heartwood,
 
 
   )

@@ -12,6 +12,8 @@ export default function Navbar() {
     ? "home"
     : pathname === "/link212"
     ? "link212"
+    : pathname === "/team"
+    ? "about"
     : "default";
 
 const [navbarState, setNavbarState] = useState(initialVariant);
@@ -21,6 +23,8 @@ const [navbarState, setNavbarState] = useState(initialVariant);
       setNavbarState("home");
     } else if (pathname === "/link212") {
       setNavbarState("link212");
+    } else if (pathname === "/team") {
+      setNavbarState("about");
     } else {
       setNavbarState("default");
     }
@@ -48,6 +52,8 @@ const [navbarState, setNavbarState] = useState(initialVariant);
     ? "navbar__home"
     : navbarState === "link212"
     ? "navbar__link212"
+    : navbarState === "about"
+    ? "navbar__about"
     : "navbar__default";
 
 
@@ -78,7 +84,14 @@ useEffect(() => {
           ? 'url("../images/l212/light-grain-bg.png")'
           : 'url("../images/l212/dark-grain-bg.png")'
       );
-    } else {
+    } else if (navbarState === "about") {
+        document.documentElement.style.setProperty(
+          "--section-bg",
+          theme === "light"
+          ? 'url("../images/fawn-grain-bg.png")'
+          : 'url("../images/charcoal-grain-bg.png")'
+        );
+  } else {
       // Optional: remove when leaving link212
       document.documentElement.style.removeProperty("--l212-bg-img");
     }

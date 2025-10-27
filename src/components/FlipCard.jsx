@@ -41,11 +41,6 @@ const FlipCard = ({
       tabIndex={0}
       onClick={toggleFlip}
       onKeyDown={onKeyDown}
-      style={{
-        // CSS vars used by SCSS (optional accent colors)
-        "--flip-accent": color || "#0f172a",
-        "--flip-accent-hover": colorhvr || "#0b1220",
-      }}
       aria-pressed={flipped}
     >
       <div className={`flip-card__inner ${flipped ? "is-flipped" : ""}`}>

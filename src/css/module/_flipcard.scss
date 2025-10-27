@@ -1,28 +1,6 @@
 @use '../base/_base' as *;
 /* 
-Flip card experimentteam page */
-.flip__card-perspective {
-  perspective: 1000px;
-}
-.flip__card-transform-style {
-  transform-style: preserve-3d;
-}
-.backface-hidden {
-  backface-visibility: hidden;
-}
-.flip__-180 {
-  transform: rotateY(180deg);
-}
-.backface-hidden {
-  backface-visibility: hidden;
-}
 
-.profile_card-back{
-  width: 300px;
-  height: 500px;
-  text-align: left;
-  justify-content: space-between;
-}
 
 /* Place in your flipCard.scss (already globally imported) */
 .flip-card {
@@ -32,8 +10,6 @@ Flip card experimentteam page */
   height: 100%;
   perspective: 1000px;
   cursor: pointer;
-  --flip-accent: #0;
-  --flip-accent-hover: #0b1220;
 }
 
 .flip-card__inner {
@@ -58,7 +34,6 @@ Flip card experimentteam page */
   display: grid;
   grid-template-rows: auto 1fr;
 
-  border: 1px solid rgba(15, 23, 42, 0.15);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -154,10 +129,6 @@ Flip card experimentteam page */
   color: #ffffff;
 }
 
-/* Hover accent (optional) */
-.flip-card:hover .flip-card__name {
-  color: var(--flip-accent-hover);
-}
 
 /* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
@@ -219,6 +190,11 @@ Flip card experimentteam page */
 
 .flip-card__front {
   /* visible by default */
+}
+
+.flip-card:hover .flip-card__front {
+  background-color: var(--flip-card-hover, #f1f5f9); // fallback if var not defined
+  transition: background-color 0.3s ease;
 }
 
 .flip-card__back {

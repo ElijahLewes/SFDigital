@@ -1,6 +1,7 @@
 @use '../base/_base.scss' as *;
 @use '../theme/_themes.scss' as *;
 @use '../state/toggle' as *;
+@use '../layout/layout' as *;
 
 
 // base wrapper (your existing styles)
@@ -160,4 +161,9 @@
   background-image: var(--l212-bg-img);
   color: var(--color); // or whatever text color you want on that page
   transition: none;
+}
+
+.navbar__wrapper.navbar__about{
+  background-image: var(--section-bg);
+  color: var(--color);
 }
