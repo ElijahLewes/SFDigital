@@ -3,65 +3,78 @@ import NbdLanding from '../../components/NBDComponents/NbdLanding.jsx';
 import LongFormVideo from '../../components/NBDComponents/LongFormVideo.jsx';
 import Article from '../../components/NBDComponents/Article.jsx';
 import Gallery from '../../components/NBDComponents/Gallery.jsx';
+import useNeighborhoodData from '../../hooks/useNeighborhoodData.js';
 
 function Remington() {
+  const { data: neighborhoodData, loading, error } = useNeighborhoodData('remington');
+
+  if (loading) {
+    return (
+      <div className="neighborhood-page">
+        <div className="loading-container">
+          <p>Loading neighborhood data...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="neighborhood-page">
+        <div className="error-container">
+          <p>Error loading neighborhood data: {error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!neighborhoodData) {
+    return (
+      <div className="neighborhood-page">
+        <div className="error-container">
+          <p>No neighborhood data found.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="neighborhood-page">
       
       {/* Landing Section */}
       <NbdLanding 
-        title="Remington"
-        publishedMonth="October 2025"
-        mapImageSrc="/images/l212/remington-map.svg"
-        mapImageAlt="Map of Remington neighborhood"
-        sections={[
-          { id: "video", title: "Community Stories", icon: "video" },
-          { id: "about", title: "About Remington", icon: "info" },
-          { id: "gallery", title: "Photo Gallery", icon: "gallery" }
-        ]}
+        title={neighborhoodData.name}
+        publishedMonth={neighborhoodData.publishedMonth}
+        mapImageSrc={neighborhoodData.mapImage}
+        mapImageAlt={`Map of ${neighborhoodData.name} neighborhood`}
+        sections={neighborhoodData.sections}
       />
 
       {/* Video Section */}
       <div id="video">
         <LongFormVideo 
-          title="Discovering Remington: A Neighborhood Story"
-          description="Join us as we explore the vibrant community of Remington, where industrial heritage meets modern innovation. Meet the residents, business owners, and community leaders who make this neighborhood special."
-          youtubeId="dQw4w9WgXcQ"
+          title={neighborhoodData.video.title}
+          description={neighborhoodData.video.description}
+          youtubeId={neighborhoodData.video.youtubeId}
         />
       </div>
 
       {/* Article Section */}
       <div id="about">
         <Article 
-          title="The Heart of Remington"
-          content="Remington is a neighborhood that perfectly balances its rich industrial past with a promising future. Once home to textile mills and manufacturing, today it's a thriving community of artists, young professionals, and long-time residents who have created something truly unique in Baltimore."
-          imageSrc="/images/l212/remington.JPG"
-          imageAlt="Remington neighborhood street view"
-          imagePosition="right"
+          title={neighborhoodData.article.title}
+          content={neighborhoodData.article.content}
+          imageSrc={neighborhoodData.article.imageSrc}
+          imageAlt={neighborhoodData.article.imageAlt}
+          imagePosition={neighborhoodData.article.imagePosition}
         />
       </div>
 
       {/* Gallery Section */}
       <div id="gallery">
         <Gallery 
-          title="Remington Through the Lens"
-          images={[
-            {
-              src: "/images/l212/remington.JPG",
-              alt: "Historic Remington building",
-              description: "The architectural heritage of Remington tells the story of Baltimore's industrial evolution and community resilience."
-            },
-            {
-              src: "/images/carousel2.JPG",
-              alt: "Community gathering space",
-              description: "Modern community spaces where neighbors come together to celebrate, create, and build lasting connections."
-            },
-            {
-              src: "/images/carousel3.JPG",
-              alt: "Local business district",
-              description: "Thriving local businesses that serve as the economic and social backbone of the Remington community."
-            }
-          ]}
+          title={neighborhoodData.gallery.title}
+          images={neighborhoodData.gallery.images}
         />
       </div>
 
