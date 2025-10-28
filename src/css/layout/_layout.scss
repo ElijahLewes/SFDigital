@@ -12,35 +12,21 @@
 }
 
 .horizontal__scroll {
-  display: flex;
-  flex-direction: row;
-  width: 200vw; // 2 columns wide
-  height: 100%;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; // no scrollbar
 }
 .horizontal__scroll::-webkit-scrollbar {
   display: none;
 }
 
-.arrow__btn-left, .arrow__btn-right{
-  border: none;
-}
-
-.arrow__btn-left img, .arrow__btn-right img{
-  width:40px;
-  height: 40px;
-}
-
 
 .section__wrapper {
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  overflow:visible;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .text__container{
@@ -54,26 +40,65 @@
 
 .section__container-column-left,
 .section__container-column-right {
-  flex: 0 0 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  padding: 40px 60px;
+  transition: transform 0.6s ease, z-index 0.4s ease;
 }
 
 .section__container-column-left {
   background-color: var(--left-column);
-  z-index: 2;
+  z-index: 4;
   flex-direction: row;
+}
+
+.section__container-column-left::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width:30px; /* the "hover zone" width */
+  height: 100%;
+  cursor: pointer;
+  z-index: 3;
+  pointer-events: auto;
+  background: red;
 }
 
 .section__container-column-right {
   background-color: var(--right-column);
-  z-index: 0;
+  z-index: 2;
   flex-direction: row;
   gap: 60;
+  padding: 40px 60px;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.6s ease, z-index 0.4s ease;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* when left column is hovered, slide the right column over */
+.section__container-column-left:hover ~ .section__container-column-right,
+.section__container-column-left:hover + .section__container-column-right {
+  transform: translateX(0);
+  z-index: 6; /* bring above left */
+  pointer-events: auto;
+}
+
+
+/* Reset */
+.section__container-column-left:not(:hover) ~ .section__container-column-right {
+  transform: translateX(100%);
+  z-index: 1;
 }
 
 .about__wrapper {
@@ -90,27 +115,41 @@
   padding: 60px;
 }
 
+.title__wrapper{
+  width: 30px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.sfd__title-about {
+  font-family: $sfd__title-font;
+  font-size: 35px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--title);
+  width: 80px;
+}
+
 .card__wrapper {
   width: 100%;
-  min-height: 400px;
+  min-height: 500px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: start;
-  gap: 5px;
+  gap: 100px;
 }
 
 .cards__container{
   display: flex;
   flex-direction: row;
-  align-items: start;
-  justify-content: space-between;
-  gap: 5px;
-  width: 900px;
+  align-items: center;
+  justify-content: space-evenly;
+  width: auto;
 }
 
 .bts__wrapper{
   width: 100%;
-  min-height: 400px;
+  min-height: 500px;
   display: flex;
   flex-direction: row;
   justify-content: center;

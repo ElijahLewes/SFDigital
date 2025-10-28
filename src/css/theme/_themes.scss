@@ -41,7 +41,12 @@ $themes: (
     l212-toggle-circle: $Charcoal,
     left-column: $Fawn,
     right-column:$Heartwood,
-    flip-card-hover: $Heartwood,
+    flipcard-bg-1: $Heartwood,
+    flipcard-bg-2: $Clover,
+    flipcard-bg-3: #E1D5C8,
+    flipcard-hvr-1: #E1D5C8,
+    flipcard-hvr-2: $Heartwood,
+    flipcard-hvr-3: $Clover,
 
   ),
   dark: (
@@ -76,6 +81,12 @@ $themes: (
     l212-toggle-circle: $Isabelline,
     left-column: $Collard-Green,
     right-column: $Heartwood,
+    flipcard-bg-1: $Collard-Green,
+    flipcard-bg-2: $Charcoal,
+    flipcard-bg-3: $Heartwood,
+    flipcard-hvr-1: $Heartwood,
+    flipcard-hvr-2: $Collard-Green,
+    flipcard-hvr-3: $Charcoal,
 
 
   )
