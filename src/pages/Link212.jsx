@@ -200,7 +200,7 @@ const [theme, setTheme] = useState(
                       />
                     )}
                     {item.label}
-                  </motion.button>
+                  </motion.a>
                 </li>
               ))}
             </ul>
