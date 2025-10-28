@@ -10,88 +10,65 @@ const FlipCard = ({
   bio,
   email,
   website,
-  color,
-  colorhvr,
-  flipped: controlledFlipped,        // optional controlled prop
-  onFlipChange,                      // optional controlled callback
-  className = "",
+  color,     // e.g. "--Heartwood"
+  colorhvr,  // e.g. "--Highlight"
 }) => {
-  const [internalFlipped, setInternalFlipped] = useState(false);
-  const isControlled = typeof controlledFlipped === "boolean";
-  const flipped = isControlled ? controlledFlipped : internalFlipped;
+  const [flipped, setFlipped] = useState(false);
 
-  const setFlipped = (next) => {
-    const value = typeof next === "function" ? next(flipped) : next;
-    if (!isControlled) setInternalFlipped(value);
-    if (onFlipChange) onFlipChange(value);
+  const toggleFlip = () => setFlipped((prev) => !prev);
+
+  const handleMouseEnter = (e) => {
+    // Only apply hover color if front is visible
+    if (!flipped) e.currentTarget.style.backgroundColor = `var(${colorhvr})`;
   };
 
-  const toggleFlip = () => setFlipped((v) => !v);
-  const onKeyDown = (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      toggleFlip();
-    }
+  const handleMouseLeave = (e) => {
+    // Always reset to base color
+    e.currentTarget.style.backgroundColor = `var(${color})`;
   };
- 
+
   return (
     <div
-      className={`flip-card ${className}`}
-      role="button"
-      tabIndex={0}
+      className={`flipcard__wrapper ${flipped ? "flipcard__180" : ""}`}
       onClick={toggleFlip}
-      onKeyDown={onKeyDown}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       style={{
-        // CSS vars used by SCSS (optional accent colors)
-        "--flip-accent": color || "#0f172a",
-        "--flip-accent-hover": colorhvr || "#0b1220",
+        backgroundColor: `var(${color})`,
+        transition: "transform 0.8s, background-color 0.3s ease",
       }}
-      aria-pressed={flipped}
     >
-      <div className={`flip-card__inner ${flipped ? "is-flipped" : ""}`}>
-        {/* FRONT */}
-        <div className="flip-card__face flip-card__front" aria-hidden={flipped}>
-          {imageSrc && (
-            <div className="flip-card__image">
-              <img src={imageSrc} alt={`${fName || ""} ${lName || ""}`} />
-            </div>
-          )}
-         
+      {/* FRONT */}
+      <div className="flipcard__front backface__hidden">
+        <div className="flipcard__btn">
+         <p>Flip</p>
         </div>
+        {imageSrc && <img src={imageSrc} alt={`${fName} ${lName}`} />}
+      </div>
 
-        {/* BACK */}
-        <div
-          className="flip-card__face flip-card__back"
-          aria-hidden={!flipped}
-        >
-          <div className="flip-card__content">
-             <div className="flip-card__content">
-            <h3 className="flip-card__name">
-              {fName} {lName}
-            </h3>
-            {description && (
-              <p className="flip-card__desc">{description}</p>
-            )}
-          </div>
-            {bio && <p className="flip-card__bio">{bio}</p>}
-            <div className="flip-card__links">
-              {email && (
-                <a href={`mailto:${email}`} className="flip-card__link">
-                  {email}
-                </a>
-              )}
-              {website && (
-                <a
-                  href={website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flip-card__link"
-                >
-                  {website}
-                </a>
-              )}
-            </div>
-          </div>
+      {/* BACK */}
+      <div className="flipcard__back backface__hidden">
+        <div className="flipcard__btn">
+          <p>Flip</p>
+        </div>
+        <div>
+          <p className="flipcard__back-title">
+            {fName} {lName}
+          </p>
+          <p className="flipcard__back-body">{description}</p>
+          <p className="flipcard__back-body">{bio}</p>
+        </div>
+        <div>
+          {email && (
+            <a href={`mailto:${email}`}>
+              <EmailDark /> {email}
+            </a>
+          )}
+          {website && (
+            <a href={website} target="_blank" rel="noopener noreferrer">
+              <GlobeDark /> {website}
+            </a>
+          )}
         </div>
       </div>
     </div>

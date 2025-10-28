@@ -1,6 +1,7 @@
 @use '../base/_base.scss' as *;
 @use '../theme/_themes.scss' as *;
 @use '../state/toggle' as *;
+@use '../layout/layout' as *;
 
 
 // base wrapper (your existing styles)
@@ -100,31 +101,26 @@
   align-items: center;
   
 }
+.nav-btn:hover {
+  background-color: currentColor;
+  color: var(--nav-background); // good contrast against the filled button
+  text-decoration: none;
+}
+
 
 .navbar__btn-ig img{
+  width: 30px;  /* default size */
+  height: auto; /* keeps aspect ratio */
+}
+
+.navbar__btn-yt img {
   width: 35px;  /* default size */
   height: auto; /* keeps aspect ratio */
 }
 
-.navbar__btn-yt img {
-  width: 44px;  /* default size */
-  height: auto; /* keeps aspect ratio */
-}
-
-/* Base styles */
-.navbar__btn-ig img {
-  width: 35px;
-  height: auto;
-}
-
-.navbar__btn-yt img {
-  width: 44px;
-  height: auto;
-}
-
 /* When dark theme is active */
 [data-theme="dark"] .navbar__btn-ig img {
-  width: 32px; /* slightly smaller, for example */
+  width: 28px; /* slightly smaller, for example */
 }
 
 
@@ -165,4 +161,9 @@
   background-image: var(--l212-bg-img);
   color: var(--color); // or whatever text color you want on that page
   transition: none;
+}
+
+.navbar__wrapper.navbar__about{
+  background-image: var(--section-bg);
+  color: var(--color);
 }

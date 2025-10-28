@@ -84,12 +84,12 @@ $Indigo-Dye: #134D67;
 $sfd__title-font: "Career";
 $l212__title-font: "Gangster Grotesk";
 $body__font: "Mona Sans";
-$title__size: 80px;
+$title__size: 40px;
 $body__size: 30px;
 
 .sfd__title {
   font-family: $sfd__title-font;
-  font-size: $title__size;
+  font-size: 55px;
   line-height: 1.2;
   font-weight: 400;
   color: var(--title);
@@ -122,8 +122,6 @@ h1{
 }
 h2{
   font-family: 'Career', sans-serif;
-  @apply text-5xl mb-2 text-left w-full;
-  transition: transform 1.4s ease;
 
 }
 %h3{
@@ -136,7 +134,8 @@ text-decoration: none;
 }
 }
 p {
-
+font-family: $body__font;
+line-height: 1.5;
 }
 img{
   max-width: 100%;
