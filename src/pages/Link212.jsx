@@ -13,7 +13,7 @@ const [theme, setTheme] = useState(
     document.documentElement.getAttribute("data-theme") || "light"
   );
 
-  // 🟢 Watch for theme changes from outside (Navbar toggle)
+
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setTheme(document.documentElement.getAttribute("data-theme"));
@@ -25,13 +25,11 @@ const [theme, setTheme] = useState(
     return () => observer.disconnect();
   }, []);
 
-  // 🟢 Compute background image based on theme
   const l212HeaderBg =
     theme === "light"
       ? 'url("../images/l212/light-grain-bg.png")'
       : 'url("../images/l212/dark-grain-bg.png")';
 
-  // 🟢 Apply header background when theme changes
   useEffect(() => {
     const headerEl = document.getElementById("l212-header");
     if (headerEl) {

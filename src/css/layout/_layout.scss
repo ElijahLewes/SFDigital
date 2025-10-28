@@ -1,30 +1,170 @@
 @use '../base/_base' as *;
-
 @use '../theme/_themes.scss' as *;
 
 /*General Page Layout*/
 .page__container {
   width: 100%;
-  min-height: 100vh;
   overflow-x: hidden;
-  justify-content: center;
-  align-items: center;
   background-color: var(--background);
   display: flex;
   flex-direction: column;
   color: var(--color);
 }
 
-.page__container-column {
-  @apply min-h-screen w-full flex flex-col;
-} 
+.horizontal__scroll {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; // no scrollbar
+}
+.horizontal__scroll::-webkit-scrollbar {
+  display: none;
+}
 
-.page__container-row {
-  @apply h-screen w-full flex flex-row;
+
+.section__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.text__container{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.section__container-column-left,
+.section__container-column-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s ease, z-index 0.4s ease;
+}
+
+.section__container-column-left {
+  background-color: var(--left-column);
+  z-index: 4;
+  flex-direction: row;
+}
+
+.section__container-column-left::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width:30px; /* the "hover zone" width */
+  height: 100%;
+  cursor: pointer;
+  z-index: 3;
+  pointer-events: auto;
+  background: red;
+}
+
+.section__container-column-right {
+  background-color: var(--right-column);
+  z-index: 2;
+  flex-direction: row;
+  gap: 60;
+  padding: 40px 60px;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.6s ease, z-index 0.4s ease;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* when left column is hovered, slide the right column over */
+.section__container-column-left:hover ~ .section__container-column-right,
+.section__container-column-left:hover + .section__container-column-right {
+  transform: translateX(0);
+  z-index: 6; /* bring above left */
+  pointer-events: auto;
+}
+
+
+/* Reset */
+.section__container-column-left:not(:hover) ~ .section__container-column-right {
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+.about__wrapper {
+  width: 100%;
+  height: 250px;
+  display: block;
+  background-image: var(--section-bg);
+}
+
+.about__container {
+  width: 80%;
+  display: block;
+  color: var(--body-color);
+  padding: 60px;
+}
+
+.title__wrapper{
+  width: 30px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.sfd__title-about {
+  font-family: $sfd__title-font;
+  font-size: 35px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--title);
+  width: 80px;
+}
+
+.card__wrapper {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 100px;
+}
+
+.cards__container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: auto;
+}
+
+.bts__wrapper{
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.bts__photo img{
+  width: 300px;
+  height: 400px;
+  border-radius: 15px;
+  margin-left: 80px;
+  object-fit: cover;
 }
 
 .footer__subtitle {
   font-family: 'Career', sans-serif;
-  @apply mb-2;
 }
 
