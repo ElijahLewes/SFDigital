@@ -11,6 +11,7 @@
 $themes: (
   light: (
     background: $Fawn,
+    section-bg: url("../images/heartwood-grain-bg.png"),
     l212-background: $Indigo-Dye,
     l212-bg-img: url("../images/l212/light-grain-bg.png"),
     l212-text: $Isabelline,
@@ -37,11 +38,20 @@ $themes: (
     toggle-border: $Charcoal,
     toggle-circle: $Charcoal,
     l212-toggle-border: $Charcoal,
-    l212-toggle-circle: $Charcoal
+    l212-toggle-circle: $Charcoal,
+    left-column: $Fawn,
+    right-column:$Heartwood,
+    flipcard-bg-1: $Heartwood,
+    flipcard-bg-2: $Clover,
+    flipcard-bg-3: #E1D5C8,
+    flipcard-hvr-1: #E1D5C8,
+    flipcard-hvr-2: $Heartwood,
+    flipcard-hvr-3: $Clover,
 
   ),
   dark: (
     background: $Charcoal,
+    section-bg: url("../images/charcoal-grain-bg.png"),
     l212-background: $Charcoal,
     l212-bg-img: url("../images/l212/dark-grain-bg.png"),
     l212-text: $Isabelline,
@@ -68,7 +78,15 @@ $themes: (
     toggle-border: $Fawn,
     toggle-circle: $Fawn,
     l212-toggle-border: $Isabelline,
-    l212-toggle-circle: $Isabelline
+    l212-toggle-circle: $Isabelline,
+    left-column: $Collard-Green,
+    right-column: $Heartwood,
+    flipcard-bg-1: $Collard-Green,
+    flipcard-bg-2: $Charcoal,
+    flipcard-bg-3: $Heartwood,
+    flipcard-hvr-1: $Heartwood,
+    flipcard-hvr-2: $Collard-Green,
+    flipcard-hvr-3: $Charcoal,
 
 
   )
