@@ -5,12 +5,18 @@ import '../css/theme/_themes.scss';
 
 export default function Navbar() {
   const { pathname } = useLocation();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  // Neighborhood data with paths
+  const neighborhoods = [
+    { name: "Remington", path: "/link212/remington/" },
+  ];
 
   // Start in the correct variant on first render (no flash)
   const initialVariant =
   pathname === "/" || pathname === "/home"
     ? "home"
-    : pathname === "/link212"
+    : pathname === "/link212" || pathname.startsWith("/link212/")
     ? "link212"
     : pathname === "/team"
     ? "about"
@@ -21,7 +27,7 @@ const [navbarState, setNavbarState] = useState(initialVariant);
     useEffect(() => {
     if (pathname === "/" || pathname === "/home") {
       setNavbarState("home");
-    } else if (pathname === "/link212") {
+    } else if (pathname === "/link212" || pathname.startsWith("/link212/")) {
       setNavbarState("link212");
     } else if (pathname === "/team") {
       setNavbarState("about");
@@ -29,6 +35,18 @@ const [navbarState, setNavbarState] = useState(initialVariant);
       setNavbarState("default");
     }
   }, [pathname]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.navbar__dropdown')) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // set theme controls
   const [theme, setTheme] = useState("light");
@@ -105,15 +123,55 @@ return (
           <Link id="navbar__logo" to="/">SFD</Link>
         </div>
 
-
         <div className="navbar__links">
-          <NavButton to="/link212" label="Link 212"/>
+          {/* Link212 Dropdown */}
+          <div className="navbar__dropdown">
+            <button
+              className="nav-btn dropdown-toggle"
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setDropdownOpen(!dropdownOpen);
+                }
+              }}
+              aria-expanded={dropdownOpen}
+              aria-haspopup="true"
+            >
+              Link 212 
+              <span className={`dropdown-arrow ${dropdownOpen ? 'open' : ''}`}>▼</span>
+            </button>
+            
+            {dropdownOpen && (
+              <div className="dropdown-menu" role="menu">
+                <Link 
+                  to="/link212" 
+                  className="dropdown-item"
+                  onClick={() => setDropdownOpen(false)}
+                  role="menuitem"
+                >
+                  Link 212 Home
+                </Link>
+                {neighborhoods.map((neighborhood, index) => (
+                  <Link
+                    key={index}
+                    to={neighborhood.path}
+                    className="dropdown-item"
+                    onClick={() => setDropdownOpen(false)}
+                    role="menuitem"
+                  >
+                    {neighborhood.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           <NavButton to="/team" label="About" />
         </div>
       </div>
 
     <div className="navbar__left-wrapper">
-          {/* Social icons with dynamic src */}
         <div className="navbar__btn-wrapper">
           <div className="navbar__btn-ig">
             <a

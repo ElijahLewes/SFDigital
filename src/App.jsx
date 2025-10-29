@@ -20,8 +20,6 @@ function App() {
 
   const isLanding = location.pathname === "/";
 
-
-
   return (
     <>
     {/* Show Navbar only if not landing */}
@@ -34,7 +32,7 @@ function App() {
           <Route path="/link212" element={<Link212 />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/neighborhoods/remington" element={<Remington />} />
+          <Route path="/link212/remington/" element={<Remington />} />
         </Routes>
       </AnimatePresence>
 
