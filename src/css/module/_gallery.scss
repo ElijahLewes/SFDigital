@@ -1,0 +1,243 @@
+@use '../base/_base.scss' as *;
+
+// Gallery Section Styles
+.gallery-section {
+  padding: 4rem 2rem;
+  background-color: var(--background);
+  background-image: var(--section-bg);
+  background-size: cover;
+  background-position: center;
+  color: var(--color);
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Gallery Header
+.gallery-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.gallery-title {
+  font-family: 'GangsterGrotesk-Bold', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--title);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+}
+
+.gallery-accent-bar {
+  width: 60px;
+  height: 4px;
+  background-color: var(--button);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+// Three Column Grid
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+// Gallery Item
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(var(--left-column-rgb, 108, 122, 137), 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Image Container
+.gallery-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+
+  @media (max-width: 640px) {
+    height: 200px;
+  }
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+
+  .gallery-item:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.gallery-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  .gallery-item:hover & {
+    opacity: 0.7;
+  }
+}
+
+// Description Section
+.gallery-description {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.gallery-text {
+  font-family: 'MonaSans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--body-color);
+  margin: 0;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+}
+
+// Gallery Footer
+.gallery-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(var(--right-column-rgb, 156, 133, 116), 0.1);
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.gallery-footer-text {
+  font-family: 'MonaSans', sans-serif;
+  font-size: 1.1rem;
+  color: var(--body-color);
+  margin: 0;
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+// Responsive Grid Adjustments
+@media (max-width: 1024px) {
+  .gallery-grid {
+    .gallery-item:last-child:nth-child(odd) {
+      grid-column: span 2;
+      
+      .gallery-image-container {
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    .gallery-item:last-child:nth-child(odd) {
+      grid-column: span 1;
+      
+      .gallery-image-container {
+        height: 200px;
+      }
+    }
+  }
+}
+
+// Loading States
+.gallery-item {
+  &.loading {
+    .gallery-image-container {
+      background-color: var(--toggle-border);
+      background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      background-size: 200px 100%;
+      background-repeat: no-repeat;
+      animation: loading 1.5s infinite;
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(100% + 200px) 0;
+  }
+}
+
+// Dark theme adjustments
+:root[data-theme="dark"] {
+  .gallery-image-overlay {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+
+  .gallery-item {
+    background-color: rgba(var(--left-column-rgb, 108, 122, 137), 0.1);
+  }
+
+  .gallery-footer {
+    background-color: rgba(var(--right-column-rgb, 156, 133, 116), 0.15);
+  }
+}

@@ -43,7 +43,8 @@ const [theme, setTheme] = useState(
       img: "/images/l212/remington.JPG",
       position: { bottom: "10px", left: "-70px" },
       width: "300px",
-      route: "/neighborhoods/remington",
+
+      route: "/NeighborhoodPages/Remington",
     },
     {
       label: "Jones Falls",

@@ -22,6 +22,12 @@
 @use './module/navbar';
 @use './module/text';
 
+/* NBD Components import */
+@use './module/article';
+@use './module/gallery';
+@use './module/longformvideo';
+@use './module/nbdlanding';
+
 @use './state/contactformstates';
 @use './state/notifs';
 @use './state/navbarstates';
