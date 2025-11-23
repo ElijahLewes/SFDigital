@@ -6,6 +6,10 @@ html, body {
   padding: 0;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /*ScSS Variables*/
 
 /* Global font-face declarations*/
@@ -79,6 +83,7 @@ $Indigo-Dye: #134D67;
   --Isabelline: #{$Isabelline};
   --Chestnut: #{$Chestnut};
   --Indigo-Dye: #{$Indigo-Dye};
+  --page-inline-padding: clamp(16px, 4vw, 64px);
 }
 
 $sfd__title-font: "Career";

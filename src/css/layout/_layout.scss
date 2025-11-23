@@ -4,11 +4,21 @@
 /*General Page Layout*/
 .page__container {
   width: 100%;
+  padding-inline: var(--page-inline-padding);
+  box-sizing: border-box;
+  margin: 0 auto;
   overflow-x: hidden;
   background-color: var(--background);
   display: flex;
   flex-direction: column;
   color: var(--color);
+}
+
+.page-container {
+  width: 100%;
+  padding-inline: var(--page-inline-padding);
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .split__container {
@@ -233,4 +243,3 @@
 .footer__subtitle {
   font-family: 'Career', sans-serif;
 }
-
