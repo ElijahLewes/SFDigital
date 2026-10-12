@@ -44,7 +44,9 @@
   flex-direction: row;
   gap: 20px;
   width: 1200px;
+  max-width: 100%;
   padding-left: 40px;
+  flex-wrap: wrap;
 }
 
 .landing__preview{
@@ -65,4 +67,18 @@
   overflow: hidden;
   object-fit: cover;
   border-radius: 15px;
+}
+
+.landing__preview-btn{
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: 15px;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.landing__preview-btn:focus-visible{
+  outline: 3px solid var(--color);
+  outline-offset: 6px;
 }
