@@ -5,9 +5,21 @@
     "publishedMonth": "October 2025",
     "mapImage": "/images/l212/remington-map.svg",
     "sections": [
-      { "id": "video", "title": "Community Stories", "icon": "video" },
-      { "id": "about", "title": "About Remington", "icon": "info" },
-      { "id": "gallery", "title": "Photo Gallery", "icon": "gallery" }
+      {
+        "id": "video",
+        "title": "Community Stories",
+        "icon": "video"
+      },
+      {
+        "id": "about",
+        "title": "About Remington",
+        "icon": "info"
+      },
+      {
+        "id": "gallery",
+        "title": "Photo Gallery",
+        "icon": "gallery"
+      }
     ],
     "population": 5000,
     "area_sq_km": 2.5,
@@ -40,6 +52,98 @@
           "src": "/images/carousel3.JPG",
           "alt": "Local business district",
           "description": "Thriving local businesses that serve as the economic and social backbone of the Remington community."
+        }
+      ]
+    }
+  },
+  "jones-falls": {
+    "name": "Jones Falls",
+    "id": "JF.001",
+    "publishedMonth": "Coming soon",
+    "draft": true,
+    "mapImage": "/images/l212/remington-map.svg",
+    "sections": [
+      {
+        "id": "video",
+        "title": "Community Stories",
+        "icon": "video"
+      },
+      {
+        "id": "about",
+        "title": "About Jones Falls",
+        "icon": "info"
+      },
+      {
+        "id": "gallery",
+        "title": "Photo Gallery",
+        "icon": "gallery"
+      }
+    ],
+    "video": {
+      "title": "Jones Falls: A Neighborhood Story",
+      "description": "Placeholder. The Jones Falls story is still in production.",
+      "youtubeId": "dQw4w9WgXcQ"
+    },
+    "article": {
+      "title": "About Jones Falls",
+      "content": "Placeholder. The Jones Falls article is still being written.",
+      "imageSrc": "/images/l212/jonesfalls.JPG",
+      "imageAlt": "Jones Falls neighborhood",
+      "imagePosition": "right"
+    },
+    "gallery": {
+      "title": "Jones Falls Through the Lens",
+      "images": [
+        {
+          "src": "/images/l212/jonesfalls.JPG",
+          "alt": "Jones Falls neighborhood",
+          "description": "Placeholder photo."
+        }
+      ]
+    }
+  },
+  "abell": {
+    "name": "Abell",
+    "id": "ABL.001",
+    "publishedMonth": "Coming soon",
+    "draft": true,
+    "mapImage": "/images/l212/remington-map.svg",
+    "sections": [
+      {
+        "id": "video",
+        "title": "Community Stories",
+        "icon": "video"
+      },
+      {
+        "id": "about",
+        "title": "About Abell",
+        "icon": "info"
+      },
+      {
+        "id": "gallery",
+        "title": "Photo Gallery",
+        "icon": "gallery"
+      }
+    ],
+    "video": {
+      "title": "Abell: A Neighborhood Story",
+      "description": "Placeholder. The Abell story is still in production.",
+      "youtubeId": "dQw4w9WgXcQ"
+    },
+    "article": {
+      "title": "About Abell",
+      "content": "Placeholder. The Abell article is still being written.",
+      "imageSrc": "/images/l212/abell.JPG",
+      "imageAlt": "Abell neighborhood",
+      "imagePosition": "right"
+    },
+    "gallery": {
+      "title": "Abell Through the Lens",
+      "images": [
+        {
+          "src": "/images/l212/abell.JPG",
+          "alt": "Abell neighborhood",
+          "description": "Placeholder photo."
         }
       ]
     }

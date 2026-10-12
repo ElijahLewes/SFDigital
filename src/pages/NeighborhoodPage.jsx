@@ -1,12 +1,15 @@
 import React from 'react';
-import NbdLanding from '../../components/NBDComponents/NbdLanding.jsx';
-import LongFormVideo from '../../components/NBDComponents/LongFormVideo.jsx';
-import Article from '../../components/NBDComponents/Article.jsx';
-import Gallery from '../../components/NBDComponents/Gallery.jsx';
-import useNeighborhoodData from '../../hooks/useNeighborhoodData.js';
+import { useParams } from 'react-router-dom';
+import NotFound from './NotFound.jsx';
+import NbdLanding from '../components/NBDComponents/NbdLanding.jsx';
+import LongFormVideo from '../components/NBDComponents/LongFormVideo.jsx';
+import Article from '../components/NBDComponents/Article.jsx';
+import Gallery from '../components/NBDComponents/Gallery.jsx';
+import useNeighborhoodData from '../hooks/useNeighborhoodData.js';
 
-function Remington() {
-  const { data: neighborhoodData, loading, error } = useNeighborhoodData('remington');
+function NeighborhoodPage() {
+  const { slug } = useParams();
+  const { data: neighborhoodData, loading, error, notFound } = useNeighborhoodData(slug);
 
   if (loading) {
     return (
@@ -17,6 +20,8 @@ function Remington() {
       </div>
     );
   }
+
+  if (notFound) return <NotFound />;
 
   if (error) {
     return (
@@ -41,6 +46,10 @@ function Remington() {
   return (
     <div className="neighborhood-page">
       
+      {neighborhoodData.draft && (
+        <p className="neighborhood-draft-note">Draft: this neighborhood's content is still in production.</p>
+      )}
+
       {/* Landing Section */}
       <NbdLanding 
         title={neighborhoodData.name}
@@ -82,4 +91,4 @@ function Remington() {
   );
 }
 
-export default Remington;    
+export default NeighborhoodPage;    

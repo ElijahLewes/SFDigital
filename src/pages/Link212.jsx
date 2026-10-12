@@ -51,14 +51,14 @@ const [theme, setTheme] = useState(
       img: "/images/l212/jonesfalls.JPG",
       position: { bottom: "5px", left: "-90px" },
       width: "400px",
-      route: null,
+      route: "/link212/jones-falls/",
     },
     {
       label: "Abell",
       img: "/images/l212/abell.JPG",
       position: { bottom: "10px", left: "-100px" },
       width: "400px",
-      route: null,
+      route: "/link212/abell/",
     },
   ];
 
