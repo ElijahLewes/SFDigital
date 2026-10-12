@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ContactFormSubmitBtn from './ContactFormSubmitBtn';
-import ArrowAngularTopRight from '../../icons/ArrowLight';
+import ArrowAngularTopRight from '../../icons/Arrow';
 
 function CFProject({ activeTab }) {
   const [showForm, setShowForm] = useState(true);
