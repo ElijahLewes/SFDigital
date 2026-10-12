@@ -167,3 +167,61 @@
   background-image: var(--section-bg);
   color: var(--color);
 }
+
+
+/* Link 212 dropdown: vertical list under the toggle */
+.navbar__dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-arrow {
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 12px;
+  background: var(--background);
+  color: var(--color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1100;
+}
+
+.navbar__links .dropdown-item,
+.navbar__links .dropdown-item:visited {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 18px;
+  white-space: nowrap;
+  color: var(--color);
+  text-decoration: none;
+}
+
+.navbar__links .dropdown-item:hover,
+.navbar__links .dropdown-item:focus-visible {
+  background-color: var(--color);
+  color: var(--background);
+  text-decoration: none;
+}
