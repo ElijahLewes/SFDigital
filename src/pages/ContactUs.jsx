@@ -30,7 +30,7 @@ function ContactUs() {
             rel="noopener noreferrer"
           >
             <button className="sm__container-ig">
-              <img src="/images/ig-icon-light.svg" alt="Instagram icon"/>
+              <img src="/images/ig-light.svg" alt="Instagram icon"/>
               @SFDigital
             </button>
           </a>
@@ -41,7 +41,7 @@ function ContactUs() {
             rel="noopener noreferrer"
           >
             <button className="sm__container-yt">
-              <img src="/images/yt-icon-light.svg" alt="YouTube icon"/>
+              <img src="/images/yt-light.svg" alt="YouTube icon"/>
               @StreetfrontDigital
             </button>
           </a>

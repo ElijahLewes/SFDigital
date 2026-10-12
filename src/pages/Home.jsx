@@ -58,7 +58,7 @@ export default function Home() {
       {/* Attach ref to your hero motion.div */}
       <motion.div ref={heroRef} className="landing__section">
         <motion.img
-          src="/images/remington.JPG"
+          src="/images/remington.jpg"
           alt="Background"
           initial={{ scale: 0.99 }}
           animate={{ scale: 1 }}

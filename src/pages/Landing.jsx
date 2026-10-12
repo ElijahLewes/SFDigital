@@ -31,7 +31,7 @@ export default function Landing() {
             onClick={handleClick}
           >
             <img
-              src="/images/remington.JPG"
+              src="/images/remington.jpg"
               alt=""
               className="landing__preview-img"
             />

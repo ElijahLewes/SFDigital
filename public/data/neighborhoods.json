@@ -31,7 +31,7 @@
     "article": {
       "title": "The Heart of Remington",
       "content": "Remington is a neighborhood that perfectly balances its rich industrial past with a promising future. Once home to textile mills and manufacturing, today it's a thriving community of artists, young professionals, and long-time residents who have created something truly unique in Baltimore.",
-      "imageSrc": "/images/l212/remington.JPG",
+      "imageSrc": "/images/l212/remington.jpg",
       "imageAlt": "Remington neighborhood street view",
       "imagePosition": "right"
     },
@@ -39,17 +39,17 @@
       "title": "Remington Through the Lens",
       "images": [
         {
-          "src": "/images/l212/remington.JPG",
+          "src": "/images/l212/remington.jpg",
           "alt": "Historic Remington building",
           "description": "The architectural heritage of Remington tells the story of Baltimore's industrial evolution and community resilience."
         },
         {
-          "src": "/images/carousel2.JPG",
+          "src": "/images/carousel2.jpg",
           "alt": "Community gathering space",
           "description": "Modern community spaces where neighbors come together to celebrate, create, and build lasting connections."
         },
         {
-          "src": "/images/carousel3.JPG",
+          "src": "/images/carousel3.jpg",
           "alt": "Local business district",
           "description": "Thriving local businesses that serve as the economic and social backbone of the Remington community."
         }
@@ -87,7 +87,7 @@
     "article": {
       "title": "About Jones Falls",
       "content": "Placeholder. The Jones Falls article is still being written.",
-      "imageSrc": "/images/l212/jonesfalls.JPG",
+      "imageSrc": "/images/l212/jonesfalls.jpg",
       "imageAlt": "Jones Falls neighborhood",
       "imagePosition": "right"
     },
@@ -95,7 +95,7 @@
       "title": "Jones Falls Through the Lens",
       "images": [
         {
-          "src": "/images/l212/jonesfalls.JPG",
+          "src": "/images/l212/jonesfalls.jpg",
           "alt": "Jones Falls neighborhood",
           "description": "Placeholder photo."
         }
@@ -133,7 +133,7 @@
     "article": {
       "title": "About Abell",
       "content": "Placeholder. The Abell article is still being written.",
-      "imageSrc": "/images/l212/abell.JPG",
+      "imageSrc": "/images/l212/abell.jpg",
       "imageAlt": "Abell neighborhood",
       "imagePosition": "right"
     },
@@ -141,7 +141,7 @@
       "title": "Abell Through the Lens",
       "images": [
         {
-          "src": "/images/l212/abell.JPG",
+          "src": "/images/l212/abell.jpg",
           "alt": "Abell neighborhood",
           "description": "Placeholder photo."
         }

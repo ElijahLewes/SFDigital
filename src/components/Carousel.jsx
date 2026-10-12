@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import { initFlowbite } from "flowbite";
 
 const images = [
-  { src: "/images/carousel1.JPG", position: "object-[20%_52%]" },
-  { src: "/images/carousel2.JPG", position: "object-[30%_93%]" },
-  { src: "/images/carousel3.JPG", position: "object-[50%_64%]" },
-  { src: "/images/carousel4.JPG", position: "object-[10%_50%]" },
-  { src: "/images/carousel5.JPG", position: "object-[20%_40%]" },
+  { src: "/images/carousel1.jpg", position: "object-[20%_52%]" },
+  { src: "/images/carousel2.jpg", position: "object-[30%_93%]" },
+  { src: "/images/carousel3.jpg", position: "object-[50%_64%]" },
+  { src: "/images/carousel4.jpg", position: "object-[10%_50%]" },
+  { src: "/images/carousel5.jpg", position: "object-[20%_40%]" },
 ];
 
 function Carousel() {

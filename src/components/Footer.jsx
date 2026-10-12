@@ -28,7 +28,7 @@ export function Footer() {
             rel="noopener noreferrer"
           >
             <div className="footer__icon-ig">
-              <img src="images/footer-ig-light.svg" alt="footer instagram icon" />
+              <img src="/images/footer-ig-light.svg" alt="footer instagram icon" />
             </div>
           </a>
 
@@ -39,13 +39,13 @@ export function Footer() {
             rel="noopener noreferrer"
           >
             <div className="footer__icon">
-              <img src="images/footer-yt-light.svg" alt="footer youtube icon" />
+              <img src="/images/footer-yt-light.svg" alt="footer youtube icon" />
             </div>
           </a>
 
           {/* Email */}
           <button className="footer__icon-mail" onClick={copyEmail}>
-            <img src="images/footer-mail-light.svg" alt="footer email icon" />
+            <img src="/images/footer-mail-light.svg" alt="footer email icon" />
           </button>
         </div>
 
@@ -56,7 +56,7 @@ export function Footer() {
         <div className="footer__title-wrapper">
           <p className="footer__title">SFD</p>
           <img
-            src="images/footer-arrow.svg"
+            src="/images/footer-arrow.svg"
             alt="diagonal arrow"
             className="footer__arrow"
           />
