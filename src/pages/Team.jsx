@@ -93,11 +93,11 @@ function Team() {
             onClick={() => setActiveSection(activeSection === "bts" ? null : "bts")}
           >
             <div className="bts__wrapper">
-              <div className="bts__photo"><img src="../images/l212/Remington-4.jpg" alt="bts" /></div>
-              <div className="bts__photo"><img src="../images/l212/Remington-33.jpg" alt="bts" /></div>
-              <div className="bts__photo"><img src="../images/l212/Remington-28.jpg" alt="bts" /></div>
-              <div className="bts__photo"><img src="../images/l212/Remington-17.jpg" alt="bts" /></div>
-              <div className="bts__photo"><img src="../images/l212/Remington-33.jpg" alt="bts" /></div>
+              <div className="bts__photo"><img src="/images/l212/Remington-4.jpg" alt="bts" /></div>
+              <div className="bts__photo"><img src="/images/l212/Remington-33.jpg" alt="bts" /></div>
+              <div className="bts__photo"><img src="/images/l212/Remington-28.jpg" alt="bts" /></div>
+              <div className="bts__photo"><img src="/images/l212/Remington-17.jpg" alt="bts" /></div>
+              <div className="bts__photo"><img src="/images/l212/Remington-33.jpg" alt="bts" /></div>
             </div>
           </div>
         </div>

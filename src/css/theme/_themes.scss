@@ -11,9 +11,9 @@
 $themes: (
   light: (
     background: $Fawn,
-    section-bg: url("../images/heartwood-grain-bg.png"),
+    section-bg: url("/images/heartwood-grain-bg.png"),
     l212-background: $Indigo-Dye,
-    l212-bg-img: url("../images/l212/light-grain-bg.png"),
+    l212-bg-img: url("/images/l212/light-grain-bg.png"),
     l212-text: $Isabelline,
     l212-menu-nav: $Isabelline,
     l212-divider: $Charcoal,
@@ -51,9 +51,9 @@ $themes: (
   ),
   dark: (
     background: $Charcoal,
-    section-bg: url("../images/charcoal-grain-bg.png"),
+    section-bg: url("/images/charcoal-grain-bg.png"),
     l212-background: $Charcoal,
-    l212-bg-img: url("../images/l212/dark-grain-bg.png"),
+    l212-bg-img: url("/images/l212/dark-grain-bg.png"),
     l212-text: $Isabelline,
     l212-menu-nav: $Isabelline,
     l212-divider: $Isabelline,

@@ -101,15 +101,15 @@ useEffect(() => {
       document.documentElement.style.setProperty(
         "--l212-bg-img",
         theme === "light"
-          ? 'url("../images/l212/light-grain-bg.png")'
-          : 'url("../images/l212/dark-grain-bg.png")'
+          ? 'url("/images/l212/light-grain-bg.png")'
+          : 'url("/images/l212/dark-grain-bg.png")'
       );
     } else if (navbarState === "about") {
         document.documentElement.style.setProperty(
           "--section-bg",
           theme === "light"
-          ? 'url("../images/fawn-grain-bg.png")'
-          : 'url("../images/charcoal-grain-bg.png")'
+          ? 'url("/images/fawn-grain-bg.png")'
+          : 'url("/images/charcoal-grain-bg.png")'
         );
   } else {
       // Optional: remove when leaving link212

@@ -11,7 +11,7 @@ html, body {
 /* Global font-face declarations*/
   @font-face {
     font-family: 'Career';
-    src: url('./fonts/Career.otf') format('opentype');
+    src: url('/fonts/Career.otf') format('opentype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -19,7 +19,7 @@ html, body {
 
   @font-face {
     font-family: 'Mona Sans Italics';
-    src: url('./fonts/MonaSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    src: url('/fonts/MonaSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -27,7 +27,7 @@ html, body {
 
   @font-face {
     font-family: 'Mona Sans';
-    src: url('./fonts/MonaSans-VariableFont_wdth,wght.ttf') format('truetype');
+    src: url('/fonts/MonaSans-VariableFont_wdth,wght.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -35,7 +35,7 @@ html, body {
 
 @font-face {
   font-family: "Gangster Grotesk";
-  src: url("./fonts/GangsterGrotesk-Light.woff2") format("woff2");
+  src: url("/fonts/GangsterGrotesk-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -43,7 +43,7 @@ html, body {
 
 @font-face {
   font-family: "Gangster Grotesk";
-  src: url("./fonts/GangsterGrotesk-Regular.woff2") format("woff2");
+  src: url("/fonts/GangsterGrotesk-Regular.woff2") format("woff2");
   font-weight: 400; /* regular */
   font-style: normal;
   font-display: swap;
@@ -51,7 +51,7 @@ html, body {
 
 @font-face {
   font-family: "Gangster Grotesk";
-  src: url("./fonts/GangsterGrotesk-Bold.woff2") format("woff2");
+  src: url("/fonts/GangsterGrotesk-Bold.woff2") format("woff2");
   font-weight: 700; /* bold */
   font-style: normal;
   font-display: swap;

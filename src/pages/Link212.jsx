@@ -27,8 +27,8 @@ const [theme, setTheme] = useState(
 
   const l212HeaderBg =
     theme === "light"
-      ? 'url("../images/l212/light-grain-bg.png")'
-      : 'url("../images/l212/dark-grain-bg.png")';
+      ? 'url("/images/l212/light-grain-bg.png")'
+      : 'url("/images/l212/dark-grain-bg.png")';
 
   useEffect(() => {
     const headerEl = document.getElementById("l212-header");
@@ -40,7 +40,7 @@ const [theme, setTheme] = useState(
   const menuItems = [
     {
       label: "Remington",
-      img: "/images/l212/remington.JPG",
+      img: "/images/l212/remington.jpg",
       position: { bottom: "10px", left: "-70px" },
       width: "300px",
 
@@ -48,14 +48,14 @@ const [theme, setTheme] = useState(
     },
     {
       label: "Jones Falls",
-      img: "/images/l212/jonesfalls.JPG",
+      img: "/images/l212/jonesfalls.jpg",
       position: { bottom: "5px", left: "-90px" },
       width: "400px",
       route: "/link212/jones-falls/",
     },
     {
       label: "Abell",
-      img: "/images/l212/abell.JPG",
+      img: "/images/l212/abell.jpg",
       position: { bottom: "10px", left: "-100px" },
       width: "400px",
       route: "/link212/abell/",
@@ -149,7 +149,7 @@ const [theme, setTheme] = useState(
 
           <div className="l212__header-right">
           <img
-            src="images/l212/quote-start.svg"
+            src="/images/l212/quote-start.svg"
             alt="starting quote"
             className="l212__quote-start"
           />
@@ -160,7 +160,7 @@ const [theme, setTheme] = useState(
             </p>
           </div>
           <img
-            src="images/l212/quote-end.svg"
+            src="/images/l212/quote-end.svg"
             alt="ending quote"
             className="l212__quote-end"
           />
@@ -172,7 +172,7 @@ const [theme, setTheme] = useState(
         <div className="interactive-map-container">
           <div className="map__wrapper">
             <img
-              src="images/l212/remington-map.svg"
+              src="/images/l212/remington-map.svg"
               alt="remington map"
               className="w-full h-full object-cover"
             />
@@ -218,7 +218,7 @@ const [theme, setTheme] = useState(
                   >
                     {hoverIndex === index && (
                       <motion.img
-                        src="images/l212/l212-right-arrow.svg"
+                        src="/images/l212/l212-right-arrow.svg"
                         className="menu__arrow"
                         alt="right arrow"
                         initial={{ opacity: 0 }}
