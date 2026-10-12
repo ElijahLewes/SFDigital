@@ -8,6 +8,7 @@ export default function Landing() {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
+    if (clicked) return;
     setClicked(true);
     setTimeout(() => {
       navigate("/home"); // navigate after animation
@@ -18,17 +19,23 @@ export default function Landing() {
     <div className="landing__preview">
       <AnimatePresence>
         {!clicked && (
-          <motion.img
+          <motion.button
             key="preview"
-            src="/images/remington.JPG"
-            alt="Enter"
-            className="landing__preview-img"
+            type="button"
+            aria-label="Enter site"
+            className="landing__preview-btn"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1.5, opacity: 1 }}
             exit={{ scale: 8, opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
             onClick={handleClick}
-          />
+          >
+            <img
+              src="/images/remington.JPG"
+              alt=""
+              className="landing__preview-img"
+            />
+          </motion.button>
         )}
       </AnimatePresence>
     </div>

@@ -89,7 +89,12 @@ const [theme, setTheme] = useState(
         ? (cursorY + (items[nearestIndex].getBoundingClientRect().top + items[nearestIndex].getBoundingClientRect().height / 2 - rect.top - DOT_SIZE / 2)) / 2
         : cursorY;
 
-    setDotTop(Math.max(0, Math.min(targetY, rect.height - DOT_SIZE)));
+    // Keep the dot between the first and last menu items
+    const centerOf = (item) =>
+      item.getBoundingClientRect().top + item.getBoundingClientRect().height / 2 - rect.top - DOT_SIZE / 2;
+    const minY = centerOf(items[0]);
+    const maxY = centerOf(items[items.length - 1]);
+    setDotTop(Math.max(minY, Math.min(targetY, maxY)));
 
     // Update hover index if cursor is within item bounds
     const foundIndex = items.findIndex((item) => {
@@ -101,6 +106,19 @@ const [theme, setTheme] = useState(
 
   const handleMouseLeave = () => {
     setHoverIndex(null);
+  };
+
+  // Keyboard focus and touch taps activate an item the same way hover does:
+  // show its preview and move the dot to it.
+  const activateItem = (index) => {
+    if (!menuRef.current) return;
+    const rect = menuRef.current.getBoundingClientRect();
+    const li = menuRef.current.querySelectorAll("li")[index];
+    if (li) {
+      const r = li.getBoundingClientRect();
+      setDotTop(Math.max(0, Math.min(r.top + r.height / 2 - rect.top - DOT_SIZE / 2, rect.height - DOT_SIZE)));
+    }
+    setHoverIndex(index);
   };
 
   const handleMenuClick = (item) => {
@@ -184,8 +202,12 @@ const [theme, setTheme] = useState(
                     href={item.route || undefined}
                     onClick={(e) => {
                       e.preventDefault();
+                      activateItem(index);
                       handleMenuClick(item);
                     }}
+                    onFocus={() => activateItem(index)}
+                    onBlur={() => setHoverIndex(null)}
+                    tabIndex={0}
                     aria-disabled={!item.route}
                     animate={{
                       opacity: hoverIndex === null || hoverIndex === index ? 1 : 0.4,
