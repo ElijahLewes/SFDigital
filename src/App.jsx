@@ -9,7 +9,8 @@ import Home from './pages/Home.jsx';
 import Link212 from './pages/Link212.jsx';
 import Team from './pages/Team.jsx';
 import ContactUs from './pages/ContactUs.jsx';
-import Remington from './pages/NeighborhoodPages/Remington.jsx';
+import NeighborhoodPage from './pages/NeighborhoodPage.jsx';
+import NotFound from './pages/NotFound.jsx';
 import OnPageLoad from './components/OnPageLoad.jsx';
 import Footer from './components/Footer.jsx';
 import { useSyncExternalStore } from "react";
@@ -33,7 +34,8 @@ function App() {
             <Route path="/link212" element={<Link212 />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/link212/remington/" element={<Remington />} />
+            <Route path="/link212/:slug" element={<NeighborhoodPage />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </AnimatePresence>

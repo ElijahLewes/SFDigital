@@ -10,6 +10,8 @@ export default function Navbar() {
   // Neighborhood data with paths
   const neighborhoods = [
     { name: "Remington", path: "/link212/remington/" },
+    { name: "Jones Falls", path: "/link212/jones-falls/" },
+    { name: "Abell", path: "/link212/abell/" },
   ];
 
   // Start in the correct variant on first render (no flash)
