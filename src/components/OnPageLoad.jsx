@@ -1,16 +1,15 @@
+import { useLayoutEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-
-// Defines default behavior for scrolling to the top of the page on route change
-// This component should be used in the main App component to ensure it runs on every route change
-
+// Layout route that scrolls to the top when a page mounts.
+// App.jsx keys <Routes> by pathname, so every navigation mounts a fresh copy
+// together with the new page. The old page therefore stays where it was
+// until it is swapped out, with no scroll jump during the transition.
 function OnPageLoad() {
-  const { pathname } = useLocation();
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
+  }, []);
+  return <Outlet />;
 }
 
 export default OnPageLoad;
