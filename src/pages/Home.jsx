@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import ProjectCard from "../components/ProjectCard";
 import "../css/layout/_landinglayout.scss";
 import ContactUs from "./ContactUs.jsx";
 import FlipCard from "/src/components/FlipCard.jsx";
 
 export default function Home() {
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(null);
   const [flippedIndex, setFlippedIndex] = useState(null);
 
@@ -88,8 +90,15 @@ export default function Home() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
             <div className="landing__btn-wrapper">
-              <button>About Us</button>
-              <button>Work With Us</button>
+              <button type="button" onClick={() => navigate("/team")}>About Us</button>
+              <button
+                type="button"
+                onClick={() =>
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" })
+                }
+              >
+                Work With Us
+              </button>
             </div>
             </motion.div>
       </motion.div>
@@ -116,7 +125,7 @@ export default function Home() {
       </section>
          
 
-          <div className="contactus__container">
+          <div id="contact" className="contactus__container">
           <ContactUs />
           </div>
 
