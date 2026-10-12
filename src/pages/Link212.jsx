@@ -44,7 +44,7 @@ const [theme, setTheme] = useState(
       position: { bottom: "10px", left: "-70px" },
       width: "300px",
 
-      route: "/NeighborhoodPages/Remington",
+      route: "/link212/remington/",
     },
     {
       label: "Jones Falls",
@@ -181,12 +181,17 @@ const [theme, setTheme] = useState(
               {menuItems.map((item, index) => (
                 <li key={index} className="menu__items">
                   <motion.a
-                    href="#"
+                    href={item.route || undefined}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuClick(item);
+                    }}
+                    aria-disabled={!item.route}
                     animate={{
                       opacity: hoverIndex === null || hoverIndex === index ? 1 : 0.4,
                       x: hoverIndex === index ? 10 : 0, // move right 10px when hovered
                     }}
-                    style={{textDecoration: "none"}}
+                    style={{textDecoration: "none", cursor: item.route ? "pointer" : "default"}}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
                     {hoverIndex === index && (
@@ -201,6 +206,7 @@ const [theme, setTheme] = useState(
                       />
                     )}
                     {item.label}
+                    {!item.route && <span className="menu__soon">Coming soon</span>}
                   </motion.a>
                 </li>
               ))}
